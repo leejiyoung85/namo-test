@@ -509,8 +509,67 @@ footer {
 }
 /* --------------------  index02  -------------------- */
 .map-box {
+  position: relative;
   width: 330px;
   margin: 20px auto;
+}
+.map-box svg {
+  width: 100%;
+  height: auto;
+}
+.region-text-box {
+  display: none;
+  position: absolute;
+}
+.region-text-box p {
+  font-size: 18px;
+}
+.region-text-box.map01 {
+}
+.region-text-box.map02 {
+}
+
+.region-text-box.map04 {
+}
+.region-text-box.map05 {
+}
+.region-text-box.map07 {
+  bottom: 0;
+  right: -10%;
+  transform: translateX(-10%);
+}
+.region-text-box.map08 {
+}
+.region-text-box.map09 {
+}
+.region-text-box.map10 {
+}
+.region-text-box.map11 {
+}
+.region-text-box.map12 {
+}
+.region-text-box.map13 {
+}
+.region-text-box.map14 {
+  top: 16%;
+  right: -11%;
+  transform: translateX(-11%);
+}
+.region-text-box.map03,
+.region-text-box.map06,
+.region-text-box.map15 {
+  top: 24%;
+  left: -12%;
+  transform: translateX(-12%);
+}
+.region-text-box.map16 {
+}
+.region-text-box.map17 {
+}
+.region-text-box.map18 {
+  top: 50%;
+  right: -40%;
+  transform: translateX(-40%);
 }
 .region {
   fill: #dadcec;
@@ -695,6 +754,7 @@ footer {
   /* a link */
   .link {
     height: 42px;
+    line-height: 42px;
   }
   /* modal */
   .modal.show .modal-dialog {
@@ -752,6 +812,13 @@ footer {
   .switch {
     max-width: 100%;
     min-width: 100%;
+  }
+  /* index02 */
+  .map-box {
+    width: 200px;
+  }
+  .region-text-box p {
+    font-size: 11px;
   }
   /* index05 */
   .project-tab {
