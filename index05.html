@@ -206,9 +206,9 @@
                             <div id="content1" class="tab-content">
                                 <p>건축물 내용</p>
                             </div>
-                            <div id="content2" class="tab-content">
+                            <div id="content2" class="tab-content" style="height: 359px;">
                                 <!-- 그래프에 대한 컨텐츠 -->
-                                <p>그래프 내용</p>
+                                <canvas id="myChart"></canvas>
                             </div>
                             <div id="content3" class="tab-content">
                                 <!-- 결과값에 대한 컨텐츠 -->
@@ -233,6 +233,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/bootstrap-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['봄', '여름', '가을', '겨울'],
+                datasets: [{
+                    label: 'label1',
+                    data: [12, 19, 3, 5],
+                    backgroundColor: '#404AB3',
+                    borderWidth: 1
+                }, {
+                    label: 'label2',
+                    data: [6, 19, 3, 5],
+                    backgroundColor: '#828AD8',
+                    borderWidth: 1
+                }, {
+                    label: 'label3',
+                    data: [9, 19, 3, 5],
+                    backgroundColor: '#D6DAFF',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                aspectRatio: 319 / 150,
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        bottom: 0
+                    }
+                },
+                barPercentage: 0.8, // 각 bar의 너비를 조정
+                categoryPercentage: 0.7 // 그 사이 패딩을 조정
+            }
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('.spinner-container').show();

@@ -308,6 +308,12 @@ input {
   color: unset !important;
   height: 100%;
 }
+/* --------------------  chart  -------------------- */
+.chart-legend li span {
+  border-radius: 0 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
 /* --------------------  header  -------------------- */
 .header-top,
 nav {
