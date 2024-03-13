@@ -233,15 +233,24 @@
                   </li>
                 </ul>
                 <div id="content1" class="tab-content">
-                  <p>건축물 내용</p>
+                  <div class="d-flex gap-16">
+                    <div class="tab-con chart project01">
+                      <canvas id="project01"></canvas>
+                    </div>
+                    <div class="tab-con chart project02">
+                      <canvas id="project02"></canvas>
+                    </div>
+                  </div>
                 </div>
-                <div id="content2" class="tab-content" style="height: 359px">
-                  <!-- 그래프에 대한 컨텐츠 -->
-                  <canvas id="myChart"></canvas>
+                <div id="content2" class="tab-content">
+                  <div class="tab-con">
+                    <p>그래프 내용</p>
+                  </div>
                 </div>
                 <div id="content3" class="tab-content">
-                  <!-- 결과값에 대한 컨텐츠 -->
-                  <p>결과값 내용</p>
+                  <div class="tab-con">
+                    <p>결과값 내용</p>
+                  </div>
                 </div>
               </div>
               <div class="d-flex justify-content-end p-16 p-m0 pt-m22 gap-8">
@@ -271,8 +280,55 @@
     <script src="./js/bootstrap-select.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-      const ctx = document.getElementById("myChart");
-      var chart = new Chart(ctx, {
+      $(document).ready(function () {
+        $(".spinner-container").show();
+        setTimeout(function () {
+          $(".spinner-container").hide();
+        }, 200);
+
+        // 초기 설정: 각 탭 콘텐츠를 숨김
+        $(".tab-content").hide();
+        // 활성화된 탭에 해당하는 콘텐츠를 보여줌
+        $(".project-tab li a.active").each(function () {
+          var contentId = $(this).attr("href");
+          $(contentId).show();
+        });
+
+        $(".project-tab li a").click(function () {
+          $(".project-tab li a").removeClass("active");
+          $(this).addClass("active");
+
+          $(".tab-content").hide();
+          var contentId = $(this).attr("href");
+          $(contentId).show();
+        });
+
+        // 초기 설정: 비교검색이 off일 때 project02 숨김
+        $(".project02").hide();
+        // 비교검색이 off일 때 프로젝트1 보이게 만들기
+        if (!$("#switch").is(":checked")) {
+          $(".project01").show();
+        }
+        // 비교검색 toggle 시
+        $("#switch").change(function () {
+          if ($(this).is(":checked")) {
+            // 비교검색이 on이면 project02 보여주고 캔버스 너비 조정
+            $(".project02").show();
+            $(".project01").addClass("half");
+            $(".project02").addClass("half");
+          } else {
+            // 비교검색이 off이면 project02 숨기고 캔버스 너비 조정
+            $(".project02").hide();
+            $(".project01").removeClass("half");
+            // 비교검색이 off일 때 프로젝트1 보이게 만들기
+            $(".project01").show();
+          }
+        });
+      });
+    </script>
+    <script>
+      const ctx1 = document.getElementById("project01");
+      var chart = new Chart(ctx1, {
         type: "bar",
         data: {
           labels: ["봄", "여름", "가을", "겨울"],
@@ -281,19 +337,16 @@
               label: "label1",
               data: [12, 19, 3, 5],
               backgroundColor: "#404AB3",
-              borderWidth: 1,
             },
             {
               label: "label2",
               data: [6, 19, 3, 5],
               backgroundColor: "#828AD8",
-              borderWidth: 1,
             },
             {
               label: "label3",
               data: [9, 19, 3, 5],
               backgroundColor: "#D6DAFF",
-              borderWidth: 1,
             },
           ],
         },
@@ -307,7 +360,11 @@
                 display: false,
               },
               ticks: {
-                display: false,
+                color: "#444868",
+                font: {
+                  family: "pretendard",
+                  size: 20,
+                },
               },
             },
             y: {
@@ -324,39 +381,69 @@
               position: "bottom",
             },
           },
-          layout: {
-            padding: {
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
-            },
-          },
-          barPercentage: 0.8,
-          categoryPercentage: 0.7,
+          barPercentage: 0.9,
+          categoryPercentage: 0.6,
         },
       });
     </script>
     <script>
-      $(document).ready(function () {
-        $(".spinner-container").show();
-        setTimeout(function () {
-          $(".spinner-container").hide();
-        }, 200);
-        $(".tab-content").hide();
-        $(".project-tab li a.active").each(function () {
-          var contentId = $(this).attr("href");
-          $(contentId).show();
-        });
-
-        $(".project-tab li a").click(function () {
-          $(".project-tab li a").removeClass("active");
-          $(this).addClass("active");
-
-          $(".tab-content").hide();
-          var contentId = $(this).attr("href");
-          $(contentId).show();
-        });
+      const ctx2 = document.getElementById("project02");
+      var chart = new Chart(ctx2, {
+        type: "bar",
+        data: {
+          labels: ["봄", "여름", "가을", "겨울"],
+          datasets: [
+            {
+              label: "label1",
+              data: [12, 19, 3, 5],
+              backgroundColor: "#404AB3",
+            },
+            {
+              label: "label2",
+              data: [6, 19, 3, 5],
+              backgroundColor: "#828AD8",
+            },
+            {
+              label: "label3",
+              data: [9, 19, 3, 5],
+              backgroundColor: "#D6DAFF",
+            },
+          ],
+        },
+        options: {
+          maintainAspectRatio: false,
+          responsive: true,
+          aspectRatio: 319 / 150,
+          scales: {
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                color: "#444868",
+                font: {
+                  family: "pretendard",
+                  size: 20,
+                },
+              },
+            },
+            y: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                display: false,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              position: "bottom",
+            },
+          },
+          barPercentage: 0.9,
+          categoryPercentage: 0.6,
+        },
       });
     </script>
   </body>

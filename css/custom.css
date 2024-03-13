@@ -315,6 +315,13 @@ input {
   width: 10px !important;
   height: 10px !important;
 }
+.chart {
+  height: 320px;
+  width: 100%;
+}
+.half {
+  width: calc(50% - 8px) !important;
+}
 /* --------------------  header  -------------------- */
 .header-top,
 nav {
@@ -491,6 +498,9 @@ footer {
   background-color: #404ab3;
   color: #ffffff;
 }
+.tab-content {
+  max-width: 1204px;
+}
 /* --------------------  modal  -------------------- */
 .modal {
   --bs-modal-width: 400px !important;
@@ -650,7 +660,7 @@ footer {
   border-radius: 4px;
   box-shadow: 0px 0px 8px 0px rgba(171, 174, 215, 0.4);
 }
-.tab-content {
+.tab-con {
   margin: 25px 0 10px;
   padding: 20px;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
@@ -838,6 +848,7 @@ footer {
     padding: 8px 0;
   }
   .tab-content {
+    max-width: 100%;
     margin: 24px 0 40px;
     box-shadow: none;
     padding: 0;
