@@ -1,176 +1,208 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link href="./css/reset.css" rel="stylesheet" />
     <link href="./css/custom.css" rel="stylesheet" />
     <link href="./css/bootstrap-select.min.css" rel="stylesheet" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- [s] : spinner  -->
     <div class="spinner-container">
-        <div class="spinner-dim"></div>
-        <div class="spinner-border color-primary" role="status"></div>
+      <div class="spinner-dim"></div>
+      <div class="spinner-border color-primary" role="status"></div>
     </div>
     <!-- [e] : spinner  -->
     <!-- [s] : header -->
     <header>
-        <div class="header-top d-flex m-auto align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-16">
-                <a href="index.html">
-                    <img class="logo img" src="./assets/images/logo.png" alt="로고" />
-                </a>
-                <h1 class="fw-bold m-none">축사 에너지부하 자가 진단 서비스</h1>
-            </div>
-            <a href="#" class="m-none px-12 py-6">
-                <p class="color-primary">이용안내</p>
-            </a>
-            <div class="m-block">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header border-bottom px-20">
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="./menu1.html">
-                                    <p>에너지부하 진단</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./menu2.html">
-                                    <p>건축물 에너지 절약 설계 기준</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <p>축사표준설계도 안내</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <p>사양기술정보 안내</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div
+        class="header-top d-flex m-auto align-items-center justify-content-between"
+      >
+        <div class="d-flex align-items-center gap-16">
+          <a href="index.html">
+            <img class="logo img" src="./assets/images/logo.png" alt="로고" />
+          </a>
+          <h1 class="fw-bold m-none">축사 에너지부하 자가 진단 서비스</h1>
         </div>
-        <div class="bg-secondary m-none">
-            <nav class="m-auto px-16">
-                <h2 class="d-none">네비게이션 메뉴</h2>
-                <ul class="d-flex">
-                    <li>
-                        <a href="#">
-                            <h3 class="fw-medium">에너지부하 진단</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3 class="fw-medium">건축물 에너지 절약 설계 기준</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3 class="fw-medium">축사표준설계도 안내</h3>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <a href="#" class="m-none px-12 py-6">
+          <p class="color-primary">이용안내</p>
+        </a>
+        <div class="m-block">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header border-bottom px-20">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./menu1.html">
+                    <p>에너지부하 진단</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./menu2.html">
+                    <p>건축물 에너지 절약 설계 기준</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <p>축사표준설계도 안내</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <p>사양기술정보 안내</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="bg-secondary m-none">
+        <nav class="m-auto px-16">
+          <h2 class="d-none">네비게이션 메뉴</h2>
+          <ul class="d-flex">
+            <li>
+              <a href="#">
+                <h3 class="fw-medium">에너지부하 진단</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h3 class="fw-medium">건축물 에너지 절약 설계 기준</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <h3 class="fw-medium">축사표준설계도 안내</h3>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <!-- [e] : header -->
     <main>
-        <div class="main">
-            <div class="title-box d-flex justify-content-between">
-                <h1 class="fs-32 fw-bold fs-m20">축사 에너지부하 자가 진단 서비스</h1>
-                <ul class="tab">
-                    <li class="tab-item">
-                        <a class="tab-link active" aria-current="page" href="#">프로젝트 01</a>
-                    </li>
-                    <li class="tab-item">
-                        <a class="tab-link" href="#">프로젝트 02</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="d-flex m-col pt-m20">
-                <div class="stepper">
-                    <ul>
-                        <li class="active d-flex align-items-center">
-                            <span class="circle-24 fw-semibold">
-                                <!-- active  -->
-                                <img src="./assets/icons/check.svg" />
-                            </span>
-                            <p class="fs-18 fw-semibold">사육 정보 입력</p>
-                        </li>
-                        <li class="active d-flex align-items-center">
-                            <span class="circle-24 fw-semibold">
-                                <!-- active  -->
-                                <img src="./assets/icons/check.svg" />
-                            </span>
-                            <p class="fs-18 fw-semibold">지역 선택</p>
-                        </li>
-                        <li class="active d-flex align-items-center">
-                            <span class="circle-24 fw-semibold">
-                                <!-- active  -->
-                                <img src="./assets/icons/check.svg" />
-                            </span>
-                            <p class="fs-18 fw-semibold">건물 정보 입력</p>
-                        </li>
-                        <li class="active d-flex align-items-center">
-                            <span class="circle-24 fw-semibold">4</span>
-                            <p class="fs-18 fw-semibold">단열 구성 입력</p>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <span class="circle-24 fw-semibold">5</span>
-                            <p class="fs-18 fw-semibold">에너지부하 산출</p>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <span class="circle-24 fw-semibold">6</span>
-                            <p class="fs-18 fw-semibold">프로젝트 비교진단</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="container">
-                    <div class="con-title">
-                        <div class="d-flex align-items-center gap-7 gap-m4">
-                            <span class="circle-24 fw-semibold circle-m18">4</span>
-                            <h2 class="fs-24 fw-bold text-align-center text-black fs-m18">
-                                단열 구성 입력
-                            </h2>
-                        </div>
-                        <p class="fs-18 color-sub mt-6 fs-m16">
-                            지붕 혹은 벽체를 클릭하여, 지붕 단열 정보와 벽체 단열 정보를
-                            입력하세요.
-                        </p>
-                    </div>
-                    <div class="con-wrap">
-                        <div class="con-content">
-                            <div class="img-box">
-                                <img class="w-100" src="./assets/images/building.png" alt="건물 이미지" />
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-end p-16 p-m0 pt-m22 gap-8">
-                            <a href="./index03.html" class="link link-line w-m50 fw-semibold">이전</a>
-                            <a href="./index05.html" class="link link-blue w-m50 fw-semibold">
-                                다음
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="main">
+        <div class="title-box d-flex justify-content-between">
+          <h1 class="fs-32 fw-bold fs-m20">축사 에너지부하 자가 진단 서비스</h1>
+          <ul class="tab">
+            <li class="tab-item">
+              <a class="tab-link active" aria-current="page" href="#"
+                >프로젝트 01</a
+              >
+            </li>
+            <li class="tab-item">
+              <a class="tab-link" href="#">프로젝트 02</a>
+            </li>
+          </ul>
         </div>
+        <div class="d-flex m-col pt-m20">
+          <div class="stepper">
+            <ul>
+              <li class="active d-flex align-items-center">
+                <span class="circle-24 fw-semibold">
+                  <!-- active  -->
+                  <img src="./assets/icons/check.svg" />
+                </span>
+                <p class="fs-18 fw-semibold">사육 정보 입력</p>
+              </li>
+              <li class="active d-flex align-items-center">
+                <span class="circle-24 fw-semibold">
+                  <!-- active  -->
+                  <img src="./assets/icons/check.svg" />
+                </span>
+                <p class="fs-18 fw-semibold">지역 선택</p>
+              </li>
+              <li class="active d-flex align-items-center">
+                <span class="circle-24 fw-semibold">
+                  <!-- active  -->
+                  <img src="./assets/icons/check.svg" />
+                </span>
+                <p class="fs-18 fw-semibold">건물 정보 입력</p>
+              </li>
+              <li class="active d-flex align-items-center">
+                <span class="circle-24 fw-semibold">4</span>
+                <p class="fs-18 fw-semibold">단열 구성 입력</p>
+              </li>
+              <li class="d-flex align-items-center">
+                <span class="circle-24 fw-semibold">5</span>
+                <p class="fs-18 fw-semibold">에너지부하 산출</p>
+              </li>
+              <li class="d-flex align-items-center">
+                <span class="circle-24 fw-semibold">6</span>
+                <p class="fs-18 fw-semibold">프로젝트 비교진단</p>
+              </li>
+            </ul>
+          </div>
+          <div class="container">
+            <div class="con-title">
+              <div class="d-flex align-items-center gap-7 gap-m4">
+                <span class="circle-24 fw-semibold circle-m18">4</span>
+                <h2 class="fs-24 fw-bold text-align-center text-black fs-m18">
+                  단열 구성 입력
+                </h2>
+              </div>
+              <p class="fs-18 color-sub mt-6 fs-m16">
+                지붕 혹은 벽체를 클릭하여, 지붕 단열 정보와 벽체 단열 정보를
+                입력하세요.
+              </p>
+            </div>
+            <div class="con-wrap">
+              <div class="con-content">
+                <div class="img-box">
+                  <img
+                    class="w-100"
+                    src="./assets/images/building.png"
+                    alt="건물 이미지"
+                  />
+                </div>
+              </div>
+              <div class="d-flex justify-content-end p-16 p-m0 pt-m22 gap-8">
+                <a
+                  href="./index03.html"
+                  class="link link-line w-m50 fw-semibold"
+                  >이전</a
+                >
+                <a
+                  href="./index05.html"
+                  class="link link-blue w-m50 fw-semibold"
+                >
+                  다음
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- [s] : footer -->
     <footer>2022 copyright © all right reserved</footer>
@@ -180,14 +212,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/bootstrap-select.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.spinner-container').show();
-            setTimeout(function () {
-                $('.spinner-container').hide();
-            }, 200);
-            $(".selectpicker").selectpicker();
-        });
+      $(document).ready(function () {
+        $(".spinner-container").show();
+        setTimeout(function () {
+          $(".spinner-container").hide();
+        }, 200);
+        $(".selectpicker").selectpicker();
+      });
     </script>
-</body>
-
+  </body>
 </html>

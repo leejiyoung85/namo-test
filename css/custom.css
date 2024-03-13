@@ -177,6 +177,7 @@
 .input-box {
   position: relative;
 }
+/* --------------------  form : input -------------------- */
 input {
   padding: 0 16px;
 }
@@ -189,10 +190,65 @@ input {
   top: 50%;
   transform: translateY(-50%);
 }
-/* switch */
+/* --------------------  form : select -------------------- */
 .bootstrap-select {
   height: 42px;
 }
+.bootstrap-select > .dropdown-toggle:after {
+  margin: 0 !important;
+}
+.bootstrap-select .dropdown-toggle .filter-option {
+  display: flex;
+  align-items: center;
+}
+:not(.btn-check) + .btn:active {
+  background-color: #ffffff;
+  border-color: #e9e9e9;
+}
+.bootstrap-select .dropdown-menu {
+  top: -2px !important;
+  border: 1px solid #e9e9e9;
+  border-radius: 0 0 4px 4px;
+  padding: 0;
+}
+.bootstrap-select .dropdown-menu li a {
+  padding: 13px 16px;
+  display: inline-block;
+  color: #78838f;
+}
+.bootstrap-select .dropdown-menu.show {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.btn.dropdown-toggle.bs-placeholder.btn-light.show::after {
+  transform: rotate(-180deg);
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #f9f9f9;
+}
+.btn.dropdown-toggle.bs-placeholder.btn-light.show {
+  border-color: #e9e9e9;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+.dropdown-toggle::after {
+  background-image: url(../assets/icons/dropdown.svg);
+  border: none !important;
+  min-width: 11px;
+  width: 11px;
+  height: 7px;
+  background-repeat: no-repeat;
+}
+.bootstrap-select > .dropdown-toggle {
+  border: 1px solid #e9e9e9;
+  background-color: #ffffff;
+  color: unset !important;
+  height: 100%;
+}
+/* --------------------  form : switch -------------------- */
 .custom-switch {
   position: relative;
 }
@@ -252,61 +308,6 @@ input {
 .switch-input:checked + .switch-label .switch-on,
 .switch-input:not(:checked) + .switch-label .switch-off {
   color: white;
-}
-/* select */
-.bootstrap-select > .dropdown-toggle:after {
-  margin: 0 !important;
-}
-.bootstrap-select .dropdown-toggle .filter-option {
-  display: flex;
-  align-items: center;
-}
-:not(.btn-check) + .btn:active {
-  background-color: #ffffff;
-  border-color: #e9e9e9;
-}
-.bootstrap-select .dropdown-menu {
-  top: -2px !important;
-  border: 1px solid #e9e9e9;
-  border-radius: 0 0 4px 4px;
-  padding: 0;
-}
-.bootstrap-select .dropdown-menu li a {
-  padding: 13px 16px;
-  display: inline-block;
-  color: #78838f;
-}
-.bootstrap-select .dropdown-menu.show {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-}
-.btn.dropdown-toggle.bs-placeholder.btn-light.show::after {
-  transform: rotate(-180deg);
-}
-.dropdown-item.active,
-.dropdown-item:active {
-  background-color: #f9f9f9;
-}
-.btn.dropdown-toggle.bs-placeholder.btn-light.show {
-  border-color: #e9e9e9;
-  border-radius: 4px 4px 0 0;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-}
-.bootstrap-select .dropdown-toggle:focus {
-  outline: none !important;
-}
-.dropdown-toggle::after {
-  background-image: url(../assets/icons/dropdown.svg);
-  border: none !important;
-  min-width: 11px;
-  width: 11px;
-  height: 7px;
-  background-repeat: no-repeat;
-}
-.bootstrap-select > .dropdown-toggle {
-  border: 1px solid #e9e9e9;
-  background-color: #ffffff;
-  color: unset !important;
-  height: 100%;
 }
 /* --------------------  chart  -------------------- */
 .chart-legend li span {
@@ -630,7 +631,6 @@ footer {
 .m-block {
   display: none;
 }
-
 /* --------------------  index04  -------------------- */
 .img-box {
   margin: 0 auto;
@@ -657,7 +657,7 @@ footer {
 }
 /* --------------------  mobile  -------------------- */
 @media (max-width: 1190px) {
-  /* header */
+  /* --------------  mobile : header -------------- */
   .header-top,
   header nav {
     padding: 1px 16px;
@@ -670,11 +670,11 @@ footer {
     height: 24px;
     background-image: url("../assets/icons/icon_menu.svg");
   }
-  /* footer */
+  /* --------------  mobile : footer -------------- */
   footer {
     display: none;
   }
-  /* font-size */
+  /* --------------  mobile : font-size -------------- */
   .fs-m12 {
     font-size: 12px;
   }
@@ -691,7 +691,7 @@ footer {
   .fs-m20 {
     font-size: 20px;
   }
-  /* common */
+  /* --------------  mobile : common -------------- */
   .m-block {
     display: block !important;
   }
@@ -701,7 +701,7 @@ footer {
   .m-col {
     flex-direction: column;
   }
-  /* padding */
+  /* --------------  mobile : padding -------------- */
   .p-m0 {
     padding: unset;
   }
@@ -714,7 +714,7 @@ footer {
   .pt-m22 {
     padding-top: 22px;
   }
-  /* margin */
+  /* --------------  mobile : margin -------------- */
   .mt-m0 {
     margin-top: 0;
   }
@@ -724,18 +724,18 @@ footer {
   .mb-m24 {
     margin-bottom: 24px;
   }
-  /* width */
+  /* --------------  mobile : width -------------- */
   .w-m50 {
     width: 50%;
   }
   .w-m100 {
     width: 100%;
   }
-  /* gap */
+  /* --------------  mobile : gap -------------- */
   .gap-m4 {
     gap: 4px;
   }
-  /* stepper */
+  /* --------------  mobile : stepper -------------- */
   .stepper {
     padding: 8px 23px;
     min-width: 100%;
@@ -757,12 +757,12 @@ footer {
     top: 12px;
     left: calc(-50% + 12px);
   }
-  /* a link */
+  /* --------------  mobile : a link -------------- */
   .link {
     height: 42px;
     line-height: 42px;
   }
-  /* modal */
+  /* --------------  mobile : modal -------------- */
   .modal.show .modal-dialog {
     width: 100%;
   }
@@ -770,7 +770,7 @@ footer {
     padding: 32px;
     margin: auto;
   }
-  /* common */
+  /* --------------  mobile : common -------------- */
   .m-border-top-none {
     border-top: 0;
     padding: 0 0 16px !important;
@@ -806,27 +806,30 @@ footer {
     height: 18px;
     font-size: 12px;
   }
-  .img-box-text {
-    padding: 37px 0;
-  }
-  .build-text {
-    margin-top: 24px;
-  }
-  .img-box {
-    padding: 64px 0;
-  }
+  /* --------------  mobile : switch -------------- */
   .switch {
     max-width: 100%;
     min-width: 100%;
   }
-  /* index02 */
+  /* --------------  mobile : index02 -------------- */
   .map-box {
     width: 200px;
   }
   .region-text-box p {
     font-size: 11px;
   }
-  /* index05 */
+  /* --------------  mobile : index03 -------------- */
+  .img-box-text {
+    padding: 37px 0;
+  }
+  .build-text {
+    margin-top: 24px;
+  }
+  /* --------------  mobile : index04 -------------- */
+  .img-box {
+    padding: 64px 0;
+  }
+  /* --------------  mobile : index05 -------------- */
   .project-tab {
     width: 100%;
     height: 38px;
