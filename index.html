@@ -191,8 +191,27 @@
                       </div>
                     </div>
                     <div class="mt-20 mt-m16">
-                      <label for="사육두수" class="form-label fw-semibold">
+                      <label
+                        for="사육두수"
+                        class="form-label fw-semibold d-flex align-items-center gap-4"
+                      >
                         사육두수
+                        <a
+                          tabindex="0"
+                          role="button"
+                          data-bs-toggle="popover"
+                          data-bs-placement="top"
+                          data-container="body"
+                          data-bs-html="true"
+                          data-bs-title="사육 수수 안내"
+                          data-bs-content="육계, 산란계 농가는 분석하고자 하는<br/>
+                          건물의 1개동에 대한 사육 수수를 입력해 주세요."
+                        >
+                          <img
+                            src="./assets/icons/question.svg"
+                            alt="사육두수"
+                          />
+                        </a>
                       </label>
                       <input
                         type="text"
@@ -243,6 +262,7 @@
     <!-- [e] : footer -->
     <!--  js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/bootstrap-select.js"></script>
     <script>
@@ -252,6 +272,25 @@
           $(".spinner-container").hide();
         }, 200);
         $(".selectpicker").selectpicker();
+        //  popover reset
+        var popoverTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="popover"]')
+        );
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+          return new bootstrap.Popover(popoverTriggerEl);
+        });
+        // popover hide
+        $(document).on("click", function (e) {
+          if (
+            $(".popover").has(e.target).length === 0 &&
+            !$(".popover").is(e.target) &&
+            !$(e.target).hasClass('[data-bs-toggle="popover"]')
+          ) {
+            $('[data-bs-toggle="popover"]').each(function () {
+              $(this).popover("hide");
+            });
+          }
+        });
       });
     </script>
   </body>

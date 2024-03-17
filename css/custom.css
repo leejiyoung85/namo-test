@@ -56,6 +56,9 @@
   object-fit: containe;
 }
 /* --------------------  gap  -------------------- */
+.gap-4 {
+  gap: 4px !important;
+}
 .gap-7 {
   gap: 7px;
 }
@@ -308,6 +311,33 @@ input {
 .switch-input:checked + .switch-label .switch-on,
 .switch-input:not(:checked) + .switch-label .switch-off {
   color: white;
+}
+/* --------------------  popover  -------------------- */
+.popover {
+  font-family: "pretendard";
+  padding: 8px;
+  --bs-popover-max-width: 270px;
+  --bs-popover-header-font-size: 14px;
+  --bs-popover-font-size: 14px;
+  --bs-popover-header-bg: transparent;
+  --bs-popover-border-color: rgba(50, 53, 77, 0.95);
+  --bs-popover-bg: rgba(50, 53, 77, 0.95);
+  --bs-popover-border-radius: 4px;
+  --bs-popover-header-color: #ffffff;
+  --bs-popover-body-color: #ffffff;
+  --bs-popover-body-padding-x: 0;
+  --bs-popover-body-padding-y: 0;
+  --bs-popover-header-padding-x: 0;
+  --bs-popover-header-padding-y: 0;
+  --bs-popover-arrow-width: 0.8rem;
+}
+.popover-header {
+  padding-bottom: 4px;
+  font-weight: 500;
+}
+.popover-body {
+  letter-spacing: -0.4px;
+  font-weight: 200;
 }
 /* --------------------  chart  -------------------- */
 .chart-legend li span {
@@ -830,6 +860,8 @@ footer {
     height: 18px;
     font-size: 12px;
   }
+  /* --------------  mobile : popover -------------- */
+
   /* --------------  mobile : switch -------------- */
   .switch {
     max-width: 100%;
