@@ -416,7 +416,11 @@
         setTimeout(function () {
           $(".spinner-container").hide();
         }, 200);
+
         $("#modal-select").modal("show");
+        $(".selectpicker").selectpicker({
+          dropupAuto: false, // 드롭다운 위치 고정
+        });
         $(".region").on("click", function (e) {
           $(".region").removeClass("selectedRegion");
           $(this).addClass("selectedRegion");

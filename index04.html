@@ -232,7 +232,9 @@
         setTimeout(function () {
           $(".spinner-container").hide();
         }, 200);
-        $(".selectpicker").selectpicker();
+        $(".selectpicker").selectpicker({
+          dropupAuto: false, // 드롭다운 위치 고정
+        });
       });
     </script>
   </body>
