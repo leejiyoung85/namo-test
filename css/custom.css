@@ -209,13 +209,12 @@ input {
   border-color: #e9e9e9;
 }
 .bootstrap-select .dropdown-menu {
-  top: -2px !important;
   border: 1px solid #e9e9e9;
   border-radius: 0 0 4px 4px;
   padding: 0;
 }
 .bootstrap-select .dropdown-menu li a {
-  padding: 13px 16px;
+  padding: 11px 16px;
   display: inline-block;
   color: #78838f;
 }
@@ -250,6 +249,60 @@ input {
   background-color: #ffffff;
   color: unset !important;
   height: 100%;
+}
+.season-select,
+.season-detail {
+  flex: 5;
+}
+.season-detail {
+  display: none !important;
+}
+.season-detail.open {
+  display: block !important;
+}
+.season-detail.open .dropdown-menu .show {
+  max-height: 168px;
+}
+.season-detail.open .filter-option-inner-inner {
+  max-width: 130px;
+  text-overflow: ellipsis;
+}
+.multiple .dropdown-menu li a {
+  display: flex;
+  align-items: center;
+}
+.bootstrap-select.show-tick .dropdown-menu li a span.text {
+  margin-right: 0 !important;
+  margin-left: 6px;
+}
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+  position: unset !important;
+}
+.bootstrap-select .bs-ok-default:after {
+  visibility: hidden;
+}
+.bootstrap-select .dropdown-menu li a span.check-mark {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #495057;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+}
+.bootstrap-select .dropdown-menu li.selected a span.check-mark {
+  background-color: #495057;
+}
+.bootstrap-select .dropdown-menu li.selected a span.check-mark::after {
+  visibility: visible !important;
+  border: 0 !important;
+  transform: unset !important;
+  width: 14px;
+  height: 14px;
+  background-image: url("../assets/icons/check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /* --------------------  form : switch -------------------- */
 .custom-switch {

@@ -225,14 +225,32 @@
                       <label for="사육시기" class="form-label fw-semibold">
                         사육시기
                       </label>
-                      <div class="h-42">
-                        <select class="selectpicker">
-                          <option value="" label="" selected>
+                      <div class="d-flex h-42 gap-8">
+                        <select class="season-select selectpicker">
+                          <option value="1" selected>
                             홀수월 사육(연 6번 사육)
                           </option>
-                          <option value="">짝수월 사육(연 6번 사육)</option>
-                          <option value="">매월 사육(연 12번 사육)</option>
-                          <option value="">직접 입력</option>
+                          <option value="2">짝수월 사육(연 6번 사육)</option>
+                          <option value="3">매월 사육(연 12번 사육)</option>
+                          <option value="4">직접 입력</option>
+                        </select>
+                        <select
+                          class="season-detail multiple selectpicker"
+                          multiple
+                          title="선택"
+                        >
+                          <option value="1">1월</option>
+                          <option value="2">2월</option>
+                          <option value="3">3월</option>
+                          <option value="4">4월</option>
+                          <option value="5">5월</option>
+                          <option value="6">6월</option>
+                          <option value="7">7월</option>
+                          <option value="8">8월</option>
+                          <option value="9">9월</option>
+                          <option value="10">10월</option>
+                          <option value="11">11월</option>
+                          <option value="12">12월</option>
                         </select>
                       </div>
                     </div>
@@ -271,7 +289,9 @@
         setTimeout(function () {
           $(".spinner-container").hide();
         }, 200);
-        $(".selectpicker").selectpicker();
+        $(".selectpicker").selectpicker({
+          dropupAuto: false, // 드롭다운 위치 고정
+        });
         //  popover reset
         var popoverTriggerList = [].slice.call(
           document.querySelectorAll('[data-bs-toggle="popover"]')
@@ -280,7 +300,7 @@
           return new bootstrap.Popover(popoverTriggerEl);
         });
         // popover hide
-        $(document).on("click", function (e) {
+        $(".popover").on("click", function (e) {
           if (
             $(".popover").has(e.target).length === 0 &&
             !$(".popover").is(e.target) &&
@@ -291,6 +311,25 @@
             });
           }
         });
+      });
+      // 사육시기 직접 입력
+      let selectedItem = [];
+      $(".season-select").on("change", function () {
+        var selectedValue = $(this).val();
+        if (selectedValue === "4") {
+          console.log("직접 입력 선택");
+          $(".season-detail").addClass("open");
+        } else {
+          $(".season-detail").removeClass("open");
+          $(".season-detail").selectpicker("val", []);
+        }
+      });
+      $(".season-detail").on("change", function () {
+        const selected = $(this).val();
+        selectedItem = selected;
+        if (selected.length === 0) {
+          // 직접 입력 미선택 시 예외 처리
+        }
       });
     </script>
   </body>
