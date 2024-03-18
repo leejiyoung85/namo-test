@@ -239,7 +239,7 @@
                           <option value="4">직접 입력</option>
                         </select>
                         <select
-                          class="season-detail multiple selectpicker"
+                          class="multiple season-detail selectpicker"
                           multiple
                           title="선택"
                         >
@@ -335,6 +335,25 @@
         $(".selectpicker").selectpicker({
           dropupAuto: false, // 드롭다운 위치 고정
         });
+        // 사육시기 직접 입력
+        let selectedItem = [];
+        $(".season-select").on("change", function () {
+          var selectedValue = $(this).val();
+          if (selectedValue === "4") {
+            $(".season-detail").selectpicker("toggle");
+            $(".season-detail").addClass("open");
+          } else {
+            $(".season-detail").removeClass("open");
+            $(".season-detail").selectpicker("val", []);
+          }
+        });
+        $(".season-detail").on("change", function () {
+          const selected = $(this).val();
+          selectedItem = selected;
+          if (selected.length === 0) {
+            // 직접 입력 미선택 시 예외 처리
+          }
+        });
         // 팝오버 초기화
         $(function () {
           $('[data-bs-toggle="popover"]').popover({
@@ -350,20 +369,6 @@
           ) {
             $('[data-bs-toggle="popover"]').popover("hide");
           }
-        });
-        // 사육시기 직접 입력
-        $(".season-select").on("change", function () {
-          var selectedValue = $(this).val();
-          if (selectedValue === "4") {
-            $(".season-detail").addClass("open");
-          } else {
-            $(".season-detail").removeClass("open");
-            $(".season-detail").selectpicker("val", []);
-          }
-        });
-        $(".season-detail").on("change", function () {
-          const selected = $(this).val();
-          selectedItem = selected;
         });
         // 적용 버튼 클릭 모달
         $(".apply").on("click", function () {

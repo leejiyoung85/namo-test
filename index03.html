@@ -233,7 +233,7 @@
             <img src="./assets/icons/info.svg" />
             <p class="fs-20 fw-semibold">건물정보입력</p>
           </div>
-          <div class="modal-con">
+          <div class="modal-con modal-padding">
             <div>
               <label for="건물 폭" class="form-label fw-semibold">
                 건물 폭
@@ -295,9 +295,18 @@
               </div>
             </div>
             <div class="mt-20">
-              <label for="배치 방향" class="form-label fs-16 fw-semibold">
-                배치 방향
-              </label>
+              <div class="d-flex mb-8 gap-4">
+                <label
+                  for="배치 방향"
+                  class="form-label fs-16 fw-semibold"
+                  style="margin-bottom: 0"
+                >
+                  배치 방향
+                </label>
+                <a tabindex="0" role="button" class="info">
+                  <img src="./assets/icons/question.svg" alt="배치 방향 정보" />
+                </a>
+              </div>
               <div class="h-42">
                 <select class="selectpicker" id="regionSelect">
                   <option value="" selected>방향 선택</option>
@@ -322,6 +331,45 @@
       </div>
     </div>
     <!-- [e] : modal -->
+    <!-- [s] : modal -->
+    <div
+      class="modal fade"
+      id="info"
+      tabindex="-1"
+      aria-labelledby="info"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="d-flex align-items-center gap-4">
+            <img src="./assets/icons/info.svg" />
+            <p class="fs-20 fw-semibold">사육 시기 확인</p>
+          </div>
+          <div class="modal-con py-20">
+            <p class="fs-16">
+              선택하신 사육 시기는<br />1,2월&nbsp;이 맞습니까?
+            </p>
+          </div>
+          <div class="d-flex justify-content-end gap-8">
+            <button
+              type="button"
+              class="link link-line"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+            <button
+              type="button"
+              class="link link-blue"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [e] : modal -->
     <!--  js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -332,6 +380,10 @@
         setTimeout(function () {
           $(".spinner-container").hide();
         }, 200);
+        $(".info").on("click", function (e) {
+          e.preventDefault();
+          $("#info").modal("show");
+        });
       });
     </script>
   </body>

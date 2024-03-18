@@ -199,6 +199,24 @@
                     src="./assets/images/building.png"
                     alt="건물 이미지"
                   />
+                  <a
+                    class="btn-building roof-info"
+                    tabindex="0"
+                    role="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#roof"
+                  >
+                    <img src="./assets/icons/touch.svg" alt="선택 아이콘" />
+                  </a>
+                  <a
+                    class="btn-building wall-info"
+                    tabindex="0"
+                    role="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#wall"
+                  >
+                    <img src="./assets/icons/touch.svg" alt="선택 아이콘" />
+                  </a>
                 </div>
               </div>
               <div class="d-flex justify-content-end p-16 p-m0 pt-m22 gap-8">
@@ -222,6 +240,80 @@
     <!-- [s] : footer -->
     <footer>2022 copyright © all right reserved</footer>
     <!-- [e] : footer -->
+    <!-- [s] : modal : roof -->
+    <div
+      class="modal fade"
+      id="roof"
+      tabindex="-1"
+      aria-labelledby="roof"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="d-flex align-items-center gap-4">
+            <img src="./assets/icons/info.svg" />
+            <p class="fs-20 fw-semibold">지붕 정보</p>
+          </div>
+          <div class="modal-con py-20">
+            <p class="fs-16"></p>
+          </div>
+          <div class="d-flex justify-content-end gap-8">
+            <button
+              type="button"
+              class="link link-line"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+            <button
+              type="button"
+              class="link link-blue"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [e] : modal -->
+    <!-- [s] : modal : wall  -->
+    <div
+      class="modal fade"
+      id="wall"
+      tabindex="-1"
+      aria-labelledby="wall"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="d-flex align-items-center gap-4">
+            <img src="./assets/icons/info.svg" />
+            <p class="fs-20 fw-semibold">벽체 정보</p>
+          </div>
+          <div class="modal-con py-20">
+            <p class="fs-16"></p>
+          </div>
+          <div class="d-flex justify-content-end gap-8">
+            <button
+              type="button"
+              class="link link-line"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+            <button
+              type="button"
+              class="link link-blue"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [e] : modal -->
     <!--  js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

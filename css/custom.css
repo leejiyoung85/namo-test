@@ -759,10 +759,55 @@ footer {
   display: none;
 }
 /* --------------------  index04  -------------------- */
+@keyframes btn {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(150%);
+    opacity: 0;
+  }
+}
 .img-box {
   margin: 0 auto;
   padding: 80px 0;
   width: fit-content;
+  position: relative;
+}
+.btn-building {
+  padding: 20px;
+  border-radius: 100%;
+  background-color: rgba(50, 53, 77, 0.2);
+  position: absolute;
+  z-index: 999;
+  border: none;
+}
+.roof-info {
+  left: 80px;
+  top: 6px;
+}
+.wall-info {
+  bottom: 24%;
+  right: 20%;
+  transform: translateX(-20%);
+}
+.btn-building:last-child:after {
+  animation-delay: 0.5s;
+}
+.btn-building:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: block;
+  background-color: rgba(50, 53, 77, 0.2);
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  animation-name: btn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 /* --------------------  index05  -------------------- */
 .project-tab li a {
