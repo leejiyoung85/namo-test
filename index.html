@@ -255,7 +255,7 @@
                       </div>
                     </div>
                     <div class="d-flex justify-content-end mt-32">
-                      <button type="button" class="btn-navy btn-medium">
+                      <button type="button" class="btn-navy btn-medium apply">
                         적용
                       </button>
                     </div>
@@ -278,6 +278,45 @@
     <!-- [s] : footer -->
     <footer>2022 copyright © all right reserved</footer>
     <!-- [e] : footer -->
+    <!-- [s] : modal -->
+    <div
+      class="modal fade"
+      id="apply"
+      tabindex="-1"
+      aria-labelledby="apply"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="d-flex align-items-center gap-4">
+            <img src="./assets/icons/info.svg" />
+            <p class="fs-20 fw-semibold">사육 시기 확인</p>
+          </div>
+          <div class="modal-con py-20">
+            <p class="fs-16">
+              선택하신 사육 시기는<br />1,2월&nbsp;이 맞습니까?
+            </p>
+          </div>
+          <div class="d-flex justify-content-end gap-8">
+            <button
+              type="button"
+              class="link link-line"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+            <button
+              type="button"
+              class="link link-blue"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [e] : modal -->
     <!--  js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -330,6 +369,9 @@
         if (selected.length === 0) {
           // 직접 입력 미선택 시 예외 처리
         }
+      });
+      $(".apply").on("click", function () {
+        $("#apply").modal("show");
       });
     </script>
   </body>

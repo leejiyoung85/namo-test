@@ -38,6 +38,7 @@
 }
 .fs-16 {
   font-size: 16px;
+  line-height: 19px;
 }
 .fs-18 {
   font-size: 18px;
@@ -101,6 +102,13 @@
 .py-15 {
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.modal-padding {
+  padding: 24px 0 40px;
 }
 /* --------------------  margin  -------------------- */
 .mt-6 {
@@ -221,7 +229,6 @@ input {
 .bootstrap-select .dropdown-menu.show {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
-
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: #f9f9f9;
@@ -260,6 +267,9 @@ input {
 }
 .season-detail.open {
   display: block !important;
+}
+.dropdown-menu .show {
+  max-height: 152px;
 }
 .season-detail.open .dropdown-menu .show {
   max-height: 168px;
@@ -546,6 +556,13 @@ footer {
   color: #ffffff;
   background-color: #32354d;
 }
+.stepper ul li .step-info {
+  visibility: hidden;
+}
+.stepper ul li.active .step-info {
+  visibility: visible;
+  margin-left: 10px;
+}
 .stepper ul li.active::before {
   background-color: #32354d;
 }
@@ -615,9 +632,6 @@ footer {
   padding: 40px;
   border: none;
   background-color: #ffffff;
-}
-.modal-con {
-  padding: 24px 0 40px;
 }
 .modal-backdrop {
   background-color: #32354d;
@@ -864,6 +878,9 @@ footer {
     height: 1px;
     top: 12px;
     left: calc(-50% + 12px);
+  }
+  .step-info {
+    display: none;
   }
   /* --------------  mobile : a link -------------- */
   .link {
