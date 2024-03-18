@@ -137,9 +137,11 @@
 .link {
   width: 120px;
   height: 48px;
-  line-height: 48px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 4px;
+  line-height: 1;
 }
 .link-line {
   background-color: #ffffff;
@@ -885,7 +887,6 @@ footer {
   /* --------------  mobile : a link -------------- */
   .link {
     height: 42px;
-    line-height: 42px;
   }
   /* --------------  mobile : modal -------------- */
   .modal.show .modal-dialog {
