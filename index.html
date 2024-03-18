@@ -191,11 +191,14 @@
                       </div>
                     </div>
                     <div class="mt-20 mt-m16">
-                      <label
-                        for="사육두수"
-                        class="form-label fw-semibold d-flex align-items-center gap-4"
-                      >
-                        사육두수
+                      <div class="d-flex mb-8 gap-4">
+                        <label
+                          for="사육두수"
+                          class="form-label fw-semibold d-flex align-items-center gap-4"
+                          style="margin-bottom: 0"
+                        >
+                          사육두수
+                        </label>
                         <a
                           tabindex="0"
                           role="button"
@@ -205,14 +208,15 @@
                           data-bs-html="true"
                           data-bs-title="사육 수수 안내"
                           data-bs-content="육계, 산란계 농가는 분석하고자 하는<br/>
-                          건물의 1개동에 대한 사육 수수를 입력해 주세요."
+                        건물의 1개동에 대한 사육 수수를 입력해 주세요."
                         >
                           <img
                             src="./assets/icons/question.svg"
                             alt="사육두수"
                           />
                         </a>
-                      </label>
+                      </div>
+
                       <input
                         type="text"
                         class="form-control"
@@ -331,47 +335,40 @@
         $(".selectpicker").selectpicker({
           dropupAuto: false, // 드롭다운 위치 고정
         });
-        //  popover reset
-        var popoverTriggerList = [].slice.call(
-          document.querySelectorAll('[data-bs-toggle="popover"]')
-        );
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-          return new bootstrap.Popover(popoverTriggerEl);
+        // 팝오버 초기화
+        $(function () {
+          $('[data-bs-toggle="popover"]').popover({
+            container: "body",
+            html: true,
+          });
         });
-        // popover hide
-        $(".popover").on("click", function (e) {
+        // 팝오버 클릭 이외의 영역 클릭 시 팝오버 숨기기
+        $(document).on("click", function (e) {
           if (
-            $(".popover").has(e.target).length === 0 &&
-            !$(".popover").is(e.target) &&
-            !$(e.target).hasClass('[data-bs-toggle="popover"]')
+            !$(e.target).closest(".popover").length &&
+            !$(e.target).closest('[data-bs-toggle="popover"]').length
           ) {
-            $('[data-bs-toggle="popover"]').each(function () {
-              $(this).popover("hide");
-            });
+            $('[data-bs-toggle="popover"]').popover("hide");
           }
         });
-      });
-      // 사육시기 직접 입력
-      let selectedItem = [];
-      $(".season-select").on("change", function () {
-        var selectedValue = $(this).val();
-        if (selectedValue === "4") {
-          console.log("직접 입력 선택");
-          $(".season-detail").addClass("open");
-        } else {
-          $(".season-detail").removeClass("open");
-          $(".season-detail").selectpicker("val", []);
-        }
-      });
-      $(".season-detail").on("change", function () {
-        const selected = $(this).val();
-        selectedItem = selected;
-        if (selected.length === 0) {
-          // 직접 입력 미선택 시 예외 처리
-        }
-      });
-      $(".apply").on("click", function () {
-        $("#apply").modal("show");
+        // 사육시기 직접 입력
+        $(".season-select").on("change", function () {
+          var selectedValue = $(this).val();
+          if (selectedValue === "4") {
+            $(".season-detail").addClass("open");
+          } else {
+            $(".season-detail").removeClass("open");
+            $(".season-detail").selectpicker("val", []);
+          }
+        });
+        $(".season-detail").on("change", function () {
+          const selected = $(this).val();
+          selectedItem = selected;
+        });
+        // 적용 버튼 클릭 모달
+        $(".apply").on("click", function () {
+          $("#apply").modal("show");
+        });
       });
     </script>
   </body>

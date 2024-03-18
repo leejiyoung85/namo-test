@@ -133,6 +133,9 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.mb-8 {
+  margin-bottom: 8px;
+}
 /* --------------------  a link  -------------------- */
 .link {
   width: 120px;
