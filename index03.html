@@ -393,6 +393,9 @@
 
           // 인풋 요소에 포커스가 이동하지 않도록 설정
           $(this).find("input").blur();
+        }); // 모달이 닫힐 때 인풋 요소에 포커스가 가지 않도록 설정
+        $("#info").on("hidden.bs.modal", function () {
+          $(this).find("input").blur();
         });
       });
     </script>
