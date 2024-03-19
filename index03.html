@@ -388,15 +388,11 @@
 
         // 모달이 열릴 때 포커스를 설정하지 않음
         $("#info").on("shown.bs.modal", function () {
-          // 인풋 요소에 포커스가 이동하지 않도록 설정
-          $(this).find("input").attr("readonly", true);
-          $(this)
-            .find("input")
-            .attr("onclick", "this.removeAttribute('readonly');");
-
           // 모달이 열릴 때 포커스가 이동하지 않도록 설정
           $(this).attr("tabindex", -1);
-          $(this).focus();
+
+          // 인풋 요소에 포커스가 이동하지 않도록 설정
+          $(this).find("input").blur();
         });
       });
     </script>
