@@ -253,23 +253,22 @@
                   </li>
                 </ul>
                 <div id="content1" class="tab-content">
-                  <div class="d-flex gap-16 w-100">
+                  <!-- <div class="d-flex gap-16 w-100">
                     <div class="tab-con chart project01">
                       <canvas id="project01"></canvas>
                     </div>
-                    <div class="tab-con chart project02">
-                      <canvas id="project02"></canvas>
-                    </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div id="content2" class="tab-content">
-                  <div class="tab-con">
-                    <p>그래프 내용</p>
+                  <div class="tab-con chart">
+                    <canvas id="project01"></canvas>
                   </div>
                 </div>
                 <div id="content3" class="tab-content">
                   <div class="tab-con">
-                    <p>결과값 내용</p>
+                    <div class="d-flex chart">
+                      <canvas id="project02"></canvas>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -321,7 +320,127 @@
           $(".tab-content").hide();
           var contentId = $(this).attr("href");
           $(contentId).show();
+
+          // 그래프를 만들어 줄 콘텐츠 탭을 확인하여 해당 탭이면 그래프를 생성
+          if (contentId === "#content2" || contentId === "#content3") {
+            createGraph(contentId.substring(1)); // #을 제외한 ID 전달
+          }
         });
+
+        // 각 탭에 해당하는 그래프 생성
+        function createGraph(tabId) {
+          // 차트 초기화
+          let existingChart;
+          if (tabId === "content2") {
+            existingChart = Chart.getChart("project01");
+          } else if (tabId === "content3") {
+            existingChart = Chart.getChart("project02");
+          }
+          if (existingChart !== undefined) {
+            existingChart.destroy();
+          }
+          // content2 : line_chart
+          if (tabId === "content2") {
+            const ctx1 = document.getElementById("project01");
+            var chart = new Chart(ctx1, {
+              type: "bar",
+              data: {
+                labels: [
+                  "1월",
+                  "2월",
+                  "3월",
+                  "4월",
+                  "5월",
+                  "6월",
+                  "7월",
+                  "8월",
+                  "9월",
+                  "10월",
+                  "11월",
+                  "12월",
+                ],
+                datasets: [
+                  {
+                    label: "기간냉방부하",
+                    data: [
+                      0.8, 0.4, 0.5, 0.2, 0.6, 0.3, 0.3, 0.2, 0.7, 0.9, 1, 0.2,
+                    ],
+                    backgroundColor: "rgba(27, 59, 139, 1)",
+                  },
+                  {
+                    label: "기간난방부하",
+                    data: [
+                      0.8, 0.4, 0.5, 0.2, 0.6, 0.3, 0.3, 0.2, 0.7, 0.9, 1, 0.2,
+                    ],
+                    backgroundColor: " rgba(136, 44, 44, 1)",
+                  },
+                ],
+              },
+              options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                aspectRatio: 319 / 150,
+                scales: {
+                  x: {
+                    grid: {
+                      display: false,
+                    },
+                    ticks: {
+                      color: "#444868",
+                      font: {
+                        family: "pretendard",
+                        size: 20,
+                      },
+                    },
+                  },
+                  y: {
+                    grid: {
+                      display: false,
+                    },
+                    ticks: {
+                      display: false,
+                    },
+                  },
+                },
+                plugins: {
+                  legend: {
+                    position: "bottom",
+                  },
+                },
+                barPercentage: 0.4,
+                categoryPercentage: 0.4,
+              },
+            });
+          }
+          // content3 : doughnut_chart
+          else if (tabId === "content3") {
+            const ctx2 = document.getElementById("project02");
+            var chart = new Chart(ctx2, {
+              type: "doughnut",
+              data: {
+                datasets: [
+                  {
+                    label: "기간 냉방부하",
+                    data: [82, 18],
+                    backgroundColor: ["rgb(255, 99, 132)", "rgb(255,255,255)"],
+                  },
+                ],
+              },
+              options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                aspectRatio: 319 / 150,
+                plugins: {
+                  legend: {
+                    position: "bottom",
+                  },
+                },
+                barPercentage: 0.9,
+                categoryPercentage: 0.6,
+              },
+            });
+          }
+        }
 
         // 초기 설정: 비교검색이 off일 때 project02 숨김
         $(".project02").hide();
@@ -344,126 +463,6 @@
             $(".project01").show();
           }
         });
-      });
-    </script>
-    <script>
-      const ctx1 = document.getElementById("project01");
-      var chart = new Chart(ctx1, {
-        type: "bar",
-        data: {
-          labels: ["봄", "여름", "가을", "겨울"],
-          datasets: [
-            {
-              label: "label1",
-              data: [12, 19, 3, 5],
-              backgroundColor: "#404AB3",
-            },
-            {
-              label: "label2",
-              data: [6, 19, 3, 5],
-              backgroundColor: "#828AD8",
-            },
-            {
-              label: "label3",
-              data: [9, 19, 3, 5],
-              backgroundColor: "#D6DAFF",
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-          responsive: true,
-          aspectRatio: 319 / 150,
-          scales: {
-            x: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                color: "#444868",
-                font: {
-                  family: "pretendard",
-                  size: 20,
-                },
-              },
-            },
-            y: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                display: false,
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              position: "bottom",
-            },
-          },
-          barPercentage: 0.9,
-          categoryPercentage: 0.6,
-        },
-      });
-    </script>
-    <script>
-      const ctx2 = document.getElementById("project02");
-      var chart = new Chart(ctx2, {
-        type: "bar",
-        data: {
-          labels: ["봄", "여름", "가을", "겨울"],
-          datasets: [
-            {
-              label: "label1",
-              data: [12, 19, 3, 5],
-              backgroundColor: "#404AB3",
-            },
-            {
-              label: "label2",
-              data: [6, 19, 3, 5],
-              backgroundColor: "#828AD8",
-            },
-            {
-              label: "label3",
-              data: [9, 19, 3, 5],
-              backgroundColor: "#D6DAFF",
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-          responsive: true,
-          aspectRatio: 319 / 150,
-          scales: {
-            x: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                color: "#444868",
-                font: {
-                  family: "pretendard",
-                  size: 20,
-                },
-              },
-            },
-            y: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                display: false,
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              position: "bottom",
-            },
-          },
-          barPercentage: 0.9,
-          categoryPercentage: 0.6,
-        },
       });
     </script>
   </body>
