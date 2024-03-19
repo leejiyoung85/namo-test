@@ -374,6 +374,39 @@
         setTimeout(function () {
           $(".spinner-container").hide();
         }, 200);
+
+        // 모달 열기 함수
+        function openModal() {
+          $("#info").modal("show");
+        }
+
+        // info 아이콘 클릭 시 모달 열기
+        $(".info").on("click", function (e) {
+          e.preventDefault();
+          openModal();
+        });
+
+        // 모달이 열릴 때 포커스를 설정하지 않음
+        $("#info").on("shown.bs.modal", function () {
+          // 인풋 요소에 포커스가 이동하지 않도록 설정
+          $(this).find("input").attr("readonly", true);
+          $(this)
+            .find("input")
+            .attr("onclick", "this.removeAttribute('readonly');");
+
+          // 모달이 열릴 때 포커스가 이동하지 않도록 설정
+          $(this).attr("tabindex", -1);
+          $(this).focus();
+        });
+      });
+    </script>
+
+    <!-- <script>
+      $(document).ready(function () {
+        $(".spinner-container").show();
+        setTimeout(function () {
+          $(".spinner-container").hide();
+        }, 200);
         $(".info").on("click", function (e) {
           e.preventDefault();
           $("#info").modal("show");
@@ -388,6 +421,6 @@
             .attr("onclick", "this.removeAttribute('readonly');");
         });
       });
-    </script>
+    </script> -->
   </body>
 </html>
