@@ -389,7 +389,7 @@
                       color: "#444868",
                       font: {
                         family: "pretendard",
-                        size: 20,
+                        size: window.innerWidth <= 768 ? 10 : 20,
                       },
                     },
                   },
@@ -407,8 +407,10 @@
                     position: "bottom",
                   },
                 },
-                barPercentage: 0.4,
-                categoryPercentage: 0.4,
+                barPercentage: 0.4, // 막대 너비 설정 (전체 너비의 비율)
+                categoryPercentage: 0.8, // 레이블 간의 여백 설정 (막대의 너비의 비율)
+                barSpacing: 8, // 막대 간 여백 설정
+                barThickness: window.innerWidth <= 768 ? 6 : 10, // 막대의 두께 설정
               },
             });
           }

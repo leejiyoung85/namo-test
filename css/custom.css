@@ -431,10 +431,6 @@ input {
     transform: translateX(0);
   }
 }
-/* .project01, */
-.project02 {
-  animation: slideIn 0.5s ease;
-}
 /* --------------------  header  -------------------- */
 .header-top,
 nav {
