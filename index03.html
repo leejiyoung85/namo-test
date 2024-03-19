@@ -378,6 +378,9 @@
           e.preventDefault();
           $("#info").modal("show");
         });
+        $("#info").on("shown.bs.modal", function () {
+          $(this).removeAttr("tabindex");
+        });
       });
     </script>
   </body>
