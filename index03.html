@@ -115,19 +115,7 @@
     <!-- [e] : header -->
     <main>
       <div class="main">
-        <div class="title-box d-flex justify-content-between">
-          <h1 class="fs-32 fw-bold fs-m20">축사 에너지부하 자가 진단 서비스</h1>
-          <ul class="tab">
-            <li class="tab-item">
-              <a class="tab-link active" aria-current="page" href="#"
-                >프로젝트 01</a
-              >
-            </li>
-            <li class="tab-item">
-              <a class="tab-link" href="#">프로젝트 02</a>
-            </li>
-          </ul>
-        </div>
+        <div class="title-box"></div>
         <div class="d-flex m-col pt-m20">
           <div class="stepper">
             <ul>
@@ -378,15 +366,13 @@
         function openModal() {
           $("#info").modal("show");
         }
-        $("#info").on("shown.bs.modal", function () {
-          // 모달이 열릴 때 특정 요소에 포커스를 주지 않음
-          $(this).attr("tabindex", -1);
-          $(this).find("input").blur(); // 인풋 요소에 포커스가 가지 않도록 함
-        });
 
-        // 모달이 닫힐 때 인풋 요소에 포커스가 가지 않도록 설정
-        $("#info").on("hidden.bs.modal", function () {
-          $(this).find("input").blur();
+        // .info를 클릭할 때만 모달 열기
+        $(".info").on("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          openModal();
+          return false;
         });
       });
     </script>
