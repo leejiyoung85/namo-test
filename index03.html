@@ -381,6 +381,12 @@
         $("#info").on("shown.bs.modal", function () {
           $(this).removeAttr("tabindex");
         });
+        $("#info").on("shown.bs.modal", function () {
+          $(this).find("input").attr("readonly", true);
+          $(this)
+            .find("input")
+            .attr("onclick", "this.removeAttribute('readonly');");
+        });
       });
     </script>
   </body>
