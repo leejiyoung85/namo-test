@@ -465,6 +465,10 @@ main h1 {
   background-color: #3598db;
   color: #ffffff;
 }
+.fill-navy {
+  background-color: #32354d;
+  color: #ffffff;
+}
 /* --------------------  index  -------------------- */
 .index-box {
   display: flex;
@@ -763,7 +767,7 @@ main h1 {
   height: 422px;
   width: 100%;
 }
-.tab3-container {
+.scroll-container {
   padding: 40px;
   max-height: 422px;
   overflow-x: hidden;
@@ -780,15 +784,63 @@ main h1 {
     border-radius: 20px;
   }
 }
-.tab3-container p {
+.scroll-container p {
   font-size: 18px;
   line-height: 26px;
   letter-spacing: -1.5px;
   color: #78838f;
 }
-.tab3-container span {
+.scroll-container span {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -1.5px;
   color: #adb5bd;
+}
+/* index06 */
+.index06-chart-box {
+  display: flex;
+  gap: 16px;
+}
+.index06-chart-box div {
+  flex: 5;
+}
+.icon-text-box {
+  display: flex;
+}
+.icon-text-box strong {
+  line-height: 26px;
+}
+.icon-text-box span {
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #78838f;
+}
+.write-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 14px;
+  border-radius: 20px;
+  height: calc(100% - 28px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.write-icon {
+  cursor: pointer;
+  max-width: 40px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c60ff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.18);
+}
+.row-form {
+  display: flex;
+  gap: 20px;
+}
+.max-360 {
+  max-width: 360px;
 }
