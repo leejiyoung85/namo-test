@@ -673,14 +673,14 @@ main h1 {
   border: none;
 }
 .roof-info {
+  top: 20%;
   right: 28%;
-  top: 14%;
-  transform: translate(28%, 14%);
+  transform: translate(-28%, -20%);
 }
 .wall-info {
-  bottom: 38%;
-  left: 17%;
-  transform: translate(-17%, -38%);
+  top: 60%;
+  left: 18%;
+  transform: translate(-18%, -60%);
 }
 .btn-building:last-child:after {
   animation-delay: 0.5s;
