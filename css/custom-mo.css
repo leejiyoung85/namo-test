@@ -87,6 +87,9 @@
   .btn-box {
     padding: 21px 0 0;
   }
+  .btn-box a {
+    width: 100%;
+  }
   /* modal */
   .modal-content {
     min-width: fit-content;
