@@ -195,10 +195,13 @@
                 </span>
                 <p>계산된 값을 통해 연간 소요되는 에너지 비용을 예측할 수 있고 에너지 절감 대책 마련을 위한 기초자료로 활용할 수 있습니다. 설정하신 사육기간에 해당하는 에너지 부하 크기는 다음과
                   같습니다.</p>
-                <div
-                  style="height: 328px; border:1px solid #adb5bd; line-height: 328px; text-align: center; margin: 20px 0;">
-                  chart.js
-                  영역
+                <div style="display:flex; height:328px; border:1px solid #adb5bd; ">
+                  <div style="flex: 1;">
+                    <canvas id="doughnutChart1" width="200" height="200"></canvas>
+                  </div>
+                  <div style="flex: 1;">
+                    <canvas id="doughnutChart2" width="200" height="200"></canvas>
+                  </div>
                 </div>
                 <p>
                   ▶ 전체 에너지 부하 : 306.6 GJ
@@ -262,140 +265,142 @@
         $(this).addClass("active");
         $(".tab-content").hide();
         $(tabId).show();
-      });
 
-    })
-  </script>
-  <script>
-    $(document).ready(function () {
-      const ctx = document.getElementById('barChart');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-          datasets: [{
-            label: '기간냉방부하',
-            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
-            backgroundColor: "#404AB3",
-          },
-          {
-            label: '기간난방부하',
-            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
-            backgroundColor: "#FF6565",
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          // barPercentage: 0.6, // 막대 너비 설정 (전체 너비의 비율)
-          // categoryPercentage: 0.8, // 레이블 간의 여백 설정 (막대의 너비의 비율)
-          // barSpacing: 60, // 막대 간 여백 설정
-          // barThickness: window.innerWidth <= 768 ? 6 : 10, // 막대의 두께 설정
-          plugins: {
-            legend: {}
-          },
-          scales: {
-            x: {
-              grid: {
-                display: false,
-                drawBorder: false,
-              }
-            },
-            y: {
-              min: 0,
-              max: 1,
-              ticks: {
-                padding: 22,
-                color: '#BFBFBF',
-                stepSize: 0.2,
-                callback: function (value, index, values) {
-                  return value + ' GJ';
-                },
-
-              },
-              border: {
-                dash: [3, 3],
-              },
-              grid: {
-                drawTicks: false,
-                drawBorder: false,
-                color: '#E9E9E9',
-                borderWidth: function (context) {
-                  return context.tick.value === 1 ? 0 : 1;
-                }
-              }
-            }
-          }
+        if (tabId === "#tab2" || tabId === "#tab3") {
+          destroyCharts();
+          drawChart(tabId.substring(1));
         }
       });
     });
   </script>
+  <!-- chart reset -->
+  <script>
+    function destroyCharts() {
+      const chart1 = Chart.getChart("barChart");
+      const chart2 = Chart.getChart("doughnutChart1");
+      const chart3 = Chart.getChart("doughnutChart2");
 
-  <!-- <script>
-    $(document).ready(function () {
-      const ctx = document.getElementById('barChart');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-          datasets: [{
-            label: '기간냉방부하',
-            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
-            backgroundColor: "#404AB3",
-          },
-          {
-            label: '기간난방부하',
-            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
-            backgroundColor: "#FF6565",
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          barPercentage: 0.2, // 막대 너비 설정 (전체 너비의 비율)
-          categoryPercentage: 0.3, // 레이블 간의 여백 설정 (막대의 너비의 비율)
-          barSpacing: 60, // 막대 간 여백 설정
-          barThickness: window.innerWidth <= 768 ? 6 : 10, // 막대의 두께 설정
-          plugins: {
-            legend: {
-
-            }
-          },
-          scales: {
-            x: {
-              grid: {
-                display: false,
-                drawBorder: false,
-              }
+      if (chart1 !== undefined) {
+        chart1.destroy();
+      }
+      if (chart2 !== undefined) {
+        chart2.destroy();
+      }
+      if (chart3 !== undefined) {
+        chart3.destroy();
+      }
+    }
+  </script>
+  <!-- chart data -->
+  <script>
+    function drawChart(tabId) {
+      let newChart1, newChart2;
+      if (tabId === "tab2") {
+        newChart1 = Chart.getChart("barChart");
+      } else if (tabId === "tab3") {
+        newChart1 = Chart.getChart("doughnutChart1");
+        newChart2 = Chart.getChart("doughnutChart2");
+      }
+      if (newChart1 !== undefined) {
+        newChart1.destroy();
+      }
+      if (newChart2 !== undefined) {
+        newChart2.destroy();
+      }
+      if (tabId === "tab2") {
+        const ctx = document.getElementById('barChart');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            datasets: [{
+              label: '기간냉방부하',
+              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+              backgroundColor: "#404AB3",
             },
-            y: {
-              min: 0,
-              max: 1,
-              ticks: {
-                padding: 22,
-                color: '#BFBFBF',
-                stepSize: 0.2,
-                callback: function (value, index, values) {
-                  return value + ' GJ';
-                },
+            {
+              label: '기간난방부하',
+              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+              backgroundColor: "#FF6565",
+            }]
+          },
+          options: {
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {}
+            },
+            scales: {
+              x: {
+                grid: {
+                  display: false,
+                  drawBorder: false,
+                }
+              },
+              y: {
+                min: 0,
+                max: 1,
+                ticks: {
+                  padding: 22,
+                  color: '#BFBFBF',
+                  stepSize: 0.2,
+                  callback: function (value, index, values) {
+                    return value + ' GJ';
+                  },
 
-              },
-              border: {
-                dash: [3, 3],
-              },
-              grid: {
-                drawTicks: false,
-                drawBorder: false,
-                color: '#E9E9E9',
-                borderWidth: function (context) {
-                  return context.tick.value === 1 ? 0 : 1;
+                },
+                border: {
+                  dash: [3, 3],
+                },
+                grid: {
+                  drawTicks: false,
+                  drawBorder: false,
+                  color: '#E9E9E9',
+                  borderWidth: function (context) {
+                    return context.tick.value === 1 ? 0 : 1;
+                  }
                 }
               }
-            },
-
+            }
           }
-        }
-      });
-    })
-  </script> -->
+        });
+      }
+      else if (tabId === "tab3") {
+        const ctxDoughnut1 = document.getElementById('doughnutChart1')
+        new Chart(ctxDoughnut1, {
+          type: 'doughnut',
+          data: {
+            labels: ['Dataset 1', 'Dataset 2'],
+            datasets: [{
+              label: '기간냉방부하',
+              data: [17, 28],
+              backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgba(120, 131, 143, 0.1)',
+              ],
+              hoverOffset: 4
+            }]
+          },
+        });
+
+        const ctxDoughnut2 = document.getElementById('doughnutChart2')
+        new Chart(ctxDoughnut2, {
+          type: 'doughnut',
+          data: {
+            labels: ['Dataset 1', 'Dataset 2'],
+            datasets: [{
+              label: '기간냉방부하',
+              data: [17, 28],
+              backgroundColor: [
+                'rgb(54, 162, 235)',
+                'rgba(255, 206, 86, 0.1)',
+              ],
+              hoverOffset: 4
+            }]
+          },
+        });
+      }
+    }
+  </script>
 </body>
 
 </html>

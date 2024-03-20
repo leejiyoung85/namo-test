@@ -265,7 +265,28 @@
   font-size: 20px;
   font-weight: 600;
 }
-
+.alert {
+  max-width: 448px;
+  border-radius: 4px;
+  margin-bottom: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.alert-title {
+  background-color: #f9f9f9;
+  padding: 20px 40px;
+}
+.alert-title p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+.alert-content {
+  padding: 20px 40px;
+  color: #32354d;
+  font-size: 20px;
+  line-height: 24px;
+}
 /* --------------------  header  -------------------- */
 .header {
   display: flex;
