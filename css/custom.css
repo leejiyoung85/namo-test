@@ -156,10 +156,11 @@
   top: -3px !important;
 }
 .season-select {
-  flex: 6;
+  flex: 6 !important;
 }
 .season-detail {
-  flex: 4;
+  flex: 4 !important;
+  max-width: calc(100% - 60% - 8px);
 }
 .season-detail {
   display: none !important;
