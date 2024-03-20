@@ -184,10 +184,44 @@
               </div>
             </div>
             <div id="tab2" class="tab-content tab-shadow">
-              <div style="height: 320px;">그래프 영역</div>
+              <div class="barChart-container">
+                <canvas id="barChart"></canvas>
+              </div>
             </div>
             <div id="tab3" class="tab-content tab-shadow">
-              <div style="height: 422px;">결과값 영역 스크롤</div>
+              <div class="tab3-container scroll">
+                <p>기간 난방/냉방 부하는 설정한 사육기간 동안 요구되는 총 난방/냉방 에너지의 크기를 의미합니다.</p>
+                <span>병아리 입추 시기 (33℃) 부터 출하 직전 (21℃) 까지의 일령별 권장 생육 온도를 달성하기 위해 필요한 에너지의 크기 (농림축산식품부, 농촌진흥청 사양관리 권고 기준)
+                </span>
+                <p>계산된 값을 통해 연간 소요되는 에너지 비용을 예측할 수 있고 에너지 절감 대책 마련을 위한 기초자료로 활용할 수 있습니다. 설정하신 사육기간에 해당하는 에너지 부하 크기는 다음과
+                  같습니다.</p>
+                <div
+                  style="height: 328px; border:1px solid #adb5bd; line-height: 328px; text-align: center; margin: 20px 0;">
+                  chart.js
+                  영역
+                </div>
+                <p>
+                  ▶ 전체 에너지 부하 : 306.6 GJ
+                  <br />
+                  ▶ 기간 난방부하 : 254.26 GJ (82.93%)
+                  <br />
+                  ▶ 기간 냉방부하 : 52.34 GJ (17.07%)
+                </p>
+                <br />
+                <p>
+                  ▷ 월별 최대 난방 부하 발생시기 : 1월 (80.24 GJ), 설정 사육기간 평균 대비 89.35% 높음
+                  <br />
+                  ▷ 월별 최대 냉방 부하 발생시기 : 7월 (38.24 GJ), 설정 사육기간 평균 대비 338.36% 높음
+                  <br />
+                  ▷ 봄철 (3~5월) 기간 난방/냉방 부하 : 85.54 / 12.85 GJ
+                  <br />
+                  ▷ 여름철 (6~8월) 기간 난방/냉방 부하 : 14.97 / 38.24 GJ
+                  <br />
+                  ▷ 가을철 (9~11월) 기간 난방/냉방 부하 : 82.88 / 4.25 GJ
+                  <br />
+                  ▷ 겨울철 (12~2월) 기간 난방/냉방 부하 : 80.24 / 0.01 GJ
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -210,6 +244,7 @@
   <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/bootstrap-select.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
@@ -231,6 +266,136 @@
 
     })
   </script>
+  <script>
+    $(document).ready(function () {
+      const ctx = document.getElementById('barChart');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+          datasets: [{
+            label: '기간냉방부하',
+            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+            backgroundColor: "#404AB3",
+          },
+          {
+            label: '기간난방부하',
+            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+            backgroundColor: "#FF6565",
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          // barPercentage: 0.6, // 막대 너비 설정 (전체 너비의 비율)
+          // categoryPercentage: 0.8, // 레이블 간의 여백 설정 (막대의 너비의 비율)
+          // barSpacing: 60, // 막대 간 여백 설정
+          // barThickness: window.innerWidth <= 768 ? 6 : 10, // 막대의 두께 설정
+          plugins: {
+            legend: {}
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false,
+                drawBorder: false,
+              }
+            },
+            y: {
+              min: 0,
+              max: 1,
+              ticks: {
+                padding: 22,
+                color: '#BFBFBF',
+                stepSize: 0.2,
+                callback: function (value, index, values) {
+                  return value + ' GJ';
+                },
+
+              },
+              border: {
+                dash: [3, 3],
+              },
+              grid: {
+                drawTicks: false,
+                drawBorder: false,
+                color: '#E9E9E9',
+                borderWidth: function (context) {
+                  return context.tick.value === 1 ? 0 : 1;
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- <script>
+    $(document).ready(function () {
+      const ctx = document.getElementById('barChart');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+          datasets: [{
+            label: '기간냉방부하',
+            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+            backgroundColor: "#404AB3",
+          },
+          {
+            label: '기간난방부하',
+            data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+            backgroundColor: "#FF6565",
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          barPercentage: 0.2, // 막대 너비 설정 (전체 너비의 비율)
+          categoryPercentage: 0.3, // 레이블 간의 여백 설정 (막대의 너비의 비율)
+          barSpacing: 60, // 막대 간 여백 설정
+          barThickness: window.innerWidth <= 768 ? 6 : 10, // 막대의 두께 설정
+          plugins: {
+            legend: {
+
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false,
+                drawBorder: false,
+              }
+            },
+            y: {
+              min: 0,
+              max: 1,
+              ticks: {
+                padding: 22,
+                color: '#BFBFBF',
+                stepSize: 0.2,
+                callback: function (value, index, values) {
+                  return value + ' GJ';
+                },
+
+              },
+              border: {
+                dash: [3, 3],
+              },
+              grid: {
+                drawTicks: false,
+                drawBorder: false,
+                color: '#E9E9E9',
+                borderWidth: function (context) {
+                  return context.tick.value === 1 ? 0 : 1;
+                }
+              }
+            },
+
+          }
+        }
+      });
+    })
+  </script> -->
 </body>
 
 </html>

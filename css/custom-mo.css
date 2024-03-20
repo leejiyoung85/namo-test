@@ -183,4 +183,23 @@
   .title-box.index05 {
     border-bottom: 0;
   }
+  /* index05 */
+  .barChart-container {
+    padding: 0 7px 16px;
+  }
+  #tab3 {
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+  }
+  .tab3-container {
+    max-height: unset;
+    padding: 20px;
+  }
+  .tab3-container p {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .tab3-container p,
+  .tab3-container span {
+    letter-spacing: 0;
+  }
 }

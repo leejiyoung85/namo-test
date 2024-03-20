@@ -756,3 +756,38 @@ main h1 {
 .main-tab {
   padding: 30px 20px 26px;
 }
+/* chart */
+.barChart-container {
+  padding: 30px 30px 72px;
+  height: 422px;
+  width: 100%;
+}
+.tab3-container {
+  padding: 40px;
+  max-height: 422px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #78838f;
+    border-radius: 20px;
+  }
+}
+.tab3-container p {
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -1.5px;
+  color: #78838f;
+}
+.tab3-container span {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -1.5px;
+  color: #adb5bd;
+}

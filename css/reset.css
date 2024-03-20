@@ -98,6 +98,7 @@ img {
   object-fit: cover;
   object-position: center;
 }
+
 @media (max-width: 1190px) {
   button {
     height: 42px;
