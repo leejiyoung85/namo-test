@@ -205,4 +205,14 @@
   .icon-text-box strong {
     font-weight: 400 !important;
   }
+  .tab-box {
+    min-height: unset;
+  }
+  .barChart-container {
+    height: 222px;
+  }
+  .doughnut-box div {
+    width: 176px;
+    padding: 30px;
+  }
 }

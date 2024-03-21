@@ -755,6 +755,9 @@ main h1 {
   color: #ffffff !important;
   border-radius: 4px;
 }
+.tab-box {
+  min-height: 422px;
+}
 .tab-content {
   display: none;
   margin: 24px 0;
@@ -767,6 +770,9 @@ main h1 {
   align-items: center;
   padding: 60px;
   gap: 60px;
+}
+.tab1-content img {
+  height: 302px;
 }
 .tab1-content > div > p {
   font-size: 20px;
@@ -816,6 +822,25 @@ main h1 {
   line-height: 18px;
   letter-spacing: -1.5px;
   color: #adb5bd;
+}
+.doughnut-box {
+  display: flex;
+  max-width: 560px;
+  justify-content: space-between;
+  margin: auto;
+}
+.doughnut-box div {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: fit-content;
+  padding: 40px 0;
+}
+.doughnut-box div p {
+  margin-top: 10px;
+  text-align: center;
+  line-height: 23px;
+  color: #78838f;
 }
 /* index06 */
 .index06-chart-box {
