@@ -432,7 +432,6 @@
         $(tabId).show();
 
         if (tabId === "#tab1" || tabId === "#tab2") {
-          destroyCharts(tabId.substring(1));
           drawChart(tabId.substring(1));
         }
       });
@@ -690,9 +689,6 @@
                   }
                 }
               },
-              tooltip: {
-                enabled: false
-              }
             }
           }
         });
@@ -717,9 +713,6 @@
             plugins: {
               legend: {
                 display: false
-              },
-              tooltip: {
-                enabled: false
               }
             }
           }
