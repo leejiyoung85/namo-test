@@ -174,10 +174,11 @@
             <div class="tab-box">
               <div id="tab1" class="tab-content">
                 <div class="chart-box">
-                  <div class="tab-shadow" style="height: 320px;">
+                  <div class="tab-shadow">
                     <canvas id="barChart1"></canvas>
                   </div>
-                  <div class="tab-shadow" style="height: 320px;">
+                  <span class="line"></span>
+                  <div class="tab-shadow">
                     <canvas id="barChart2"></canvas>
                     <div class="write-box">
                       <div class="write-icon" data-bs-toggle="modal" data-bs-target="#modal-select">
@@ -443,7 +444,7 @@
         $(".spinner-container").hide();
       }, 300);
 
-      // $("#alert").modal("show");
+      $("#alert").modal("show");
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });
@@ -539,7 +540,7 @@
         new Chart(ctxBar1, {
           type: 'bar',
           data: {
-            labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            labels: isMobile ? ['1', "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"] : ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
             datasets: [{
               label: '기간냉방부하',
               data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
@@ -569,15 +570,18 @@
                 ticks: {
                   color: '#BFBFBF',
                   font: {
-                    size: isMobile ? 12 : 16
+                    size: isMobile ? 12 : 14
                   }
                 }
               },
               y: {
+                afterDataLimits: (scale) => {
+                  scale.max = scale.max * 1.2;
+                },
                 min: 0,
                 max: 1,
                 ticks: {
-                  padding: isMobile ? 6 : 22,
+                  padding: isMobile ? 6 : 10,
                   color: '#BFBFBF',
                   stepSize: 0.2,
                   callback: function (value, index, values) {
@@ -597,14 +601,30 @@
                 }
               }
             },
-            barThickness: isMobile ? 3 : 10,
+            barThickness: isMobile ? 3 : 6,
+            plugins: {
+              legend: {
+                position: 'top',
+                align: 'end',
+                labels: {
+                  color: '#78838F',
+                  font: {
+                    family: 'pretendard',
+                    size: isMobile ? 12 : 16
+                  },
+                  boxWidth: 20,
+                  boxHeight: 8,
+                  padding: 5
+                },
+              }
+            }
           }
         });
         const ctxBar2 = document.getElementById('barChart2');
         new Chart(ctxBar2, {
           type: 'bar',
           data: {
-            labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            labels: isMobile ? ['1', "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"] : ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
             datasets: [{
               label: '기간냉방부하',
               data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
@@ -634,15 +654,18 @@
                 ticks: {
                   color: '#BFBFBF',
                   font: {
-                    size: isMobile ? 12 : 16
+                    size: isMobile ? 12 : 14
                   }
                 }
               },
               y: {
+                afterDataLimits: (scale) => {
+                  scale.max = scale.max * 1.2;
+                },
                 min: 0,
                 max: 1,
                 ticks: {
-                  padding: isMobile ? 6 : 22,
+                  padding: isMobile ? 6 : 10,
                   color: '#BFBFBF',
                   stepSize: 0.2,
                   callback: function (value, index, values) {
@@ -662,7 +685,23 @@
                 }
               }
             },
-            barThickness: isMobile ? 3 : 10,
+            barThickness: isMobile ? 3 : 6,
+            plugins: {
+              legend: {
+                position: 'top',
+                align: 'end',
+                labels: {
+                  color: '#78838F',
+                  font: {
+                    family: 'pretendard',
+                    size: isMobile ? 12 : 16
+                  },
+                  boxWidth: 20,
+                  boxHeight: 8,
+                  padding: 5
+                },
+              }
+            }
           }
         });
       } else if (tabId === "tab2") {

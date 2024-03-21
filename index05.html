@@ -314,7 +314,7 @@
           const chart = new Chart(ctx, {
             type: 'bar',
             data: {
-              labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+              labels: isMobile ? ['1', "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"] : ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
               datasets: [{
                 label: '기간냉방부하',
                 data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
@@ -334,7 +334,8 @@
               ]
             },
             options: {
-              maintainAspectRatio: false,
+              maintainAspectRatio: false, layout: {
+              },
               scales: {
                 x: {
                   grid: {
@@ -349,6 +350,9 @@
                   }
                 },
                 y: {
+                  afterDataLimits: (scale) => {
+                    scale.max = scale.max * 1.2;
+                  },
                   min: 0,
                   max: 1,
                   ticks: {
@@ -373,6 +377,22 @@
                 }
               },
               barThickness: isMobile ? 3 : 10,
+              plugins: {
+                legend: {
+                  position: 'top',
+                  align: 'end',
+                  labels: {
+                    color: '#78838F',
+                    font: {
+                      family: 'pretendard',
+                      size: isMobile ? 12 : 16
+                    },
+                    boxWidth: 20,
+                    boxHeight: 8,
+                    padding: 5
+                  },
+                }
+              }
             }
           });
         }
@@ -411,8 +431,8 @@
             }
           });
           const ctxDoughnut1 = document.getElementById('doughnutChart1');
-          const doughnut1 = 82.93; // 실제 데이터 값
-          const doughnut1Empty = 100 - doughnut1; // 비워둘 영역
+          const doughnut1 = 82.93;
+          const doughnut1Empty = 100 - doughnut1;
 
           new Chart(ctxDoughnut1, {
             type: 'doughnut',
@@ -444,8 +464,8 @@
           });
 
           const ctxDoughnut2 = document.getElementById('doughnutChart2')
-          const doughnut2 = 17.07; // 실제 데이터 값
-          const doughnut2Empty = 100 - doughnut2; // 비워둘 영역
+          const doughnut2 = 17.07;
+          const doughnut2Empty = 100 - doughnut2;
 
           new Chart(ctxDoughnut2, {
             type: 'doughnut',

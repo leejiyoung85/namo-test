@@ -858,9 +858,14 @@ main h1 {
   display: flex;
   gap: 16px;
 }
-.chart-box div {
+.chart-box .tab-shadow {
   position: relative;
+  height: 422px;
+  padding: 20px 20px 72px;
   flex: 5;
+}
+.line {
+  display: none;
 }
 .write-box {
   position: absolute !important;
