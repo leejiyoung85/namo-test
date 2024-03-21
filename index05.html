@@ -280,214 +280,201 @@
         $(tabId).show();
 
         if (tabId === "#tab2" || tabId === "#tab3") {
-          destroyCharts();
+          destroyCharts(tabId.substring(1));
           drawChart(tabId.substring(1));
         }
       });
+      function destroyCharts(tabId) {
+        const charts = {
+          "tab2": ["barChart"],
+          "tab3": ["doughnutChart1", "doughnutChart2"],
+        };
+
+        Object.keys(charts).forEach(key => {
+          if (key !== tabId) {
+            charts[key].forEach(chartId => {
+              const canvas = document.getElementById(chartId);
+              if (canvas) {
+                const chart = Chart.getChart(canvas);
+                if (chart) {
+                  chart.destroy();
+                }
+              }
+            });
+          }
+        });
+      }
+
+      function drawChart(tabId) {
+        destroyCharts(tabId);
+        var isMobile = window.matchMedia("(max-width: 670px)").matches;
+        // tab2 bar chart
+        if (tabId === "tab2") {
+          const ctx = document.getElementById('barChart');
+          const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+              datasets: [{
+                label: '기간냉방부하',
+                data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+                backgroundColor: "#404AB3",
+              },
+              {
+                // 빈 데이터 추가 여백 생성
+                label: '',
+                data: [null, null, null, null, null, null, null, null, null, null, null, null],
+                backgroundColor: "transparent",
+              },
+              {
+                label: '기간난방부하',
+                data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+                backgroundColor: "#FF6565",
+              }
+              ]
+            },
+            options: {
+              maintainAspectRatio: false,
+              scales: {
+                x: {
+                  grid: {
+                    display: false,
+                    drawBorder: false,
+                  },
+                  ticks: {
+                    color: '#BFBFBF',
+                    font: {
+                      size: isMobile ? 12 : 16
+                    }
+                  }
+                },
+                y: {
+                  min: 0,
+                  max: 1,
+                  ticks: {
+                    padding: isMobile ? 6 : 22,
+                    color: '#BFBFBF',
+                    stepSize: 0.2,
+                    callback: function (value, index, values) {
+                      return value + ' GJ';
+                    },
+                  },
+                  border: {
+                    dash: [3, 3],
+                  },
+                  grid: {
+                    drawTicks: false,
+                    drawBorder: false,
+                    color: '#E9E9E9',
+                    borderWidth: function (context) {
+                      return context.tick.value === 1 ? 0 : 1;
+                    }
+                  }
+                }
+              },
+              barThickness: isMobile ? 3 : 10,
+            }
+          });
+        }
+        // tab3 doughnut chart
+        else if (tabId === "tab3") {
+          // doughnut center text
+          Chart.register({
+            id: 'centerLabelPlugin',
+            afterDraw: chart => {
+              if (chart.config.type === 'doughnut') {
+                const ctx = chart.ctx;
+                const width = chart.width;
+                const height = chart.height;
+                const datasets = chart.config.data.datasets;
+
+                let total = 0;
+                datasets.forEach(dataset => {
+                  dataset.data.forEach(value => {
+                    total += value;
+                  });
+                });
+
+                ctx.fillStyle = '#78838F';
+                ctx.font = `bold ${isMobile ? 12 : 18}px pretendard`;
+                ctx.textBaseline = 'middle';
+                ctx.textAlign = 'center';
+
+                const text = ((datasets[0].data[0] / total) * 100).toFixed(2) + '%';
+                const textWidth = ctx.measureText(text).width;
+                const textHeight = isMobile ? 12 : 18;
+                const centerX = width / 2;
+                const centerY = height / 2 + textHeight / 4;
+
+                ctx.fillText(text, centerX, centerY);
+              }
+            }
+          });
+          const ctxDoughnut1 = document.getElementById('doughnutChart1');
+          const doughnut1 = 82.93; // 실제 데이터 값
+          const doughnut1Empty = 100 - doughnut1; // 비워둘 영역
+
+          new Chart(ctxDoughnut1, {
+            type: 'doughnut',
+            data: {
+              labels: ['기간난방부하', ''],
+              datasets: [{
+                data: [doughnut1, doughnut1Empty],
+                backgroundColor: [
+                  '#FF6565',
+                  '#E9E9E9',
+                ],
+              }]
+            },
+            options: {
+              plugins: {
+                legend: {
+                  display: false,
+                  labels: {
+                    font: {
+                      size: isMobile ? 12 : 16
+                    }
+                  }
+                },
+                tooltip: {
+                  enabled: false
+                }
+              }
+            }
+          });
+
+          const ctxDoughnut2 = document.getElementById('doughnutChart2')
+          const doughnut2 = 17.07; // 실제 데이터 값
+          const doughnut2Empty = 100 - doughnut2; // 비워둘 영역
+
+          new Chart(ctxDoughnut2, {
+            type: 'doughnut',
+            data: {
+              datasets: [{
+                label: ['기간냉방부하', ''],
+                data: [doughnut2, doughnut2Empty],
+                backgroundColor: [
+                  '#404AB3',
+                  '#E9E9E9',
+                ],
+              }]
+            },
+            options: {
+              plugins: {
+                legend: {
+                  display: false
+                },
+                tooltip: {
+                  enabled: false
+                }
+              }
+            }
+          });
+        }
+      }
     });
   </script>
-  <!-- chart reset -->
-  <script>
-    function destroyCharts() {
-      const chart1 = Chart.getChart("barChart");
-      const chart2 = Chart.getChart("doughnutChart1");
-      const chart3 = Chart.getChart("doughnutChart2");
 
-      if (chart1 !== undefined) {
-        chart1.destroy();
-      }
-      if (chart2 !== undefined) {
-        chart2.destroy();
-      }
-      if (chart3 !== undefined) {
-        chart3.destroy();
-      }
-    }
-  </script>
-  <!-- chart data -->
-  <script>
-    function drawChart(tabId) {
-      var isMobile = window.matchMedia("(max-width: 670px)").matches;
-      // chart reset
-      let newChart1, newChart2;
-      if (tabId === "tab2") {
-        newChart1 = Chart.getChart("barChart");
-      } else if (tabId === "tab3") {
-        newChart1 = Chart.getChart("doughnutChart1");
-        newChart2 = Chart.getChart("doughnutChart2");
-      }
-      if (newChart1 !== undefined) {
-        newChart1.destroy();
-      }
-      if (newChart2 !== undefined) {
-        newChart2.destroy();
-      }
-      // tab2 bar chart
-      if (tabId === "tab2") {
-        const ctx = document.getElementById('barChart');
-        const chart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-            datasets: [{
-              label: '기간냉방부하',
-              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
-              backgroundColor: "#404AB3",
-            },
-            {
-              // 빈 데이터 추가 여백 생성
-              label: '',
-              data: [null, null, null, null, null, null, null, null, null, null, null, null],
-              backgroundColor: "transparent",
-            },
-            {
-              label: '기간난방부하',
-              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
-              backgroundColor: "#FF6565",
-            }
-            ]
-          },
-          options: {
-            maintainAspectRatio: false,
-            scales: {
-              x: {
-                grid: {
-                  display: false,
-                  drawBorder: false,
-                },
-                ticks: {
-                  color: '#BFBFBF',
-                  font: {
-                    size: isMobile ? 12 : 16
-                  }
-                }
-              },
-              y: {
-                min: 0,
-                max: 1,
-                ticks: {
-                  padding: isMobile ? 6 : 22,
-                  color: '#BFBFBF',
-                  stepSize: 0.2,
-                  callback: function (value, index, values) {
-                    return value + ' GJ';
-                  },
-                },
-                border: {
-                  dash: [3, 3],
-                },
-                grid: {
-                  drawTicks: false,
-                  drawBorder: false,
-                  color: '#E9E9E9',
-                  borderWidth: function (context) {
-                    return context.tick.value === 1 ? 0 : 1;
-                  }
-                }
-              }
-            },
-            barThickness: isMobile ? 3 : 10,
-          }
-        });
-      }
-      // tab3 doughnut chart
-      else if (tabId === "tab3") {
-        // 도넛 차트 중앙 데이터값 표시 
-        Chart.register({
-          id: 'centerLabelPlugin',
-          afterDraw: chart => {
-            if (chart.config.type === 'doughnut') {
-              const ctx = chart.ctx;
-              const width = chart.width;
-              const height = chart.height;
-              const datasets = chart.config.data.datasets;
-
-              let total = 0;
-              datasets.forEach(dataset => {
-                dataset.data.forEach(value => {
-                  total += value;
-                });
-              });
-
-              ctx.fillStyle = '#78838F';
-              ctx.font = `bold ${isMobile ? 12 : 18}px pretendard`;
-              ctx.textBaseline = 'middle';
-              ctx.textAlign = 'center';
-
-              const text = ((datasets[0].data[0] / total) * 100).toFixed(2) + '%';
-              const textWidth = ctx.measureText(text).width;
-              const textHeight = isMobile ? 12 : 18;
-              const centerX = width / 2;
-              const centerY = height / 2 + textHeight / 4;
-
-              ctx.fillText(text, centerX, centerY);
-            }
-          }
-        });
-        const ctxDoughnut1 = document.getElementById('doughnutChart1');
-        const doughnut1 = 82.93; // 실제 데이터 값
-        const doughnut1Empty = 100 - doughnut1; // 비워둘 영역
-
-        new Chart(ctxDoughnut1, {
-          type: 'doughnut',
-          data: {
-            labels: ['기간난방부하', ''],
-            datasets: [{
-              data: [doughnut1, doughnut1Empty],
-              backgroundColor: [
-                '#FF6565',
-                '#E9E9E9',
-              ],
-            }]
-          },
-          options: {
-            plugins: {
-              legend: {
-                display: false,
-                labels: {
-                  font: {
-                    size: isMobile ? 12 : 16
-                  }
-                }
-              },
-              tooltip: {
-                enabled: false
-              }
-            }
-          }
-        });
-
-
-        const ctxDoughnut2 = document.getElementById('doughnutChart2')
-        const doughnut2 = 17.07; // 실제 데이터 값
-        const doughnut2Empty = 100 - doughnut2; // 비워둘 영역
-
-        new Chart(ctxDoughnut2, {
-          type: 'doughnut',
-          data: {
-            datasets: [{
-              label: ['기간냉방부하', ''],
-              data: [doughnut2, doughnut2Empty],
-              backgroundColor: [
-                '#404AB3',
-                '#E9E9E9',
-              ],
-            }]
-          },
-          options: {
-            plugins: {
-              legend: {
-                display: false
-              },
-              tooltip: {
-                enabled: false
-              }
-            }
-          }
-        });
-      }
-    }
-  </script>
 </body>
 
 </html>

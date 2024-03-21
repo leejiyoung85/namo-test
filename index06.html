@@ -171,77 +171,91 @@
                 <a href="#tab2" class="">결과값</a>
               </li>
             </ul>
-            <div id="tab1" class="tab-content">
-              <div class="index06-chart-box">
-                <div class="tab-shadow" style="height: 320px;">그래프 영역</div>
-                <div class="tab-shadow" style="height: 320px; background-color: red;">
-                  <div class="write-box">
-                    <div class="write-icon" data-bs-toggle="modal" data-bs-target="#modal-select">
-                      <img src="./assets/icons/pen.svg" />
+            <div class="tab-box">
+              <div id="tab1" class="tab-content">
+                <div class="chart-box">
+                  <div class="tab-shadow" style="height: 320px;">
+                    <canvas id="barChart1"></canvas>
+                  </div>
+                  <div class="tab-shadow" style="height: 320px;">
+                    <canvas id="barChart2"></canvas>
+                    <div class="write-box">
+                      <div class="write-icon" data-bs-toggle="modal" data-bs-target="#modal-select">
+                        <img src="./assets/icons/pen.svg" />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div id="tab2" class="tab-content tab-shadow">
-              <div class="scroll-container">
-                <p>기간 난방/냉방 부하는 설정한 사육기간 동안 요구되는 총 난방/냉방 에너지의 크기를 의미합니다.</p>
-                <span>병아리 입추 시기 (33℃) 부터 출하 직전 (21℃) 까지의 일령별 권장 생육 온도를 달성하기 위해 필요한 에너지의 크기 (농림축산식품부, 농촌진흥청 사양관리 권고 기준)
-                </span>
-                <p>계산된 값을 통해 연간 소요되는 에너지 비용을 예측할 수 있고 에너지 절감 대책 마련을 위한 기초자료로 활용할 수 있습니다. 설정하신 사육기간에 해당하는 에너지 부하 크기는 다음과
-                  같습니다.</p>
-                <div
-                  style="height: 328px; border:1px solid #adb5bd; line-height: 328px; text-align: center; margin: 20px 0;">
-                  chart.js
-                  영역
-                </div>
-                <p>
-                  <strong>[프로젝트 A]</strong>
-                  <br />
-                  ▶ 기간 난방부하 : 254.26 GJ (82.93%)
-                  <br />
-                  ▶ 기간 냉방부하 : 52.34 GJ (17.07%)
-                </p>
-                <br />
-                <p>
-                  <strong>[프로젝트 B]</strong>
-                  <br />
-                  ▶ 기간 난방부하 : 252.8 GJ (83.10%)
-                  <br />
-                  ▶ 기간 냉방부하 : 52.19 GJ (17.16%)
-                </p>
-                <br />
-                <p>
-                  <strong>[프로젝트별 입력 정보]</strong>
-                  <br />
-                  ▷ 프로젝트 A 입력 정보
-                  <br />
-                  지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000 개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값) mm / 벽체 단열재 두께 : (입력값)
-                  mm / 사육조건 : 연중 사육
-                  <br />
-                  ▷ 프로젝트 B 입력 정보
-                  <br />
-                  지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000 개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값) mm / 벽체 단열재 두께 : (입력값)
-                  mm / 사육조건 : 0, 0, 0, 0 월 사육
-                </p>
-                <br />
-                <div class="icon-text-box">
-                  <span>•</span>
-                  <p>프로젝트 B의 기간 난방부하 값은 000000 GJ로 A 조건의 기간 난방부하 값 보다 00% (높게/낮게),
+              <div id="tab2" class="tab-content tab-shadow">
+                <div class="scroll-container">
+                  <p>기간 난방/냉방 부하는 설정한 사육기간 동안 요구되는 총 난방/냉방 에너지의 크기를 의미합니다.</p>
+                  <span>병아리 입추 시기 (33℃) 부터 출하 직전 (21℃) 까지의 일령별 권장 생육 온도를 달성하기 위해 필요한 에너지의 크기 (농림축산식품부, 농촌진흥청 사양관리 권고 기준)
+                  </span>
+                  <p>계산된 값을 통해 연간 소요되는 에너지 비용을 예측할 수 있고 에너지 절감 대책 마련을 위한 기초자료로 활용할 수 있습니다. 설정하신 사육기간에 해당하는 에너지 부하 크기는
+                    다음과
+                    같습니다.</p>
+                  <div style="height: 328px; border:1px solid #adb5bd;">
+                    <div class="d-flex" style="height: 328px;">
+                      <canvas id="doughnutChart1"></canvas>
+                      <canvas id="doughnutChart2"></canvas>
+                    </div>
+                    <div class="d-flex" style="height: 328px;">
+                      <canvas id="doughnutChart3"></canvas>
+                      <canvas id="doughnutChart4"></canvas>
+                    </div>
+                  </div>
+                  <p>
+                    <strong>[프로젝트 A]</strong>
                     <br />
-                    기간 냉방부하 값은 000000 GJ로 A 조건의 기간
-                    냉방부하 값 보다 00% (높게/낮게) 산출되었습니다.
+                    ▶ 기간 난방부하 : 254.26 GJ (82.93%)
+                    <br />
+                    ▶ 기간 냉방부하 : 52.34 GJ (17.07%)
+                  </p>
+                  <br />
+                  <p>
+                    <strong>[프로젝트 B]</strong>
+                    <br />
+                    ▶ 기간 난방부하 : 252.8 GJ (83.10%)
+                    <br />
+                    ▶ 기간 냉방부하 : 52.19 GJ (17.16%)
+                  </p>
+                  <br />
+                  <p>
+                    <strong>[프로젝트별 입력 정보]</strong>
+                    <br />
+                    ▷ 프로젝트 A 입력 정보
+                    <br />
+                    지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000 개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값) mm / 벽체 단열재 두께 :
+                    (입력값)
+                    mm / 사육조건 : 연중 사육
+                    <br />
+                    ▷ 프로젝트 B 입력 정보
+                    <br />
+                    지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000 개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값) mm / 벽체 단열재 두께 :
+                    (입력값)
+                    mm / 사육조건 : 0, 0, 0, 0 월 사육
+                  </p>
+                  <br />
+                  <div class="icon-text-box">
+                    <span>•</span>
+                    <p>프로젝트 B의 기간 난방부하 값은 000000 GJ로 A 조건의 기간 난방부하 값 보다 00% (높게/낮게),
+                      <br />
+                      기간 냉방부하 값은 000000 GJ로 A 조건의 기간
+                      냉방부하 값 보다 00% (높게/낮게) 산출되었습니다.
+                    </p>
+                  </div>
+                  <br />
+                  <br />
+                  <p>
+                    <strong>[해석방법]</strong>
+                    <br />
+                    산출된 난방, 냉방 부하의 크기는 에너지 지출 비용과 직결됩니다. 에너지 지출 비용은 농가에 설치되는 난방, 냉방 장치의 종류와 효율, 농가의 운영 방식에 따라 달라질 수
+                    있습니다.
+                    <br />
+                    시설 냉방/난방 부하 차이에 따른 에너지 지출 비용과 시설/단열 성능 개선을 위한 투입 비용에 따라 농가의 에너지 운영 계획을 수립하는데 참고할 수 있습니다.
                   </p>
                 </div>
-                <br />
-                <br />
-                <p>
-                  <strong>[해석방법]</strong>
-                  <br />
-                  산출된 난방, 냉방 부하의 크기는 에너지 지출 비용과 직결됩니다. 에너지 지출 비용은 농가에 설치되는 난방, 냉방 장치의 종류와 효율, 농가의 운영 방식에 따라 달라질 수 있습니다.
-                  <br />
-                  시설 냉방/난방 부하 차이에 따른 에너지 지출 비용과 시설/단열 성능 개선을 위한 투입 비용에 따라 농가의 에너지 운영 계획을 수립하는데 참고할 수 있습니다.
-                </p>
               </div>
             </div>
           </div>
@@ -263,15 +277,15 @@
   <!-- [s] : modal -->
   <div class="modal fade" id="alert" tabindex="-1" aria-labelledby="alert" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content alert">
+      <div class="modal-content-alert">
         <div class="alert-title">
           <p>비교 데이터 입력</p>
         </div>
-        <div class="modal-container alert-content">
+        <div class="alert-content">
           비교 데이터가 존재하지 않습니다.
           ‘그래프’ 영역을 클릭하여 데이터를 입력하세요.
-          <div class="modal-btn-box">
-            <button type="button" class="fill" data-bs-dismiss="modal">
+          <div class="alert-btn-box">
+            <button type="button" data-bs-dismiss="modal">
               확인
             </button>
           </div>
@@ -386,6 +400,8 @@
   <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/bootstrap-select.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
@@ -393,13 +409,20 @@
         $(".spinner-container").hide();
       }, 300);
 
-      $("#alert").modal("show");
+      // $("#alert").modal("show");
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });
+
       // 탭 
       var activeTab = $(".tab a.active").attr("href");
       $(activeTab).show();
+
+
+      if (activeTab === "#tab1") {
+        drawChart("tab1");
+      }
+
       $(".tab a").click(function (event) {
         event.preventDefault();
         var tabId = $(this).attr("href");
@@ -407,6 +430,11 @@
         $(this).addClass("active");
         $(".tab-content").hide();
         $(tabId).show();
+
+        if (tabId === "#tab1" || tabId === "#tab2") {
+          destroyCharts(tabId.substring(1));
+          drawChart(tabId.substring(1));
+        }
       });
 
       // 사육시기 직접 입력
@@ -429,14 +457,13 @@
         }
       });
 
-      // 팝오버 초기화
+      // popover reset
       $(function () {
         $('[data-bs-toggle="popover"]').popover({
           container: "body",
           html: true,
         });
       });
-      // 팝오버 클릭 이외의 영역 클릭 시 팝오버 숨기기
       $(document).on("click", function (e) {
         if (
           !$(e.target).closest(".popover").length &&
@@ -446,7 +473,317 @@
         }
       });
     })
+    // chart reset
+    function destroyCharts(tabId) {
+      const charts = {
+        "tab1": ["barChart1", "barChart2"],
+        "tab2": ["doughnutChart1", "doughnutChart2", "doughnutChart3", "doughnutChart4"],
+      };
+
+      Object.keys(charts).forEach(key => {
+        if (key !== tabId) {
+          charts[key].forEach(chartId => {
+            const canvas = document.getElementById(chartId);
+            if (canvas) {
+              const chart = Chart.getChart(canvas);
+              if (chart) {
+                chart.destroy();
+              }
+            }
+          });
+        }
+      });
+    }
+
+
+    // chart date 
+    function drawChart(tabId) {
+      destroyCharts(tabId);
+      var isMobile = window.matchMedia("(max-width: 670px)").matches;
+      // tab1
+      if (tabId === "tab1") {
+        const ctxBar1 = document.getElementById('barChart1');
+        new Chart(ctxBar1, {
+          type: 'bar',
+          data: {
+            labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            datasets: [{
+              label: '기간냉방부하',
+              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+              backgroundColor: "#404AB3",
+            },
+            {
+              // 빈 데이터 추가 여백 생성
+              label: '',
+              data: [null, null, null, null, null, null, null, null, null, null, null, null],
+              backgroundColor: "transparent",
+            },
+            {
+              label: '기간난방부하',
+              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+              backgroundColor: "#FF6565",
+            }
+            ]
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                grid: {
+                  display: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  color: '#BFBFBF',
+                  font: {
+                    size: isMobile ? 12 : 16
+                  }
+                }
+              },
+              y: {
+                min: 0,
+                max: 1,
+                ticks: {
+                  padding: isMobile ? 6 : 22,
+                  color: '#BFBFBF',
+                  stepSize: 0.2,
+                  callback: function (value, index, values) {
+                    return value + ' GJ';
+                  },
+                },
+                border: {
+                  dash: [3, 3],
+                },
+                grid: {
+                  drawTicks: false,
+                  drawBorder: false,
+                  color: '#E9E9E9',
+                  borderWidth: function (context) {
+                    return context.tick.value === 1 ? 0 : 1;
+                  }
+                }
+              }
+            },
+            barThickness: isMobile ? 3 : 10,
+          }
+        });
+        const ctxBar2 = document.getElementById('barChart2');
+        new Chart(ctxBar2, {
+          type: 'bar',
+          data: {
+            labels: ['1월', "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            datasets: [{
+              label: '기간냉방부하',
+              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+              backgroundColor: "#404AB3",
+            },
+            {
+              // 빈 데이터 추가 여백 생성
+              label: '',
+              data: [null, null, null, null, null, null, null, null, null, null, null, null],
+              backgroundColor: "transparent",
+            },
+            {
+              label: '기간난방부하',
+              data: [0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2],
+              backgroundColor: "#FF6565",
+            }
+            ]
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                grid: {
+                  display: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  color: '#BFBFBF',
+                  font: {
+                    size: isMobile ? 12 : 16
+                  }
+                }
+              },
+              y: {
+                min: 0,
+                max: 1,
+                ticks: {
+                  padding: isMobile ? 6 : 22,
+                  color: '#BFBFBF',
+                  stepSize: 0.2,
+                  callback: function (value, index, values) {
+                    return value + ' GJ';
+                  },
+                },
+                border: {
+                  dash: [3, 3],
+                },
+                grid: {
+                  drawTicks: false,
+                  drawBorder: false,
+                  color: '#E9E9E9',
+                  borderWidth: function (context) {
+                    return context.tick.value === 1 ? 0 : 1;
+                  }
+                }
+              }
+            },
+            barThickness: isMobile ? 3 : 10,
+          }
+        });
+      } else if (tabId === "tab2") {
+        // doughnut center text
+        Chart.register({
+          id: 'centerLabelPlugin',
+          afterDraw: chart => {
+            if (chart.config.type === 'doughnut') {
+              const ctx = chart.ctx;
+              const width = chart.width;
+              const height = chart.height;
+              const datasets = chart.config.data.datasets;
+
+              let total = 0;
+              datasets.forEach(dataset => {
+                dataset.data.forEach(value => {
+                  total += value;
+                });
+              });
+
+              ctx.fillStyle = '#78838F';
+              ctx.font = `bold ${isMobile ? 12 : 18}px pretendard`;
+              ctx.textBaseline = 'middle';
+              ctx.textAlign = 'center';
+
+              const text = ((datasets[0].data[0] / total) * 100).toFixed(2) + '%';
+              const textWidth = ctx.measureText(text).width;
+              const textHeight = isMobile ? 12 : 18;
+              const centerX = width / 2;
+              const centerY = height / 2 + textHeight / 4;
+
+              ctx.fillText(text, centerX, centerY);
+            }
+          }
+        });
+        const ctxDoughnut1 = document.getElementById('doughnutChart1');
+        const doughnut1 = 82.93;
+        const doughnut1Empty = 100 - doughnut1;
+        new Chart(ctxDoughnut1, {
+          type: 'doughnut',
+          data: {
+            labels: ['기간난방부하', ''],
+            datasets: [{
+              data: [doughnut1, doughnut1Empty],
+              backgroundColor: [
+                '#FF6565',
+                '#E9E9E9',
+              ],
+            }]
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false,
+                labels: {
+                  font: {
+                    size: isMobile ? 12 : 16
+                  }
+                }
+              },
+              tooltip: {
+                enabled: false
+              }
+            }
+          }
+        });
+
+        const ctxDoughnut2 = document.getElementById('doughnutChart2')
+        const doughnut2 = 17.07;
+        const doughnut2Empty = 100 - doughnut2;
+
+        new Chart(ctxDoughnut2, {
+          type: 'doughnut',
+          data: {
+            datasets: [{
+              label: ['기간냉방부하', ''],
+              data: [doughnut2, doughnut2Empty],
+              backgroundColor: [
+                '#404AB3',
+                '#E9E9E9',
+              ],
+            }]
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: false
+              }
+            }
+          }
+        });
+
+        const ctxDoughnut3 = document.getElementById('doughnutChart3')
+        const doughnut3 = 17.07;
+        const doughnut3Empty = 100 - doughnut3;
+
+        new Chart(ctxDoughnut3, {
+          type: 'doughnut',
+          data: {
+            labels: ['기간난방부하', ''],
+            datasets: [{
+              data: [doughnut3, doughnut3Empty],
+              backgroundColor: [
+                '#FF6565',
+                '#E9E9E9',
+              ],
+            }]
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: false
+              }
+            }
+          }
+        });
+
+        const ctxDoughnut4 = document.getElementById('doughnutChart4')
+        const doughnut4 = 17.07;
+        const doughnut4Empty = 100 - doughnut4;
+
+        new Chart(ctxDoughnut4, {
+          type: 'doughnut',
+          data: {
+            datasets: [{
+              label: ['기간냉방부하', ''],
+              data: [doughnut4, doughnut4Empty],
+              backgroundColor: [
+                '#404AB3',
+                '#E9E9E9',
+              ],
+            }]
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: false
+              }
+            }
+          }
+        });
+      }
+    }
   </script>
+
 </body>
 
 </html>

@@ -104,6 +104,7 @@
     height: 42px;
     font-size: 16px;
   }
+
   /* index */
   .index-box img {
     display: none;
@@ -214,5 +215,16 @@
   .doughnut-box div {
     width: 176px;
     padding: 30px;
+  }
+  /* index06 */
+  .chart-box,
+  .row-form {
+    flex-direction: column;
+  }
+}
+@media (max-width: 670px) {
+  .modal-content-alert {
+    max-width: 337px;
+    margin: auto;
   }
 }
