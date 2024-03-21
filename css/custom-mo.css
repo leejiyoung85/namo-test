@@ -221,6 +221,17 @@
   .row-form {
     flex-direction: column;
   }
+  .doughnut-box-index06 {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+  }
+  .doughnut-con > div {
+    width: 116px;
+  }
+  .border-box {
+    padding: 15px 0;
+  }
 }
 @media (max-width: 670px) {
   .modal-content-alert {
