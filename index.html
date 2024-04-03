@@ -1,266 +1,285 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link href="./css/custom.css" rel="stylesheet" />
+    <link href="./css/custom-mo.css" rel="stylesheet" />
+    <link href="./css/bootstrap-select.min.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="./css/reset.css" rel="stylesheet" />
-  <link href="./css/custom.css" rel="stylesheet" />
-  <link href="./css/custom-mo.css" rel="stylesheet" />
-  <link href="./css/bootstrap-select.min.css" rel="stylesheet" />
-</head>
-
-<body>
-  <!-- [s] : spinner  -->
-  <div class="spinner-container">
-    <div class="spinner-dim"></div>
-    <div class="spinner-border color-primary" role="status"></div>
-  </div>
-  <!-- [e] : spinner  -->
-  <!-- [s] : header -->
-  <header>
-    <div class="header">
-      <div class="header-top">
-        <a href="index.html">
-          <img class="logo img" src="./assets/images/logo.png" alt="로고" />
+  <body>
+    <!-- [s] : spinner  -->
+    <div class="spinner-container">
+      <div class="spinner-dim"></div>
+      <div class="spinner-border color-primary" role="status"></div>
+    </div>
+    <!-- [e] : spinner  -->
+    <!-- [s] : header -->
+    <header>
+      <div class="header">
+        <div class="header-top">
+          <a href="index.html">
+            <img class="logo img" src="./assets/images/logo.png" alt="로고" />
+          </a>
+          <h1 class="m-none">축사 에너지부하 자가 진단 서비스</h1>
+        </div>
+        <a href="#" class="m-none">
+          <p class="color-primary">이용안내</p>
         </a>
-        <h1 class="m-none">축사 에너지부하 자가 진단 서비스</h1>
-      </div>
-      <a href="#" class="m-none">
-        <p class="color-primary">이용안내</p>
-      </a>
-      <!-- [s] : mo -->
-      <div class="d-none m-block">
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header border-bottom px-20">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/index.html">
-                  <p>에너지부하 진단</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./menu2.html">
-                  <p>건축물 에너지 절약 설계 기준</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p>축사표준설계도 안내</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <p>사양기술정보 안내</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- [e] : mo -->
-    </div>
-    <div class="header-bottom m-none">
-      <nav>
-        <h2 class="d-none">네비게이션 메뉴</h2>
-        <ul>
-          <li>
-            <a href="/index.html">
-              <h3>에너지부하 진단</h3>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h3>건축물 에너지 절약 설계 기준</h3>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h3>축사표준설계도 안내</h3>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- [e] : header -->
-  <main>
-    <h1>
-      축사 에너지부하 자가 진단 서비스
-    </h1>
-    <div class="main">
-      <div class="stepper">
-        <ul>
-          <li class="active">
-            <span class="circle-24">1</span>
-            <p>사육 정보 입력</p>
-          </li>
-          <li>
-            <span class="circle-24">2</span>
-            <p>지역 선택</p>
-          </li>
-          <li>
-            <span class="circle-24">3</span>
-            <p>건물 정보 입력</p>
-          </li>
-          <li>
-            <span class="circle-24">4</span>
-            <p>단열 구성 입력</p>
-          </li>
-          <li>
-            <span class="circle-24">5</span>
-            <p>에너지부하 산출</p>
-          </li>
-          <li>
-            <span class="circle-24">6</span>
-            <p>프로젝트 비교진단</p>
-          </li>
-        </ul>
-      </div>
-      <div class="main-container">
-        <div class="title-box">
-          <div class="title">
-            <span class="circle-24">1</span>
-            <h2>사육 정보 입력</h2>
-          </div>
-          <p class="desc">
-            에너지 부하 산출을 위한, 축종을 선택한 후 사육 두수를
-            입력하세요. ‘적용‘ 버튼을 클릭해야 다음 프로세스로 이동할 수
-            있습니다.
-          </p>
-        </div>
-        <div class="main-content">
-          <div class="index-box">
-            <img src="./assets/images/index01.jpg" alt="이미지" />
-            <div class="form-box">
-              <div>
-                <p class="label">축종선택</p>
-                <select class="selectpicker">
-                  <option value="" label="육계" selected>육계</option>
-                  <option value="">산란계</option>
-                  <option value="">자돈</option>
-                  <option value="">비육</option>
-                </select>
-              </div>
-              <div class="form-item">
-                <div class="icon-label">
-                  <p>사육두수</p>
-                  <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-placement="top" data-container="body"
-                    data-bs-html="true" data-bs-title="사육 수수 안내" data-bs-content="육계, 산란계 농가는 분석하고자 하는<br/>
-                  건물의 1개동에 대한 사육 수수를 입력해 주세요.">
-                    <img src="./assets/icons/question.svg" alt="사육두수" />
+        <!-- [s] : mo -->
+        <div class="d-none m-block">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header border-bottom px-20">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">
+                    <p>에너지부하 진단</p>
                   </a>
-                </div>
-                <input type="text" id="" placeholder="사육두수" />
-              </div>
-              <div class="form-item">
-                <p class="label">사육시기</p>
-                <div class="season-box">
-                  <select class="season-select selectpicker">
-                    <option value="1" selected>
-                      홀수월 사육(연 6번 사육)
-                    </option>
-                    <option value="2">짝수월 사육(연 6번 사육)</option>
-                    <option value="3">매월 사육(연 12번 사육)</option>
-                    <option value="4">직접 입력</option>
-                  </select>
-                  <select class="multiple season-detail selectpicker" multiple title="선택">
-                    <option value="1">1월</option>
-                    <option value="2">2월</option>
-                    <option value="3">3월</option>
-                    <option value="4">4월</option>
-                    <option value="5">5월</option>
-                    <option value="6">6월</option>
-                    <option value="7">7월</option>
-                    <option value="8">8월</option>
-                    <option value="9">9월</option>
-                    <option value="10">10월</option>
-                    <option value="11">11월</option>
-                    <option value="12">12월</option>
-                  </select>
-                </div>
-              </div>
-              <div class="apply-box">
-                <button type="button">
-                  적용
-                </button>
-              </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./index07.html">
+                    <p>건축물 에너지 절약 설계 기준</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./index08.html">
+                    <p>축사표준설계도 안내</p>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="btn-box">
-          <a href="./index02.html" class="fill">
-            다음
-          </a>
+        <!-- [e] : mo -->
+      </div>
+      <div class="header-bottom m-none">
+        <nav>
+          <h2 class="d-none">네비게이션 메뉴</h2>
+          <ul>
+            <li>
+              <a href="/index.html">
+                <h3>에너지부하 진단</h3>
+              </a>
+            </li>
+            <li>
+              <a href="./index07.html">
+                <h3>건축물 에너지 절약 설계 기준</h3>
+              </a>
+            </li>
+            <li>
+              <a href="./index08.html">
+                <h3>축사표준설계도 안내</h3>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- [e] : header -->
+    <main>
+      <h1>축사 에너지부하 자가 진단 서비스</h1>
+      <div class="main">
+        <div class="stepper">
+          <ul>
+            <li class="active">
+              <span class="circle-24">1</span>
+              <p>사육 정보 입력</p>
+            </li>
+            <li>
+              <span class="circle-24">2</span>
+              <p>지역 선택</p>
+            </li>
+            <li>
+              <span class="circle-24">3</span>
+              <p>건물 정보 입력</p>
+            </li>
+            <li>
+              <span class="circle-24">4</span>
+              <p>단열 구성 입력</p>
+            </li>
+            <li>
+              <span class="circle-24">5</span>
+              <p>에너지부하 산출</p>
+            </li>
+            <li>
+              <span class="circle-24">6</span>
+              <p>프로젝트 비교진단</p>
+            </li>
+          </ul>
+        </div>
+        <div class="main-container">
+          <div class="title-box">
+            <div class="title">
+              <span class="circle-24">1</span>
+              <h2>사육 정보 입력</h2>
+            </div>
+            <p class="desc">
+              에너지 부하 산출을 위한, 축종을 선택한 후 사육 두수를 입력하세요.
+              ‘적용‘ 버튼을 클릭해야 다음 프로세스로 이동할 수 있습니다.
+            </p>
+          </div>
+          <div class="main-content">
+            <div class="index-box">
+              <img src="./assets/images/index01.jpg" alt="이미지" />
+              <div class="form-box">
+                <div>
+                  <p class="label">축종선택</p>
+                  <select class="selectpicker">
+                    <option value="" label="육계" selected>육계</option>
+                    <option value="">산란계</option>
+                    <option value="">자돈</option>
+                    <option value="">비육</option>
+                  </select>
+                </div>
+                <div class="form-item">
+                  <div class="icon-label">
+                    <p>사육두수</p>
+                    <a
+                      tabindex="0"
+                      role="button"
+                      data-bs-toggle="popover"
+                      data-bs-placement="top"
+                      data-container="body"
+                      data-bs-html="true"
+                      data-bs-title="사육 수수 안내"
+                      data-bs-content="육계, 산란계 농가는 분석하고자 하는<br/>
+                  건물의 1개동에 대한 사육 수수를 입력해 주세요."
+                    >
+                      <img src="./assets/icons/question.svg" alt="사육두수" />
+                    </a>
+                  </div>
+                  <input type="text" id="" placeholder="사육두수" />
+                </div>
+                <div class="form-item">
+                  <p class="label">사육시기</p>
+                  <div class="season-box">
+                    <select class="season-select selectpicker">
+                      <option value="1" selected>
+                        홀수월 사육(연 6번 사육)
+                      </option>
+                      <option value="2">짝수월 사육(연 6번 사육)</option>
+                      <option value="3">매월 사육(연 12번 사육)</option>
+                      <option value="4">직접 입력</option>
+                    </select>
+                    <select
+                      class="multiple season-detail selectpicker"
+                      multiple
+                      title="선택"
+                    >
+                      <option value="1">1월</option>
+                      <option value="2">2월</option>
+                      <option value="3">3월</option>
+                      <option value="4">4월</option>
+                      <option value="5">5월</option>
+                      <option value="6">6월</option>
+                      <option value="7">7월</option>
+                      <option value="8">8월</option>
+                      <option value="9">9월</option>
+                      <option value="10">10월</option>
+                      <option value="11">11월</option>
+                      <option value="12">12월</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="apply-box">
+                  <button type="button">적용</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-box">
+            <a href="./index02.html" class="fill"> 다음 </a>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-  <!-- [s] : footer -->
-  <footer class="m-none">2022 copyright © all right reserved</footer>
-  <!-- [e] : footer -->
-  <!--  js -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/bootstrap-select.js"></script>
-  <script>
-    $(document).ready(function () {
-      $(".spinner-container").show();
-      setTimeout(function () {
-        $(".spinner-container").hide();
-      }, 300);
-      $(".selectpicker").selectpicker({
-        dropupAuto: false, // 드롭다운 위치 고정
-      });
-      // 사육시기 직접 입력
-      let selectedItem = [];
-      $(".season-select").on("change", function () {
-        var selectedValue = $(this).val();
-        if (selectedValue === "4") {
-          $(".season-detail").selectpicker("toggle");
-          $(".season-detail").addClass("open");
-        } else {
-          $(".season-detail").removeClass("open");
-          $(".season-detail").selectpicker("val", []);
-        }
-      });
-      $(".season-detail").on("change", function () {
-        const selected = $(this).val();
-        selectedItem = selected;
-        if (selected.length === 0) {
-          // 직접 입력 미선택 시 예외 처리
-        }
-      });
+    </main>
+    <!-- [s] : footer -->
+    <footer class="m-none">2022 copyright © all right reserved</footer>
+    <!-- [e] : footer -->
+    <!--  js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap-select.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".spinner-container").show();
+        setTimeout(function () {
+          $(".spinner-container").hide();
+        }, 300);
+        $(".selectpicker").selectpicker({
+          dropupAuto: false, // 드롭다운 위치 고정
+        });
+        // 사육시기 직접 입력
+        let selectedItem = [];
+        $(".season-select").on("change", function () {
+          var selectedValue = $(this).val();
+          if (selectedValue === "4") {
+            $(".season-detail").selectpicker("toggle");
+            $(".season-detail").addClass("open");
+          } else {
+            $(".season-detail").removeClass("open");
+            $(".season-detail").selectpicker("val", []);
+          }
+        });
+        $(".season-detail").on("change", function () {
+          const selected = $(this).val();
+          selectedItem = selected;
+          if (selected.length === 0) {
+            // 직접 입력 미선택 시 예외 처리
+          }
+        });
 
-
-      // 팝오버 초기화
-      $(function () {
-        $('[data-bs-toggle="popover"]').popover({
-          container: "body",
-          html: true,
+        // 팝오버 초기화
+        $(function () {
+          $('[data-bs-toggle="popover"]').popover({
+            container: "body",
+            html: true,
+          });
+        });
+        // 팝오버 클릭 이외의 영역 클릭 시 팝오버 숨기기
+        $(document).on("click", function (e) {
+          if (
+            !$(e.target).closest(".popover").length &&
+            !$(e.target).closest('[data-bs-toggle="popover"]').length
+          ) {
+            $('[data-bs-toggle="popover"]').popover("hide");
+          }
         });
       });
-      // 팝오버 클릭 이외의 영역 클릭 시 팝오버 숨기기
-      $(document).on("click", function (e) {
-        if (
-          !$(e.target).closest(".popover").length &&
-          !$(e.target).closest('[data-bs-toggle="popover"]').length
-        ) {
-          $('[data-bs-toggle="popover"]').popover("hide");
-        }
-      });
-    })
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

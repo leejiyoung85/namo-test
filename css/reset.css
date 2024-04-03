@@ -55,7 +55,10 @@ body {
   line-height: 1.1875;
   -webkit-tap-highlight-color: transparent;
 }
-
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 ul,
 li {
   list-style: none;
@@ -98,7 +101,9 @@ img {
   object-fit: cover;
   object-position: center;
 }
-
+td {
+  border: 1px solid #e7e7e7;
+}
 @media (max-width: 1190px) {
   button {
     height: 42px;
