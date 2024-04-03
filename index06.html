@@ -1,1021 +1,952 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="./css/reset.css" rel="stylesheet" />
-    <link href="./css/custom.css" rel="stylesheet" />
-    <link href="./css/custom-mo.css" rel="stylesheet" />
-    <link href="./css/bootstrap-select.min.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <!-- [s] : spinner  -->
-    <div class="spinner-container">
-      <div class="spinner-dim"></div>
-      <div class="spinner-border color-primary" role="status"></div>
-    </div>
-    <!-- [e] : spinner  -->
-    <!-- [s] : header -->
-    <header>
-      <div class="header">
-        <div class="header-top">
-          <a href="./index.html">
-            <img class="logo img" src="./assets/images/logo.png" alt="로고" />
-          </a>
-          <h1 class="m-none">축사 에너지부하 자가 진단 서비스</h1>
-        </div>
-        <a href="#" class="m-none">
-          <p class="color-primary">이용안내</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/reset.css" rel="stylesheet" />
+  <link href="./css/custom.css" rel="stylesheet" />
+  <link href="./css/custom-mo.css" rel="stylesheet" />
+  <link href="./css/bootstrap-select.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- [s] : spinner  -->
+  <div class="spinner-container">
+    <div class="spinner-dim"></div>
+    <div class="spinner-border color-primary" role="status"></div>
+  </div>
+  <!-- [e] : spinner  -->
+  <!-- [s] : header -->
+  <header>
+    <div class="header">
+      <div class="header-top">
+        <a href="./index.html">
+          <img class="logo img" src="./assets/images/logo.png" alt="로고" />
         </a>
-        <!-- [s] : mo -->
-        <div class="d-none m-block">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div class="offcanvas-header border-bottom px-20">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="./index.html">
-                    <p>에너지부하 진단</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./index07.html">
-                    <p>건축물 에너지 절약 설계 기준</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./index08.html">
-                    <p>축사표준설계도 안내</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- [e] : mo -->
+        <h1 class="m-none">축사 에너지부하 자가 진단 서비스</h1>
       </div>
-      <div class="header-bottom m-none">
-        <nav>
-          <h2 class="d-none">네비게이션 메뉴</h2>
-          <ul>
-            <li>
-              <a href="/index.html">
-                <h3>에너지부하 진단</h3>
-              </a>
-            </li>
-            <li>
-              <a href="./index07.html">
-                <h3>건축물 에너지 절약 설계 기준</h3>
-              </a>
-            </li>
-            <li>
-              <a href="./index08.html">
-                <h3>축사표준설계도 안내</h3>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- [e] : header -->
-    <main>
-      <h1>축사 에너지부하 자가 진단 서비스</h1>
-      <div class="main">
-        <div class="stepper">
-          <ul>
-            <li class="active">
-              <span class="circle-24">
-                <!-- active  change -->
-                <img src="./assets/icons/check.svg" alt="사육 정보" />
-              </span>
-              <p>사육 정보 입력</p>
-              <!-- active  change -->
-              <img
-                class="step-info"
-                src="./assets/icons/info_gray.svg"
-                alt="사육 정보"
-              />
-            </li>
-            <li class="active">
-              <span class="circle-24">
-                <!-- active  change -->
-                <img src="./assets/icons/check.svg" alt="지역 정보" />
-              </span>
-              <p>지역 선택</p>
-              <!-- active  change -->
-              <img
-                class="step-info"
-                src="./assets/icons/info_gray.svg"
-                alt="지역 정보"
-              />
-            </li>
-            <li class="active">
-              <span class="circle-24">
-                <!-- active  change -->
-                <img src="./assets/icons/check.svg" alt="건물 정보" />
-              </span>
-              <p>건물 정보 입력</p>
-              <!-- active  change -->
-              <img
-                class="step-info"
-                src="./assets/icons/info_gray.svg"
-                alt="건물 정보"
-              />
-            </li>
-            <li class="active">
-              <span class="circle-24">
-                <!-- active  change -->
-                <img src="./assets/icons/check.svg" alt="단열 구성" />
-              </span>
-              <p>단열 구성 입력</p>
-              <!-- active  change -->
-              <img
-                class="step-info"
-                src="./assets/icons/info_gray.svg"
-                alt="단열 구성"
-              />
-            </li>
-            <li class="active">
-              <span class="circle-24">
-                <!-- active  change -->
-                <img src="./assets/icons/check.svg" alt="에너지부하 산출" />
-              </span>
-              <p>에너지부하 산출</p>
-              <!-- active  change -->
-              <img
-                class="step-info"
-                src="./assets/icons/info_gray.svg"
-                alt="에너지부하 산출"
-              />
-            </li>
-            <li class="active">
-              <span class="circle-24">6</span>
-              <p>프로젝트 비교진단</p>
-            </li>
-          </ul>
-        </div>
-        <div class="main-container">
-          <div class="title-box index05">
-            <div class="title">
-              <span class="circle-24">6</span>
-              <h2>프로젝트 비교진단</h2>
-            </div>
-            <p class="desc">
-              입력한 정보에 따른 에너지부하 산출 값 화면입니다. 설비 종류를
-              선택하여 해당 설비에 따른 냉난방 부하 값 데이터를 확인할 수
-              있습니다.
-            </p>
+      <a href="#" class="m-none">
+        <p class="color-primary">이용안내</p>
+      </a>
+      <!-- [s] : mo -->
+      <div class="d-none m-block">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header border-bottom px-20">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="main-content main-tab">
-            <div class="index05-box">
-              <ul class="tab">
-                <li>
-                  <a href="#tab1" class="active">그래프</a>
-                </li>
-                <li>
-                  <a href="#tab2" class="">결과값</a>
-                </li>
-              </ul>
-              <div class="tab-box">
-                <div id="tab1" class="tab-content">
-                  <div class="chart-box">
-                    <div class="tab-shadow">
-                      <canvas id="barChart1"></canvas>
-                    </div>
-                    <span class="line"></span>
-                    <div class="tab-shadow">
-                      <canvas id="barChart2"></canvas>
-                      <div class="write-box">
-                        <div
-                          class="write-icon"
-                          data-bs-toggle="modal"
-                          data-bs-target="#modal-select"
-                        >
-                          <img src="./assets/icons/pen.svg" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="tab2" class="tab-content tab-shadow">
-                  <div class="scroll-container">
-                    <p>
-                      기간 난방/냉방 부하는 설정한 사육기간 동안 요구되는 총
-                      난방/냉방 에너지의 크기를 의미합니다.
-                    </p>
-                    <span
-                      >병아리 입추 시기 (33℃) 부터 출하 직전 (21℃) 까지의 일령별
-                      권장 생육 온도를 달성하기 위해 필요한 에너지의 크기
-                      (농림축산식품부, 농촌진흥청 사양관리 권고 기준)
-                    </span>
-                    <p>
-                      계산된 값을 통해 연간 소요되는 에너지 비용을 예측할 수
-                      있고 에너지 절감 대책 마련을 위한 기초자료로 활용할 수
-                      있습니다. 설정하신 사육기간에 해당하는 에너지 부하 크기는
-                      다음과 같습니다.
-                    </p>
-                    <div class="doughnut-box-index06">
-                      <div class="border-box">
-                        <strong>[프로젝트 A]</strong>
-                        <div class="doughnut-con">
-                          <div>
-                            <canvas id="doughnutChart1"></canvas>
-                            <p>
-                              <b>기간 난방 부하</b>
-                              <br />
-                              254.26 GJ
-                            </p>
-                          </div>
-                          <div>
-                            <canvas id="doughnutChart2"></canvas>
-                            <p>
-                              <b>기간 냉방 부하</b>
-                              <br />
-                              52.34 GJ
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="border-box">
-                        <strong>[프로젝트 B]</strong>
-                        <div class="doughnut-con">
-                          <div>
-                            <canvas id="doughnutChart3"></canvas>
-                            <p>
-                              <b>기간 난방 부하</b>
-                              <br />
-                              254.26 GJ
-                            </p>
-                          </div>
-                          <div>
-                            <canvas id="doughnutChart4"></canvas>
-                            <p>
-                              <b>기간 냉방 부하</b>
-                              <br />
-                              52.34 GJ
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <strong>[프로젝트 A]</strong>
-                      <br />
-                      ▶ 기간 난방부하 : 254.26 GJ (82.93%)
-                      <br />
-                      ▶ 기간 냉방부하 : 52.34 GJ (17.07%)
-                    </p>
-                    <br />
-                    <p>
-                      <strong>[프로젝트 B]</strong>
-                      <br />
-                      ▶ 기간 난방부하 : 252.8 GJ (83.10%)
-                      <br />
-                      ▶ 기간 냉방부하 : 52.19 GJ (17.16%)
-                    </p>
-                    <br />
-                    <p>
-                      <strong>[프로젝트별 입력 정보]</strong>
-                      <br />
-                      ▷ 프로젝트 A 입력 정보
-                      <br />
-                      지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000
-                      개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값)
-                      mm / 벽체 단열재 두께 : (입력값) mm / 사육조건 : 연중 사육
-                      <br />
-                      ▷ 프로젝트 B 입력 정보
-                      <br />
-                      지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000
-                      개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값)
-                      mm / 벽체 단열재 두께 : (입력값) mm / 사육조건 : 0, 0, 0,
-                      0 월 사육
-                    </p>
-                    <br />
-                    <div class="icon-text-box">
-                      <span>•</span>
-                      <p>
-                        프로젝트 B의 기간 난방부하 값은 000000 GJ로 A 조건의
-                        기간 난방부하 값 보다 00% (높게/낮게),
-                        <br />
-                        기간 냉방부하 값은 000000 GJ로 A 조건의 기간 냉방부하 값
-                        보다 00% (높게/낮게) 산출되었습니다.
-                      </p>
-                    </div>
-                    <br />
-                    <br />
-                    <p>
-                      <strong>[해석방법]</strong>
-                      <br />
-                      산출된 난방, 냉방 부하의 크기는 에너지 지출 비용과
-                      직결됩니다. 에너지 지출 비용은 농가에 설치되는 난방, 냉방
-                      장치의 종류와 효율, 농가의 운영 방식에 따라 달라질 수
-                      있습니다.
-                      <br />
-                      시설 냉방/난방 부하 차이에 따른 에너지 지출 비용과
-                      시설/단열 성능 개선을 위한 투입 비용에 따라 농가의 에너지
-                      운영 계획을 수립하는데 참고할 수 있습니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-box">
-            <a href="./index05.html" class="outline"> 이전 </a>
-            <a href="./index.html" class="fill"> 처음으로 </a>
-          </div>
-        </div>
-      </div>
-    </main>
-    <!-- [s] : footer -->
-    <footer class="m-none">2022 copyright © all right reserved</footer>
-    <!-- [e] : footer -->
-    <!-- [s] : modal -->
-    <div
-      class="modal fade"
-      id="alert"
-      tabindex="-1"
-      aria-labelledby="alert"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content-alert">
-          <div class="alert-title">
-            <p>비교 데이터 입력</p>
-          </div>
-          <div class="alert-content">
-            비교 데이터가 존재하지 않습니다. ‘그래프’ 영역을 클릭하여 데이터를
-            입력하세요.
-            <div class="alert-btn-box">
-              <button type="button" data-bs-dismiss="modal">확인</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- [e] : modal - 프로젝트B 없을때 -->
-    <!-- [s] : modal - 프로젝트B 없을때-->
-    <div
-      class="modal fade"
-      id="modal-select"
-      tabindex="-1"
-      aria-labelledby="modal-building-info"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-title">
-            <img src="./assets/icons/pen_edit.svg" />
-            <p>프로젝트B 데이터</p>
-          </div>
-          <div class="modal-container max-360">
-            <div>
-              <div class="icon-label">
-                <p>사육두수</p>
-                <a
-                  tabindex="0"
-                  role="button"
-                  data-bs-toggle="popover"
-                  data-bs-placement="top"
-                  data-container="body"
-                  data-bs-html="true"
-                  data-bs-title="사육 수수 안내"
-                  data-bs-content="육계, 산란계 농가는 분석하고자 하는<br/>
-              건물의 1개동에 대한 사육 수수를 입력해 주세요."
-                >
-                  <img src="./assets/icons/question.svg" alt="사육두수" />
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html">
+                  <p>에너지부하 진단</p>
                 </a>
-              </div>
-              <input type="text" id="" placeholder="사육두수" />
-            </div>
-            <div class="form-item">
-              <p class="label">지역</p>
-              <select class="selectpicker">
-                <option value="" selected>경상북도</option>
-                <option value="">경상북도</option>
-                <option value="">경상북도</option>
-                <option value="">경상북도</option>
-                <option value="">경상북도</option>
-                <option value="">경상북도</option>
-                <option value="">경상북도</option>
-              </select>
-            </div>
-            <div class="form-item">
-              <p class="label">건물 방향</p>
-              <select class="selectpicker">
-                <option value="">북</option>
-                <option value="">북동</option>
-                <option value="">동</option>
-                <option value="">남동</option>
-                <option value="">남</option>
-                <option value="">남서</option>
-                <option value="">서</option>
-                <option value="">북서</option>
-              </select>
-            </div>
-            <div class="form-item row-form">
-              <div>
-                <p class="label">
-                  벽체두께<span style="font-weight: 400">(샌드위치 패널)</span>
-                </p>
-                <div class="input-box">
-                  <input type="text" id="" placeholder="길이 입력" />
-                  <span>mm</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index07.html">
+                  <p>건축물 에너지 절약 설계 기준</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index08.html">
+                  <p>축사표준설계도 안내</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- [e] : mo -->
+    </div>
+    <div class="header-bottom m-none">
+      <nav>
+        <h2 class="d-none">네비게이션 메뉴</h2>
+        <ul>
+          <li>
+            <a href="/index.html">
+              <h3>에너지부하 진단</h3>
+            </a>
+          </li>
+          <li>
+            <a href="./index07.html">
+              <h3>건축물 에너지 절약 설계 기준</h3>
+            </a>
+          </li>
+          <li>
+            <a href="./index08.html">
+              <h3>축사표준설계도 안내</h3>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- [e] : header -->
+  <main>
+    <h1>축사 에너지부하 자가 진단 서비스</h1>
+    <div class="main">
+      <div class="stepper">
+        <ul>
+          <li class="active">
+            <span class="circle-24">
+              <!-- active  change -->
+              <img src="./assets/icons/check.svg" alt="사육 정보" />
+            </span>
+            <p>사육 정보 입력</p>
+            <!-- active  change -->
+            <img class="step-info" src="./assets/icons/info_gray.svg" alt="사육 정보" />
+          </li>
+          <li class="active">
+            <span class="circle-24">
+              <!-- active  change -->
+              <img src="./assets/icons/check.svg" alt="지역 정보" />
+            </span>
+            <p>지역 선택</p>
+            <!-- active  change -->
+            <img class="step-info" src="./assets/icons/info_gray.svg" alt="지역 정보" />
+          </li>
+          <li class="active">
+            <span class="circle-24">
+              <!-- active  change -->
+              <img src="./assets/icons/check.svg" alt="건물 정보" />
+            </span>
+            <p>건물 정보 입력</p>
+            <!-- active  change -->
+            <img class="step-info" src="./assets/icons/info_gray.svg" alt="건물 정보" />
+          </li>
+          <li class="active">
+            <span class="circle-24">
+              <!-- active  change -->
+              <img src="./assets/icons/check.svg" alt="단열 구성" />
+            </span>
+            <p>단열 구성 입력</p>
+            <!-- active  change -->
+            <img class="step-info" src="./assets/icons/info_gray.svg" alt="단열 구성" />
+          </li>
+          <li class="active">
+            <span class="circle-24">
+              <!-- active  change -->
+              <img src="./assets/icons/check.svg" alt="에너지부하 산출" />
+            </span>
+            <p>에너지부하 산출</p>
+            <!-- active  change -->
+            <img class="step-info" src="./assets/icons/info_gray.svg" alt="에너지부하 산출" />
+          </li>
+          <li class="active">
+            <span class="circle-24">6</span>
+            <p>프로젝트 비교진단</p>
+          </li>
+        </ul>
+      </div>
+      <div class="main-container">
+        <div class="title-box index05">
+          <div class="title">
+            <span class="circle-24">6</span>
+            <h2>프로젝트 비교진단</h2>
+          </div>
+          <p class="desc">
+            입력한 정보에 따른 에너지부하 산출 값 화면입니다. 설비 종류를
+            선택하여 해당 설비에 따른 냉난방 부하 값 데이터를 확인할 수
+            있습니다.
+          </p>
+        </div>
+        <div class="main-content main-tab">
+          <div class="index05-box">
+            <ul class="tab">
+              <li>
+                <a href="#tab1" class="active">그래프</a>
+              </li>
+              <li>
+                <a href="#tab2" class="">결과값</a>
+              </li>
+            </ul>
+            <div class="tab-box">
+              <div id="tab1" class="tab-content">
+                <div class="chart-box">
+                  <div class="tab-shadow">
+                    <canvas id="barChart1"></canvas>
+                  </div>
+                  <span class="line"></span>
+                  <div class="tab-shadow">
+                    <canvas id="barChart2"></canvas>
+                    <div class="write-box">
+                      <div class="write-icon" data-bs-toggle="modal" data-bs-target="#modal-select">
+                        <img src="./assets/icons/pen.svg" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div>
-                <p class="label">
-                  지붕두께<span style="font-weight: 400">(샌드위치 패널)</span>
-                </p>
-                <div class="input-box">
-                  <input type="text" id="" placeholder="길이 입력" />
-                  <span>mm</span>
+              <div id="tab2" class="tab-content tab-shadow">
+                <div class="scroll-container">
+                  <p>
+                    기간 난방/냉방 부하는 설정한 사육기간 동안 요구되는 총
+                    난방/냉방 에너지의 크기를 의미합니다.
+                  </p>
+                  <span>병아리 입추 시기 (33℃) 부터 출하 직전 (21℃) 까지의 일령별
+                    권장 생육 온도를 달성하기 위해 필요한 에너지의 크기
+                    (농림축산식품부, 농촌진흥청 사양관리 권고 기준)
+                  </span>
+                  <p>
+                    계산된 값을 통해 연간 소요되는 에너지 비용을 예측할 수
+                    있고 에너지 절감 대책 마련을 위한 기초자료로 활용할 수
+                    있습니다. 설정하신 사육기간에 해당하는 에너지 부하 크기는
+                    다음과 같습니다.
+                  </p>
+                  <div class="doughnut-box-index06">
+                    <div class="border-box">
+                      <strong>[프로젝트 A]</strong>
+                      <div class="doughnut-con">
+                        <div>
+                          <canvas id="doughnutChart1"></canvas>
+                          <p>
+                            <b>기간 난방 부하</b>
+                            <br />
+                            254.26 GJ
+                          </p>
+                        </div>
+                        <div>
+                          <canvas id="doughnutChart2"></canvas>
+                          <p>
+                            <b>기간 냉방 부하</b>
+                            <br />
+                            52.34 GJ
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-box">
+                      <strong>[프로젝트 B]</strong>
+                      <div class="doughnut-con">
+                        <div>
+                          <canvas id="doughnutChart3"></canvas>
+                          <p>
+                            <b>기간 난방 부하</b>
+                            <br />
+                            254.26 GJ
+                          </p>
+                        </div>
+                        <div>
+                          <canvas id="doughnutChart4"></canvas>
+                          <p>
+                            <b>기간 냉방 부하</b>
+                            <br />
+                            52.34 GJ
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <strong>[프로젝트 A]</strong>
+                    <br />
+                    ▶ 기간 난방부하 : 254.26 GJ (82.93%)
+                    <br />
+                    ▶ 기간 냉방부하 : 52.34 GJ (17.07%)
+                  </p>
+                  <br />
+                  <p>
+                    <strong>[프로젝트 B]</strong>
+                    <br />
+                    ▶ 기간 난방부하 : 252.8 GJ (83.10%)
+                    <br />
+                    ▶ 기간 냉방부하 : 52.19 GJ (17.16%)
+                  </p>
+                  <br />
+                  <p>
+                    <strong>[프로젝트별 입력 정보]</strong>
+                    <br />
+                    ▷ 프로젝트 A 입력 정보
+                    <br />
+                    지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000
+                    개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값)
+                    mm / 벽체 단열재 두께 : (입력값) mm / 사육조건 : 연중 사육
+                    <br />
+                    ▷ 프로젝트 B 입력 정보
+                    <br />
+                    지역 : (입력값) / 전체 사육두수 : 000두 / 돈방개수 : 000
+                    개 / 건물배치방향 : (입력값) / 지붕 단열재 두께 : (입력값)
+                    mm / 벽체 단열재 두께 : (입력값) mm / 사육조건 : 0, 0, 0,
+                    0 월 사육
+                  </p>
+                  <br />
+                  <div class="icon-text-box">
+                    <span>•</span>
+                    <p>
+                      프로젝트 B의 기간 난방부하 값은 000000 GJ로 A 조건의
+                      기간 난방부하 값 보다 00% (높게/낮게),
+                      <br />
+                      기간 냉방부하 값은 000000 GJ로 A 조건의 기간 냉방부하 값
+                      보다 00% (높게/낮게) 산출되었습니다.
+                    </p>
+                  </div>
+                  <br />
+                  <br />
+                  <p>
+                    <strong>[해석방법]</strong>
+                    <br />
+                    산출된 난방, 냉방 부하의 크기는 에너지 지출 비용과
+                    직결됩니다. 에너지 지출 비용은 농가에 설치되는 난방, 냉방
+                    장치의 종류와 효율, 농가의 운영 방식에 따라 달라질 수
+                    있습니다.
+                    <br />
+                    시설 냉방/난방 부하 차이에 따른 에너지 지출 비용과
+                    시설/단열 성능 개선을 위한 투입 비용에 따라 농가의 에너지
+                    운영 계획을 수립하는데 참고할 수 있습니다.
+                  </p>
                 </div>
-              </div>
-            </div>
-            <div class="form-item">
-              <p class="label">사육시기</p>
-              <div class="season-box">
-                <select class="season-select selectpicker">
-                  <option value="1" selected>홀수월 사육(연 6번 사육)</option>
-                  <option value="2">짝수월 사육(연 6번 사육)</option>
-                  <option value="3">매월 사육(연 12번 사육)</option>
-                  <option value="4">직접 입력</option>
-                </select>
-                <select
-                  class="multiple season-detail selectpicker"
-                  multiple
-                  title="선택"
-                >
-                  <option value="1">1월</option>
-                  <option value="2">2월</option>
-                  <option value="3">3월</option>
-                  <option value="4">4월</option>
-                  <option value="5">5월</option>
-                  <option value="6">6월</option>
-                  <option value="7">7월</option>
-                  <option value="8">8월</option>
-                  <option value="9">9월</option>
-                  <option value="10">10월</option>
-                  <option value="11">11월</option>
-                  <option value="12">12월</option>
-                </select>
               </div>
             </div>
           </div>
-          <div class="modal-btn-box">
-            <button type="button" class="outline" data-bs-dismiss="modal">
-              닫기
-            </button>
-            <button type="button" class="fill-navy" data-bs-dismiss="modal">
-              저장
-            </button>
+        </div>
+        <div class="btn-box">
+          <a href="./index05.html" class="outline"> 이전 </a>
+          <a href="./index.html" class="fill"> 처음으로 </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- [s] : footer -->
+  <footer class="m-none">2022 copyright © all right reserved</footer>
+  <!-- [e] : footer -->
+  <!-- [s] : modal -->
+  <div class="modal fade" id="alert" tabindex="-1" aria-labelledby="alert" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content-alert">
+        <div class="alert-title">
+          <p>비교 데이터 입력</p>
+        </div>
+        <div class="alert-content">
+          비교 데이터가 존재하지 않습니다. ‘그래프’ 영역을 클릭하여 데이터를
+          입력하세요.
+          <div class="alert-btn-box">
+            <button type="button" data-bs-dismiss="modal">확인</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- [e] : modal -프로젝트B -->
-    <!--  js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/bootstrap-select.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </div>
+  <!-- [e] : modal - 프로젝트B 없을때 -->
+  <!-- [s] : modal - 프로젝트B 없을때-->
+  <div class="modal fade" id="modal-select" tabindex="-1" aria-labelledby="modal-building-info" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-title">
+          <img src="./assets/icons/pen_edit.svg" />
+          <p>프로젝트B 데이터</p>
+        </div>
+        <div class="modal-container max-360">
+          <div>
+            <div class="icon-label">
+              <p>사육두수</p>
+              <a tabindex="0" role="button" data-bs-toggle="popover" data-bs-placement="top" data-container="body"
+                data-bs-html="true" data-bs-title="사육 수수 안내" data-bs-content="육계, 산란계 농가는 분석하고자 하는<br/>
+              건물의 1개동에 대한 사육 수수를 입력해 주세요.">
+                <img src="./assets/icons/question.svg" alt="사육두수" />
+              </a>
+            </div>
+            <input type="text" id="" placeholder="사육두수" />
+          </div>
+          <div class="form-item">
+            <p class="label">지역</p>
+            <select class="selectpicker">
+              <option value="" selected>경상북도</option>
+              <option value="">경상북도</option>
+              <option value="">경상북도</option>
+              <option value="">경상북도</option>
+              <option value="">경상북도</option>
+              <option value="">경상북도</option>
+              <option value="">경상북도</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <p class="label">건물 방향</p>
+            <select class="selectpicker">
+              <option value="">북</option>
+              <option value="">북동</option>
+              <option value="">동</option>
+              <option value="">남동</option>
+              <option value="">남</option>
+              <option value="">남서</option>
+              <option value="">서</option>
+              <option value="">북서</option>
+            </select>
+          </div>
+          <div class="form-item row-form">
+            <div>
+              <p class="label">
+                벽체두께<span style="font-weight: 400">(샌드위치 패널)</span>
+              </p>
+              <div class="input-box">
+                <input type="text" id="" placeholder="길이 입력" />
+                <span>mm</span>
+              </div>
+            </div>
+            <div>
+              <p class="label">
+                지붕두께<span style="font-weight: 400">(샌드위치 패널)</span>
+              </p>
+              <div class="input-box">
+                <input type="text" id="" placeholder="길이 입력" />
+                <span>mm</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <p class="label">사육시기</p>
+            <div class="season-box">
+              <select class="season-select selectpicker">
+                <option value="1" selected>홀수월 사육(연 6번 사육)</option>
+                <option value="2">짝수월 사육(연 6번 사육)</option>
+                <option value="3">매월 사육(연 12번 사육)</option>
+                <option value="4">직접 입력</option>
+              </select>
+              <select class="multiple season-detail selectpicker" multiple title="선택">
+                <option value="1">1월</option>
+                <option value="2">2월</option>
+                <option value="3">3월</option>
+                <option value="4">4월</option>
+                <option value="5">5월</option>
+                <option value="6">6월</option>
+                <option value="7">7월</option>
+                <option value="8">8월</option>
+                <option value="9">9월</option>
+                <option value="10">10월</option>
+                <option value="11">11월</option>
+                <option value="12">12월</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-btn-box">
+          <button type="button" class="outline" data-bs-dismiss="modal">
+            닫기
+          </button>
+          <button type="button" class="fill-navy" data-bs-dismiss="modal">
+            저장
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [e] : modal -프로젝트B -->
+  <!--  js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/bootstrap-select.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script>
-      $(document).ready(function () {
-        $(".spinner-container").show();
-        setTimeout(function () {
-          $(".spinner-container").hide();
-        }, 300);
+  <script>
+    $(document).ready(function () {
+      $(".spinner-container").show();
+      setTimeout(function () {
+        $(".spinner-container").hide();
+      }, 300);
 
-        $("#alert").modal("show");
-        $(".selectpicker").selectpicker({
-          dropupAuto: false, // 드롭다운 위치 고정
-        });
+      $("#alert").modal("show");
+      $(".selectpicker").selectpicker({
+        dropupAuto: false, // 드롭다운 위치 고정
+      });
 
-        // 탭
-        var activeTab = $(".tab a.active").attr("href");
-        $(activeTab).show();
+      // 탭
+      var activeTab = $(".tab a.active").attr("href");
+      $(activeTab).show();
 
-        if (activeTab === "#tab1") {
-          drawChart("tab1");
+      if (activeTab === "#tab1") {
+        drawChart("tab1");
+      }
+
+      $(".tab a").click(function (event) {
+        event.preventDefault();
+        var tabId = $(this).attr("href");
+        $(".tab a").removeClass("active");
+        $(this).addClass("active");
+        $(".tab-content").hide();
+        $(tabId).show();
+
+        if (tabId === "#tab1" || tabId === "#tab2") {
+          drawChart(tabId.substring(1));
         }
+      });
 
-        $(".tab a").click(function (event) {
-          event.preventDefault();
-          var tabId = $(this).attr("href");
-          $(".tab a").removeClass("active");
-          $(this).addClass("active");
-          $(".tab-content").hide();
-          $(tabId).show();
+      // 사육시기 직접 입력
+      let selectedItem = [];
+      $(".season-select").on("change", function () {
+        var selectedValue = $(this).val();
+        if (selectedValue === "4") {
+          $(".season-detail").selectpicker("toggle");
+          $(".season-detail").addClass("open");
+        } else {
+          $(".season-detail").removeClass("open");
+          $(".season-detail").selectpicker("val", []);
+        }
+      });
+      $(".season-detail").on("change", function () {
+        const selected = $(this).val();
+        selectedItem = selected;
+        if (selected.length === 0) {
+          // 직접 입력 미선택 시 예외 처리
+        }
+      });
 
-          if (tabId === "#tab1" || tabId === "#tab2") {
-            drawChart(tabId.substring(1));
-          }
-        });
-
-        // 사육시기 직접 입력
-        let selectedItem = [];
-        $(".season-select").on("change", function () {
-          var selectedValue = $(this).val();
-          if (selectedValue === "4") {
-            $(".season-detail").selectpicker("toggle");
-            $(".season-detail").addClass("open");
-          } else {
-            $(".season-detail").removeClass("open");
-            $(".season-detail").selectpicker("val", []);
-          }
-        });
-        $(".season-detail").on("change", function () {
-          const selected = $(this).val();
-          selectedItem = selected;
-          if (selected.length === 0) {
-            // 직접 입력 미선택 시 예외 처리
-          }
-        });
-
-        // popover reset
-        $(function () {
-          $('[data-bs-toggle="popover"]').popover({
-            container: "body",
-            html: true,
-          });
-        });
-        $(document).on("click", function (e) {
-          if (
-            !$(e.target).closest(".popover").length &&
-            !$(e.target).closest('[data-bs-toggle="popover"]').length
-          ) {
-            $('[data-bs-toggle="popover"]').popover("hide");
-          }
+      // popover reset
+      $(function () {
+        $('[data-bs-toggle="popover"]').popover({
+          container: "body",
+          html: true,
         });
       });
-      // chart reset
-      function destroyCharts(tabId) {
-        const charts = {
-          tab1: ["barChart1", "barChart2"],
-          tab2: [
-            "doughnutChart1",
-            "doughnutChart2",
-            "doughnutChart3",
-            "doughnutChart4",
-          ],
-        };
+      $(document).on("click", function (e) {
+        if (
+          !$(e.target).closest(".popover").length &&
+          !$(e.target).closest('[data-bs-toggle="popover"]').length
+        ) {
+          $('[data-bs-toggle="popover"]').popover("hide");
+        }
+      });
+    });
+    // chart reset
+    function destroyCharts(tabId) {
+      const charts = {
+        tab1: ["barChart1", "barChart2"],
+        tab2: [
+          "doughnutChart1",
+          "doughnutChart2",
+          "doughnutChart3",
+          "doughnutChart4",
+        ],
+      };
 
-        Object.keys(charts).forEach((key) => {
-          if (key !== tabId) {
-            charts[key].forEach((chartId) => {
-              const canvas = document.getElementById(chartId);
-              if (canvas) {
-                const chart = Chart.getChart(canvas);
-                if (chart) {
-                  chart.destroy();
-                }
+      Object.keys(charts).forEach((key) => {
+        if (key !== tabId) {
+          charts[key].forEach((chartId) => {
+            const canvas = document.getElementById(chartId);
+            if (canvas) {
+              const chart = Chart.getChart(canvas);
+              if (chart) {
+                chart.destroy();
               }
-            });
-          }
-        });
-      }
-
-      // chart date
-      function drawChart(tabId) {
-        destroyCharts(tabId);
-        var isMobile = window.matchMedia("(max-width: 670px)").matches;
-        // tab1
-        if (tabId === "tab1") {
-          const ctxBar1 = document.getElementById("barChart1");
-          new Chart(ctxBar1, {
-            type: "bar",
-            data: {
-              labels: isMobile
-                ? [
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
-                    "8",
-                    "9",
-                    "10",
-                    "11",
-                    "12",
-                  ]
-                : [
-                    "1월",
-                    "2월",
-                    "3월",
-                    "4월",
-                    "5월",
-                    "6월",
-                    "7월",
-                    "8월",
-                    "9월",
-                    "10월",
-                    "11월",
-                    "12월",
-                  ],
-              datasets: [
-                {
-                  label: "기간냉방부하",
-                  data: [
-                    0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
-                  ],
-                  backgroundColor: "#404AB3",
-                },
-                {
-                  // 빈 데이터 추가 여백 생성
-                  label: "",
-                  data: [
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                  ],
-                  backgroundColor: "transparent",
-                },
-                {
-                  label: "기간난방부하",
-                  data: [
-                    0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
-                  ],
-                  backgroundColor: "#FF6565",
-                },
-              ],
-            },
-            options: {
-              maintainAspectRatio: false,
-              scales: {
-                x: {
-                  grid: {
-                    display: false,
-                    drawBorder: false,
-                  },
-                  ticks: {
-                    color: "#BFBFBF",
-                    font: {
-                      size: isMobile ? 12 : 14,
-                    },
-                  },
-                },
-                y: {
-                  afterDataLimits: (scale) => {
-                    scale.max = scale.max * 1.2;
-                  },
-                  min: 0,
-                  max: 1,
-                  ticks: {
-                    padding: isMobile ? 6 : 10,
-                    color: "#BFBFBF",
-                    stepSize: 0.2,
-                    callback: function (value, index, values) {
-                      return value + " GJ";
-                    },
-                  },
-                  border: {
-                    dash: [3, 3],
-                  },
-                  grid: {
-                    drawTicks: false,
-                    drawBorder: false,
-                    color: "#E9E9E9",
-                    borderWidth: function (context) {
-                      return context.tick.value === 1 ? 0 : 1;
-                    },
-                  },
-                },
-              },
-              barThickness: isMobile ? 3 : 6,
-              plugins: {
-                legend: {
-                  position: "top",
-                  align: "end",
-                  labels: {
-                    color: "#78838F",
-                    font: {
-                      family: "pretendard",
-                      size: isMobile ? 12 : 16,
-                    },
-                    boxWidth: 20,
-                    boxHeight: 8,
-                    padding: 5,
-                  },
-                },
-              },
-            },
-          });
-          const ctxBar2 = document.getElementById("barChart2");
-          new Chart(ctxBar2, {
-            type: "bar",
-            data: {
-              labels: isMobile
-                ? [
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
-                    "8",
-                    "9",
-                    "10",
-                    "11",
-                    "12",
-                  ]
-                : [
-                    "1월",
-                    "2월",
-                    "3월",
-                    "4월",
-                    "5월",
-                    "6월",
-                    "7월",
-                    "8월",
-                    "9월",
-                    "10월",
-                    "11월",
-                    "12월",
-                  ],
-              datasets: [
-                {
-                  label: "기간냉방부하",
-                  data: [
-                    0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
-                  ],
-                  backgroundColor: "#404AB3",
-                },
-                {
-                  // 빈 데이터 추가 여백 생성
-                  label: "",
-                  data: [
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                    null,
-                  ],
-                  backgroundColor: "transparent",
-                },
-                {
-                  label: "기간난방부하",
-                  data: [
-                    0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
-                  ],
-                  backgroundColor: "#FF6565",
-                },
-              ],
-            },
-            options: {
-              maintainAspectRatio: false,
-              scales: {
-                x: {
-                  grid: {
-                    display: false,
-                    drawBorder: false,
-                  },
-                  ticks: {
-                    color: "#BFBFBF",
-                    font: {
-                      size: isMobile ? 12 : 14,
-                    },
-                  },
-                },
-                y: {
-                  afterDataLimits: (scale) => {
-                    scale.max = scale.max * 1.2;
-                  },
-                  min: 0,
-                  max: 1,
-                  ticks: {
-                    padding: isMobile ? 6 : 10,
-                    color: "#BFBFBF",
-                    stepSize: 0.2,
-                    callback: function (value, index, values) {
-                      return value + " GJ";
-                    },
-                  },
-                  border: {
-                    dash: [3, 3],
-                  },
-                  grid: {
-                    drawTicks: false,
-                    drawBorder: false,
-                    color: "#E9E9E9",
-                    borderWidth: function (context) {
-                      return context.tick.value === 1 ? 0 : 1;
-                    },
-                  },
-                },
-              },
-              barThickness: isMobile ? 3 : 6,
-              plugins: {
-                legend: {
-                  position: "top",
-                  align: "end",
-                  labels: {
-                    color: "#78838F",
-                    font: {
-                      family: "pretendard",
-                      size: isMobile ? 12 : 16,
-                    },
-                    boxWidth: 20,
-                    boxHeight: 8,
-                    padding: 5,
-                  },
-                },
-              },
-            },
-          });
-        } else if (tabId === "tab2") {
-          // doughnut center text
-          Chart.register({
-            id: "centerLabelPlugin",
-            afterDraw: (chart) => {
-              if (chart.config.type === "doughnut") {
-                const ctx = chart.ctx;
-                const width = chart.width;
-                const height = chart.height;
-                const datasets = chart.config.data.datasets;
-
-                let total = 0;
-                datasets.forEach((dataset) => {
-                  dataset.data.forEach((value) => {
-                    total += value;
-                  });
-                });
-
-                ctx.fillStyle = "#78838F";
-                ctx.font = `bold ${isMobile ? 12 : 18}px pretendard`;
-                ctx.textBaseline = "middle";
-                ctx.textAlign = "center";
-
-                const text =
-                  ((datasets[0].data[0] / total) * 100).toFixed(2) + "%";
-                const textWidth = ctx.measureText(text).width;
-                const textHeight = isMobile ? 12 : 18;
-                const centerX = width / 2;
-                const centerY = height / 2 + textHeight / 4;
-
-                ctx.fillText(text, centerX, centerY);
-              }
-            },
-          });
-          const ctxDoughnut1 = document.getElementById("doughnutChart1");
-          const doughnut1 = 82.93;
-          const doughnut1Empty = 100 - doughnut1;
-          new Chart(ctxDoughnut1, {
-            type: "doughnut",
-            data: {
-              labels: ["기간난방부하", ""],
-              datasets: [
-                {
-                  data: [doughnut1, doughnut1Empty],
-                  backgroundColor: ["#FF6565", "#E9E9E9"],
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  display: false,
-                  labels: {
-                    font: {
-                      size: isMobile ? 12 : 16,
-                    },
-                  },
-                },
-              },
-            },
-          });
-
-          const ctxDoughnut2 = document.getElementById("doughnutChart2");
-          const doughnut2 = 17.07;
-          const doughnut2Empty = 100 - doughnut2;
-
-          new Chart(ctxDoughnut2, {
-            type: "doughnut",
-            data: {
-              datasets: [
-                {
-                  label: ["기간냉방부하", ""],
-                  data: [doughnut2, doughnut2Empty],
-                  backgroundColor: ["#404AB3", "#E9E9E9"],
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  display: false,
-                },
-              },
-            },
-          });
-
-          const ctxDoughnut3 = document.getElementById("doughnutChart3");
-          const doughnut3 = 82.93;
-          const doughnut3Empty = 100 - doughnut3;
-
-          new Chart(ctxDoughnut3, {
-            type: "doughnut",
-            data: {
-              labels: ["기간난방부하", ""],
-              datasets: [
-                {
-                  data: [doughnut3, doughnut3Empty],
-                  backgroundColor: ["#FF6565", "#E9E9E9"],
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  display: false,
-                },
-                tooltip: {
-                  enabled: false,
-                },
-              },
-            },
-          });
-
-          const ctxDoughnut4 = document.getElementById("doughnutChart4");
-          const doughnut4 = 17.07;
-          const doughnut4Empty = 100 - doughnut4;
-
-          new Chart(ctxDoughnut4, {
-            type: "doughnut",
-            data: {
-              datasets: [
-                {
-                  label: ["기간냉방부하", ""],
-                  data: [doughnut4, doughnut4Empty],
-                  backgroundColor: ["#404AB3", "#E9E9E9"],
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                legend: {
-                  display: false,
-                },
-                tooltip: {
-                  enabled: false,
-                },
-              },
-            },
+            }
           });
         }
+      });
+    }
+
+    // chart date
+    function drawChart(tabId) {
+      destroyCharts(tabId);
+      var isMobile = window.matchMedia("(max-width: 670px)").matches;
+      // tab1
+      if (tabId === "tab1") {
+        const ctxBar1 = document.getElementById("barChart1");
+        new Chart(ctxBar1, {
+          type: "bar",
+          data: {
+            labels: isMobile
+              ? [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+              ]
+              : [
+                "1월",
+                "2월",
+                "3월",
+                "4월",
+                "5월",
+                "6월",
+                "7월",
+                "8월",
+                "9월",
+                "10월",
+                "11월",
+                "12월",
+              ],
+            datasets: [
+              {
+                label: "기간냉방부하",
+                data: [
+                  0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
+                ],
+                backgroundColor: "#404AB3",
+              },
+              {
+                // 빈 데이터 추가 여백 생성
+                label: "",
+                data: [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                ],
+                backgroundColor: "transparent",
+              },
+              {
+                label: "기간난방부하",
+                data: [
+                  0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
+                ],
+                backgroundColor: "#FF6565",
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                grid: {
+                  display: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  color: "#BFBFBF",
+                  font: {
+                    size: isMobile ? 12 : 14,
+                  },
+                },
+              },
+              y: {
+                afterDataLimits: (scale) => {
+                  scale.max = scale.max * 1.2;
+                },
+                min: 0,
+                max: 1,
+                ticks: {
+                  padding: isMobile ? 6 : 10,
+                  color: "#BFBFBF",
+                  stepSize: 0.2,
+                  callback: function (value, index, values) {
+                    return value + " GJ";
+                  },
+                },
+                border: {
+                  dash: [3, 3],
+                },
+                grid: {
+                  drawTicks: false,
+                  drawBorder: false,
+                  color: "#E9E9E9",
+                  borderWidth: function (context) {
+                    return context.tick.value === 1 ? 0 : 1;
+                  },
+                },
+              },
+            },
+            barThickness: isMobile ? 3 : 6,
+            plugins: {
+              legend: {
+                position: "top",
+                align: "end",
+                labels: {
+                  color: "#78838F",
+                  font: {
+                    family: "pretendard",
+                    size: isMobile ? 12 : 16,
+                  },
+                  boxWidth: 20,
+                  boxHeight: 8,
+                  padding: 5,
+                },
+              },
+            },
+          },
+        });
+        const ctxBar2 = document.getElementById("barChart2");
+        new Chart(ctxBar2, {
+          type: "bar",
+          data: {
+            labels: isMobile
+              ? [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+              ]
+              : [
+                "1월",
+                "2월",
+                "3월",
+                "4월",
+                "5월",
+                "6월",
+                "7월",
+                "8월",
+                "9월",
+                "10월",
+                "11월",
+                "12월",
+              ],
+            datasets: [
+              {
+                label: "기간냉방부하",
+                data: [
+                  0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
+                ],
+                backgroundColor: "#404AB3",
+              },
+              {
+                // 빈 데이터 추가 여백 생성
+                label: "",
+                data: [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                ],
+                backgroundColor: "transparent",
+              },
+              {
+                label: "기간난방부하",
+                data: [
+                  0.1, 0.1, 0.1, 0.1, 0.2, 0.4, 0.8, 0.9, 0.85, 0.5, 0.4, 0.2,
+                ],
+                backgroundColor: "#FF6565",
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                grid: {
+                  display: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  color: "#BFBFBF",
+                  font: {
+                    size: isMobile ? 12 : 14,
+                  },
+                },
+              },
+              y: {
+                afterDataLimits: (scale) => {
+                  scale.max = scale.max * 1.2;
+                },
+                min: 0,
+                max: 1,
+                ticks: {
+                  padding: isMobile ? 6 : 10,
+                  color: "#BFBFBF",
+                  stepSize: 0.2,
+                  callback: function (value, index, values) {
+                    return value + " GJ";
+                  },
+                },
+                border: {
+                  dash: [3, 3],
+                },
+                grid: {
+                  drawTicks: false,
+                  drawBorder: false,
+                  color: "#E9E9E9",
+                  borderWidth: function (context) {
+                    return context.tick.value === 1 ? 0 : 1;
+                  },
+                },
+              },
+            },
+            barThickness: isMobile ? 3 : 6,
+            plugins: {
+              legend: {
+                position: "top",
+                align: "end",
+                labels: {
+                  color: "#78838F",
+                  font: {
+                    family: "pretendard",
+                    size: isMobile ? 12 : 16,
+                  },
+                  boxWidth: 20,
+                  boxHeight: 8,
+                  padding: 5,
+                },
+              },
+            },
+          },
+        });
+      } else if (tabId === "tab2") {
+        // doughnut center text
+        Chart.register({
+          id: "centerLabelPlugin",
+          afterDraw: (chart) => {
+            if (chart.config.type === "doughnut") {
+              const ctx = chart.ctx;
+              const width = chart.width;
+              const height = chart.height;
+              const datasets = chart.config.data.datasets;
+
+              let total = 0;
+              datasets.forEach((dataset) => {
+                dataset.data.forEach((value) => {
+                  total += value;
+                });
+              });
+
+              ctx.fillStyle = "#78838F";
+              ctx.font = `bold ${isMobile ? 12 : 18}px pretendard`;
+              ctx.textBaseline = "middle";
+              ctx.textAlign = "center";
+
+              const text =
+                ((datasets[0].data[0] / total) * 100).toFixed(2) + "%";
+              const textWidth = ctx.measureText(text).width;
+              const textHeight = isMobile ? 12 : 18;
+              const centerX = width / 2;
+              const centerY = height / 2 + textHeight / 4;
+
+              ctx.fillText(text, centerX, centerY);
+            }
+          },
+        });
+        const ctxDoughnut1 = document.getElementById("doughnutChart1");
+        const doughnut1 = 82.93;
+        const doughnut1Empty = 100 - doughnut1;
+        new Chart(ctxDoughnut1, {
+          type: "doughnut",
+          data: {
+            labels: ["기간난방부하", ""],
+            datasets: [
+              {
+                data: [doughnut1, doughnut1Empty],
+                backgroundColor: ["#FF6565", "#E9E9E9"],
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false,
+                labels: {
+                  font: {
+                    size: isMobile ? 12 : 16,
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        const ctxDoughnut2 = document.getElementById("doughnutChart2");
+        const doughnut2 = 17.07;
+        const doughnut2Empty = 100 - doughnut2;
+
+        new Chart(ctxDoughnut2, {
+          type: "doughnut",
+          data: {
+            datasets: [
+              {
+                label: ["기간냉방부하", ""],
+                data: [doughnut2, doughnut2Empty],
+                backgroundColor: ["#404AB3", "#E9E9E9"],
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+          },
+        });
+
+        const ctxDoughnut3 = document.getElementById("doughnutChart3");
+        const doughnut3 = 82.93;
+        const doughnut3Empty = 100 - doughnut3;
+
+        new Chart(ctxDoughnut3, {
+          type: "doughnut",
+          data: {
+            labels: ["기간난방부하", ""],
+            datasets: [
+              {
+                data: [doughnut3, doughnut3Empty],
+                backgroundColor: ["#FF6565", "#E9E9E9"],
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                enabled: false,
+              },
+            },
+          },
+        });
+
+        const ctxDoughnut4 = document.getElementById("doughnutChart4");
+        const doughnut4 = 17.07;
+        const doughnut4Empty = 100 - doughnut4;
+
+        new Chart(ctxDoughnut4, {
+          type: "doughnut",
+          data: {
+            datasets: [
+              {
+                label: ["기간냉방부하", ""],
+                data: [doughnut4, doughnut4Empty],
+                backgroundColor: ["#404AB3", "#E9E9E9"],
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                enabled: false,
+              },
+            },
+          },
+        });
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
