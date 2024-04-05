@@ -66,6 +66,9 @@
   font-weight: 200;
 }
 /* --------------------  form  -------------------- */
+.form-inner {
+  min-height: 69px;
+}
 .form-item {
   margin-top: 20px;
 }
@@ -94,7 +97,9 @@
   transform: translateY(-50%);
   color: #1c60ff;
 }
+.dropdown,
 .bootstrap-select {
+  min-height: 42px;
   height: 42px;
 }
 .bootstrap-select > .dropdown-toggle:after {
@@ -149,8 +154,8 @@
   border: 1px solid #e9e9e9;
   background-color: #ffffff;
   color: unset !important;
-  height: 100%;
   padding: 0 16px;
+  height: 42px;
 }
 .dropdown-menu.show {
   top: -3px !important;
@@ -537,6 +542,9 @@ main h1 {
   color: #ffffff;
   font-size: 16px;
 }
+.index-img-box {
+  min-width: 346px;
+}
 /* --------------------  index02  -------------------- */
 .index02-box {
   position: relative;
@@ -556,55 +564,10 @@ main h1 {
   font-size: 18px;
   font-weight: 500;
 }
-.map-text.map01 {
-}
-.map-text.map02 {
-}
-.map-text.map04 {
-}
-.map-text.map05 {
-}
-.map-text.map07 {
-  bottom: 0;
-  right: -10%;
-  transform: translateX(-10%);
-}
-.map-text.map08 {
-}
-.map-text.map09 {
-}
-.map-text.map10 {
-}
-.map-text.map11 {
-}
-.map-text.map12 {
-}
-.map-text.map13 {
-}
-.map-text.map14 {
-  top: 16%;
-  right: -11%;
-  transform: translateX(-11%);
-}
-.map-text.map03,
-.map-text.map06,
-.map-text.map15 {
-  top: 24%;
-  left: -12%;
-  transform: translateX(-12%);
-}
-.map-text.map16 {
-}
-.map-text.map17 {
-}
-.map-text.map18 {
-  top: 50%;
-  right: -40%;
-  transform: translateX(-40%);
-}
-.region {
-  fill: #dadcec;
+.map-svg * {
+  fill: #c8cbea;
   transition: 0.3s;
+  cursor: pointer;
 }
 .selectedRegion {
   fill: #32354d;
@@ -1072,4 +1035,31 @@ main h1 {
   font-size: 20px;
   line-height: 1;
   border-radius: 4px;
+}
+/* --------------------  spinner  -------------------- */
+.form-control.is-invalid,
+.form-control.is-valid,
+.was-validated .form-control:valid,
+.was-validated .form-control:invalid {
+  background-image: none;
+}
+.invalid-feedback {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  margin-top: 8px;
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  color: #e62222;
+}
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: transparent;
+}
+
+.form-control.is-valid:focus,
+.was-validated .form-control:valid:focus {
+  border-color: transparent;
+  box-shadow: none;
 }
