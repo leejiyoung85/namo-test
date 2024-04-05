@@ -120,11 +120,19 @@
     display: none;
   }
   /* index02 */
-  .index02-box {
-    /* width: 202px; */
-  }
   .map-text p {
     font-size: 11px;
+  }
+  .bubble-box {
+    width: 58px;
+    height: 30px;
+  }
+  .bubble-box b {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .bubble-inner::after {
+    top: 28px;
   }
   /* index03 */
   .index03-text-box {

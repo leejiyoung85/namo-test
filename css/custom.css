@@ -548,11 +548,12 @@ main h1 {
 /* --------------------  index02  -------------------- */
 .index02-box {
   position: relative;
-  max-width: 330px;
+  width: fit-content;
   margin: 24px auto;
 }
 .index02-box svg {
-  /* width: 100%; */
+  width: 100%;
+  height: fit-content;
 }
 .map-text {
   display: none;
@@ -571,17 +572,32 @@ main h1 {
 .selectedRegion {
   fill: #32354d;
 }
+.index02-selected {
+  display: flex;
+  gap: 8px;
+  background-color: #e9e9e9;
+  padding: 4.5px 10px;
+  width: fit-content;
+  margin: auto;
+}
+.index02-selected p {
+  font-size: 18px;
+  line-height: 21px;
+  width: 83px;
+  text-align: center;
+}
+.index02-selected p:nth-child(1) {
+  font-weight: 600;
+}
 .bubble-box {
   display: none;
   position: absolute;
-  width: 58px;
-  height: 30px;
+  width: 64px;
+  height: 33px;
   border-radius: 4px;
   background-color: white;
   border: 1px solid #444868;
-}
-.bubble-box b {
-  font-size: 12px;
+  cursor: pointer;
 }
 .bubble-inner {
   display: flex;
@@ -595,61 +611,68 @@ main h1 {
 .bubble-inner::after {
   content: "";
   position: absolute;
-  left: 24px;
-  top: 24px;
-  width: 10px;
-  height: 10px;
+  left: 50%;
+  top: 31px;
+  width: 7px;
+  height: 7.15px;
   border: 1px solid #444868;
-  transform: rotate(45deg);
+  transform: rotate(45deg) translateX(-50%);
   border-top: 0;
   border-left: 0;
   background-color: white;
 }
+.bubble-box b {
+  font-size: 14px;
+  line-height: 17px;
+}
 .bubble-box.active {
   display: block;
 }
-.bubble-box.active.map01 {
-  bottom: 6%;
-  left: 8px;
-  transform: translateX(-8px);
+/* 제주 */
+.bubble-box.map01 {
+  bottom: 4%;
+  left: 1%;
 }
-/* #map01 .bubble-box {
-  bottom: 6%;
-  left: 8px;
-  transform: translateX(-8px);
-}
-#map02 {
+/* 경상남도 */
+.bubble-box.map02 {
   bottom: 30%;
-  right: 36%;
+  right: 30%;
 }
-#map03 {
+/* 전라남도 */
+.bubble-box.map03 {
   bottom: 24%;
-  left: 10%;
+  left: 8%;
 }
-#map04 {
-  top: 32%;
-  left: 38%;
+/* 충청북도 */
+.bubble-box.map04 {
+  top: 26%;
+  left: 40%;
 }
-#map05 {
+/* 전라북도 */
+.bubble-box.map05 {
   bottom: 40%;
-  left: 22%;
+  left: 20%;
 }
-#map06 {
-  right: 24%;
-  top: 11%;
+/* 강원도 */
+.bubble-box.map06 {
+  right: 18%;
+  top: 14%;
 }
-#map07 {
-  left: 30%;
-  top: 12%;
+/* 경기도 */
+.bubble-box.map07 {
+  left: 18%;
+  top: 8%;
 }
-#map08 {
-  top: 36%;
-  left: 14%;
-}
-#map09 {
-  right: 10%;
+/* 충청남도 */
+.bubble-box.map08 {
   top: 30%;
-} */
+  left: 8%;
+}
+/* 경상북도 */
+.bubble-box.map09 {
+  right: 8%;
+  top: 36%;
+}
 /* --------------------  index03  -------------------- */
 .index03-box {
   width: fit-content;
