@@ -552,8 +552,7 @@ main h1 {
   margin: 24px auto;
 }
 .index02-box svg {
-  width: 100%;
-  height: auto;
+  /* width: 100%; */
 }
 .map-text {
   display: none;
@@ -572,6 +571,85 @@ main h1 {
 .selectedRegion {
   fill: #32354d;
 }
+.bubble-box {
+  display: none;
+  position: absolute;
+  width: 58px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #444868;
+}
+.bubble-box b {
+  font-size: 12px;
+}
+.bubble-inner {
+  display: flex;
+  height: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 5;
+}
+.bubble-inner::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #444868;
+  transform: rotate(45deg);
+  border-top: 0;
+  border-left: 0;
+  background-color: white;
+}
+.bubble-box.active {
+  display: block;
+}
+.bubble-box.active.map01 {
+  bottom: 6%;
+  left: 8px;
+  transform: translateX(-8px);
+}
+/* #map01 .bubble-box {
+  bottom: 6%;
+  left: 8px;
+  transform: translateX(-8px);
+}
+#map02 {
+  bottom: 30%;
+  right: 36%;
+}
+#map03 {
+  bottom: 24%;
+  left: 10%;
+}
+#map04 {
+  top: 32%;
+  left: 38%;
+}
+#map05 {
+  bottom: 40%;
+  left: 22%;
+}
+#map06 {
+  right: 24%;
+  top: 11%;
+}
+#map07 {
+  left: 30%;
+  top: 12%;
+}
+#map08 {
+  top: 36%;
+  left: 14%;
+}
+#map09 {
+  right: 10%;
+  top: 30%;
+} */
 /* --------------------  index03  -------------------- */
 .index03-box {
   width: fit-content;
