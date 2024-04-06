@@ -982,6 +982,9 @@ main h1 {
   display: flex;
   gap: 16px;
 }
+.chart-box canvas {
+  width: 100% !important;
+}
 .chart-box .tab-shadow {
   position: relative;
   height: 422px;
@@ -1001,7 +1004,8 @@ main h1 {
   border-radius: 20px;
   width: calc(100% - 28px);
   height: calc(100% - 28px);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
 }
 .write-icon {
   cursor: pointer;
