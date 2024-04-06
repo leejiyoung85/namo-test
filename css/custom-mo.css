@@ -120,6 +120,9 @@
     display: none;
   }
   /* index02 */
+  .map-svg {
+    height: 278px !important;
+  }
   .index02-box {
     margin: 24px auto;
   }
@@ -139,6 +142,51 @@
   }
   .bubble-inner::after {
     top: 28px;
+  }
+  /* 제주 */
+  .bubble-box.map01 {
+    bottom: 16px;
+    left: -12px;
+  }
+  /* 경상남도 */
+  .bubble-box.map02 {
+    bottom: 30%;
+    right: 24%;
+  }
+  /* 전라남도 */
+  .bubble-box.map03 {
+    bottom: 26%;
+    left: 2%;
+  }
+  /* 충청북도 */
+  .bubble-box.map04 {
+    top: 26%;
+    left: 30%;
+  }
+  /* 전라북도 */
+  .bubble-box.map05 {
+    bottom: 40%;
+    left: 12%;
+  }
+  /* 강원도 */
+  .bubble-box.map06 {
+    right: 14%;
+    top: 8%;
+  }
+  /* 경기도 */
+  .bubble-box.map07 {
+    left: 22%;
+    top: 12%;
+  }
+  /* 충청남도 */
+  .bubble-box.map08 {
+    top: 30%;
+    left: 8%;
+  }
+  /* 경상북도 */
+  .bubble-box.map09 {
+    right: 8%;
+    top: 36%;
   }
   /* index03 */
   .index03-text-box {
