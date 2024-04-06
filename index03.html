@@ -177,63 +177,81 @@
           <p>건물정보입력</p>
         </div>
         <div class="modal-container">
-          <div>
-            <p class="label">건물 폭</p>
-            <div class="input-box">
-              <input type="text" id="" placeholder="길이 입력" />
+          <form class="form-box needs-validation" novalidate>
+            <div class="was-validated">
+              <p class="label">건물 폭</p>
+              <div class="input-box">
+                <input type="text" class="form-control" id="validation" placeholder="폭 입력" required />
+                <span>m</span>
+              </div>
+              <div class="invalid-feedback">
+                <img src="./assets/images/invalid.png" alt="알림" />
+                ‘20’을 초과하는 값을 입력할 수 없습니다.
+              </div>
+            </div>
+            <div class="form-item was-validated">
+              <p class="label">건물 길이</p>
+              <div class="input-box">
+                <input type="text" class="form-control" id="validation" placeholder="길이 입력" required />
+                <span>m</span>
+              </div>
+              <div class="invalid-feedback">
+                <img src="./assets/images/invalid.png" alt="알림" />
+                ‘120’을 초과하는 값을 입력할 수 없습니다.
+              </div>
+            </div>
+            <div class="form-item was-validated">
+              <p class="label">건물 측고</p>
+              <div class="input-box">
+                <input type="text" class="form-control" id="validation" placeholder="측고 입력" required />
+                <span>m</span>
+              </div>
+              <div class="invalid-feedback">
+                <img src="./assets/images/invalid.png" alt="알림" />
+                ‘5’을 초과하는 값을 입력할 수 없습니다.
+              </div>
+            </div>
+            <div class="form-item  was-validated">
+              <p class="label">건물 동고</p>
+              <div class="input-box class=" form-control" id="validation" ">
+                <input type=" text" class="form-control" id="validation" placeholder="동고 입력" required />
               <span>m</span>
             </div>
-          </div>
-          <div class="form-item">
-            <p class="label">건물 길이</p>
-            <div class="input-box">
-              <input type="text" id="" placeholder="길이 입력" />
-              <span>m</span>
+            <div class="invalid-feedback">
+              <img src="./assets/images/invalid.png" alt="알림" />
+              ‘8’을 초과하는 값을 입력할 수 없습니다.
             </div>
-          </div>
-          <div class="form-item">
-            <p class="label">건물 측고</p>
-            <div class="input-box">
-              <input type="text" id="" placeholder="측고 입력" />
-              <span>m</span>
-            </div>
-          </div>
-          <div class="form-item">
-            <p class="label">건물 동고</p>
-            <div class="input-box">
-              <input type="text" id="" placeholder="동고 입력" />
-              <span>m</span>
-            </div>
-          </div>
-          <div class="form-item">
-            <div class="icon-label">
-              <p>배치 방향</p>
-              <a tabindex="0" role="button" class="info">
-                <img src="./assets/icons/question.svg" alt="배치 방향 정보" />
-              </a>
-            </div>
-            <select class="selectpicker">
-              <option value="">북</option>
-              <option value="">북동</option>
-              <option value="">동</option>
-              <option value="">남동</option>
-              <option value="">남</option>
-              <option value="">남서</option>
-              <option value="">서</option>
-              <option value="">북서</option>
-            </select>
-          </div>
         </div>
-        <div class="modal-btn-box">
-          <button type="button" class="outline" data-bs-dismiss="modal">
-            취소
-          </button>
-          <button type="button" class="fill" data-bs-dismiss="modal">
-            다음
-          </button>
+        <div class="form-item">
+          <div class="icon-label">
+            <p>배치 방향</p>
+            <a tabindex="0" role="button" class="info">
+              <img src="./assets/icons/question.svg" alt="배치 방향 정보" />
+            </a>
+          </div>
+          <select class="selectpicker">
+            <option value="">북</option>
+            <option value="">북동</option>
+            <option value="">동</option>
+            <option value="">남동</option>
+            <option value="">남</option>
+            <option value="">남서</option>
+            <option value="">서</option>
+            <option value="">북서</option>
+          </select>
         </div>
+        </form>
+      </div>
+      <div class="modal-btn-box">
+        <button type="button" class="outline" data-bs-dismiss="modal">
+          취소
+        </button>
+        <button type="button" class="fill" data-bs-dismiss="modal">
+          다음
+        </button>
       </div>
     </div>
+  </div>
   </div>
   <!-- [e] : modal - 건물 정보 입력 -->
   <!-- [s] : modal - 배치 방향 -->

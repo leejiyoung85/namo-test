@@ -120,6 +120,12 @@
     display: none;
   }
   /* index02 */
+  .index02-box {
+    margin: 24px auto;
+  }
+  .index02-selected {
+    margin: 0 auto 24px;
+  }
   .map-text p {
     font-size: 11px;
   }
