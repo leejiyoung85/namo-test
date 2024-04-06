@@ -280,7 +280,7 @@
       setTimeout(function () {
         $(".spinner-container").hide();
       }, 200);
-
+      // 지도 선택 시 해당 영역 색상 변경 및 지역명 
       $(".region").on("click", function (e) {
         var selectedId = $(this).attr("id");
         var selectedRegion = $(".bubble-box[data-region='" + selectedId + "'] b").text();

@@ -597,7 +597,7 @@ main h1 {
 }
 .map-svg * {
   fill: #c8cbea;
-  transition: 0.3s;
+  transition: 150ms ease;
   cursor: pointer;
 }
 .selectedRegion {
@@ -960,7 +960,23 @@ main h1 {
   line-height: 23px;
   color: #78838f;
 }
-
+.tab3Chart-container {
+  width: 600px;
+  height: 328px;
+  margin: 20px auto;
+  position: relative;
+}
+.legend-unit {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.legend-unit p {
+  color: #78838f;
+  font-size: 14px;
+  line-height: 1;
+}
 /* index06 */
 .chart-box {
   display: flex;
