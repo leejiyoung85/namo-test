@@ -108,7 +108,7 @@
   }
   .modal-container {
     margin: 28px 0 32px;
-    padding: 0 28px;
+    /* padding: 0 28px; */
     overflow-y: auto;
   }
   .modal-btn-box button {
