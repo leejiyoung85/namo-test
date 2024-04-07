@@ -106,7 +106,6 @@
     padding: 0;
     width: 90vw !important;
     min-width: unset !important;
-    max-height: 300px;
     /* max-height: 84vh !important; */
     overflow-y: auto;
   }
@@ -117,7 +116,7 @@
     margin: 28px 0 32px;
     padding: 0 28px;
     overflow-y: auto;
-    max-height: calc(100% - 56px);
+    max-height: 300px;
   }
   .modal-btn-box button {
     width: 100%;
