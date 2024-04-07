@@ -91,6 +91,15 @@
     width: 100%;
   }
   /* modal */
+  .modal-content {
+    height: 80vh; /* 높이를 뷰포트의 80%로 설정 */
+    max-height: 80vh; /* 최대 높이도 설정 */
+    overflow-y: auto; /* 모달 내용이 넘칠 경우 스크롤 생성 */
+    position: fixed; /* 모달을 고정 위치로 설정 */
+    top: 0;
+    left: 0;
+    -webkit-overflow-scrolling: touch;
+  }
   .modal-title {
     padding: 32px 28px 0;
   }
