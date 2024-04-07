@@ -92,8 +92,7 @@
   }
   /* modal */
   .modal-content {
-    width: calc(90vw - 56px);
-    height: 80vh;
+    max-width: 90vw;
     max-height: 80vh;
     overflow-y: auto;
     position: fixed;
@@ -106,7 +105,6 @@
     padding: 32px 28px 0;
   }
   .modal-content {
-    min-width: fit-content;
     padding: 0;
   }
   .modal-container {
