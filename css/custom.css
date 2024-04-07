@@ -635,7 +635,7 @@ main h1 {
   margin: 0 auto;
 }
 .index02-box svg {
-  width: 100% !important;
+  width: 100%;
   height: fit-content;
 }
 .map-text {
