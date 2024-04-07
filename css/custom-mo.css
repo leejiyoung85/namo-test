@@ -121,7 +121,7 @@
   }
   .modal-content-alert {
     max-width: unset !important;
-    width: 90vw;
+    width: 90vw !important;
     position: fixed;
     top: 50%;
     left: 50%;
