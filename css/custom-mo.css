@@ -93,8 +93,8 @@
   /* modal */
   .modal-content {
     padding: 0;
-    min-width: 90vw;
-    max-width: 90vw;
+    min-width: 84vw !important;
+    max-width: 84vw;
     max-height: 80vh;
     overflow-y: auto;
     position: fixed;
