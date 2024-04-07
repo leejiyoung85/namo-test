@@ -264,8 +264,7 @@
   padding: 40px;
   border: none;
   background-color: #ffffff;
-  height: 80vh; /* 높이를 뷰포트의 80%로 설정 */
-  max-height: 80vh; /* 최대 높이도 설정 */
+  max-height: 80vh;
   overflow-y: auto;
 }
 .modal-title {
