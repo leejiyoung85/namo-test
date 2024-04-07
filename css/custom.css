@@ -261,15 +261,14 @@
 }
 .modal-content {
   min-width: 400px;
-  padding: 40px;
   border: none;
   background-color: #ffffff;
-  max-height: 80vh;
-  overflow-y: auto;
+  max-height: 90vh;
 }
 .modal-title {
   display: flex;
   gap: 4px;
+  padding: 40px 40px 0 40px;
 }
 .modal-title img {
   width: 24px;
@@ -289,12 +288,26 @@
   background-color: #32354d;
 }
 .modal-container {
-  padding: 24px 0 40px;
+  overflow-y: auto;
+  margin: 24px 0 40px;
+  padding: 0 40px;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #78838f;
+    border-radius: 20px;
+  }
 }
 .modal-btn-box {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
+  padding: 0 40px 40px 40px;
 }
 .modal-btn-box button {
   width: 120px;
@@ -307,6 +320,44 @@
   overflow: hidden;
   max-width: 448px;
   background-color: #ffffff;
+}
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 53, 77, 0.82);
+  z-index: 1100;
+  display: none;
+}
+.modal-info-container {
+  background-color: #ffffff;
+  padding: 40px 44px;
+}
+.modal-info-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.modal-info-title p {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+.modal-info-box {
+  padding: 40px 0;
+}
+.modal-info-box img {
+  width: 100%;
+}
+.modal-info-container button {
+  width: 120px;
+  font-weight: 600;
+  float: right;
+  height: 48px;
+  font-size: 20px;
 }
 .alert-title {
   background-color: #f9f9f9;
@@ -752,44 +803,7 @@ main h1 {
 .index03-sub-box span {
   font-weight: 600;
 }
-.dim {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(50, 53, 77, 0.82);
-  z-index: 1100;
-  display: none;
-}
-.modal-info-container {
-  background-color: #ffffff;
-  padding: 40px 44px;
-}
-.modal-info-title {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.modal-info-title p {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 700;
-  letter-spacing: -2px;
-}
-.modal-info-box {
-  padding: 40px 0;
-}
-.modal-info-box img {
-  width: 100%;
-}
-.modal-info-container button {
-  width: 120px;
-  font-weight: 600;
-  float: right;
-  height: 48px;
-  font-size: 20px;
-}
+
 /* index04 */
 .index04-box {
   width: fit-content;

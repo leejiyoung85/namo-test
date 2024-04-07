@@ -108,7 +108,6 @@
   .modal-container {
     margin: 28px 0 32px;
     padding: 0 28px;
-    /* max-height: calc(80vh - 130px); */
     overflow-y: scroll;
   }
   .modal-btn-box button {
