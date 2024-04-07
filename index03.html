@@ -286,6 +286,21 @@
         $(".spinner-container").hide(); // 스피너 숨김
       }, 300);
 
+      // 높이값 확인 함수
+      function checkContentHeight() {
+        var contentHeight = $('body').height();
+        console.log('컨텐츠 높이:', contentHeight, '픽셀');
+      }
+
+
+      // 초기 실행 시 body 높이 조정
+      bodyHeight();
+
+      // 윈도우 리사이즈 시 body 높이 조정
+      $(window).resize(function () {
+        bodyHeight();
+      });
+
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });
@@ -306,6 +321,13 @@
         $(this).hide();
       });
     });
+  </script>
+  <script>
+    function bodyHeight() {
+      var windowHeight = $(window).height();
+      var addressBarHeight = windowHeight - $(document).height();
+      $('body').height(windowHeight - addressBarHeight);
+    }
   </script>
 </body>
 
