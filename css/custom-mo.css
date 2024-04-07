@@ -112,7 +112,6 @@
     margin: 28px 0 32px;
     padding: 0 28px;
     overflow-y: auto;
-    max-height: 370px;
   }
   .modal-btn-box button {
     width: 100%;
