@@ -631,7 +631,7 @@ main h1 {
 /* --------------------  index02  -------------------- */
 .index02-box {
   position: relative;
-  width: fit-content;
+  width: max-content;
   margin: 0 auto;
 }
 .index02-box svg {
