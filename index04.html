@@ -241,9 +241,10 @@
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
-      window.onload = function () {
-        $(".spinner-container").hide(); // 스피너 숨김
-      };
+      $(window).on('load', function () {
+        $(".spinner-container").hide();
+      });
+
 
 
       // 페이지 로드 및 리사이즈 이벤트 시에도 영역 높이 재설정

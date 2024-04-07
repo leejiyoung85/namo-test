@@ -1503,9 +1503,10 @@
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
-      window.onload = function () {
-        $(".spinner-container").hide(); // 스피너 숨김
-      };
+      $(window).on('load', function () {
+        $(".spinner-container").hide();
+      });
+
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });
