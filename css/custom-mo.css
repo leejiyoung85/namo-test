@@ -119,6 +119,15 @@
   .modal-btn-box {
     padding: 0 28px 32px;
   }
+  .modal-content-alert {
+    max-width: unset !important;
+    width: 90vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-overflow-scrolling: touch;
+  }
   /* index */
   .btn-box a {
     height: 42px;
