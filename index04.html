@@ -241,11 +241,21 @@
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
-      window.onload = function () {
-        setTimeout(function () {
-          $(".spinner-container").hide(); // 스피너 숨김
-        }, 300);
-      };
+      setTimeout(function () {
+        $(".spinner-container").hide(); // 스피너 숨김
+      }, 300);
+      // 모바일일 경우에만 실행
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // 화면이 회전할 때마다 높이 재계산
+        $(window).on('resize', function () {
+          $('body').height(`calc(100% - ${window.innerHeight - document.documentElement.clientHeight}px)`);
+        });
+
+        // 페이지 로드 시 초기 높이 계산
+        $(window).on('load', function () {
+          $('body').height(`calc(100% - ${window.innerHeight - document.documentElement.clientHeight}px)`);
+        });
+      }
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });
