@@ -97,8 +97,9 @@
     max-height: 80vh;
     overflow-y: auto;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     -webkit-overflow-scrolling: touch;
   }
   .modal-title {
@@ -106,7 +107,6 @@
   }
   .modal-content {
     min-width: fit-content;
-    margin: 0 28px;
     padding: 0;
   }
   .modal-container {
