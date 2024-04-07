@@ -255,11 +255,11 @@
   --bs-modal-width: fit-content !important;
   --bs-modal-padding: 0;
   --bs-modal-border-radius: 0;
+  height: 100vh !important;
 }
 .modal-dialog {
   margin: 0 auto;
 }
-
 .modal-content {
   min-width: 400px;
   border: none;
