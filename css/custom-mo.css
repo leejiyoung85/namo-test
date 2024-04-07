@@ -106,8 +106,7 @@
     padding: 0;
     width: 90vw !important;
     min-width: unset !important;
-    /* max-height: 84vh !important; */
-    overflow-y: auto;
+    max-height: 84vh !important;
   }
   .modal-title {
     padding: 32px 28px 0;
