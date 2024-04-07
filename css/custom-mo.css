@@ -92,7 +92,7 @@
   }
   /* modal */
   .modal-content {
-    width: calc(100% - 32px);
+    width: 90vw;
     height: 80vh;
     max-height: 80vh;
     overflow-y: auto;
