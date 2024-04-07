@@ -632,9 +632,9 @@ main h1 {
 .index02-box {
   position: relative;
   left: 0;
-  width: 100%;
+  width: max-content;
   max-width: max-content;
-  min-width: max-content;
+  min-width: fit-content;
   margin: 0 auto;
 }
 .index02-box svg {
