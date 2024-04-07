@@ -260,6 +260,7 @@
 .modal-dialog {
   margin: 0 auto;
   height: 100vh !important;
+  transform: translate(0, -10px) !important;
 }
 .modal-content {
   min-width: 400px;
