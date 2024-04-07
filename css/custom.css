@@ -257,8 +257,7 @@
   --bs-modal-border-radius: 0;
   --bs-modal-margin: 0;
 }
-.modal-dialog-centered {
-  margin: 0 auto;
+.modal-dialog {
   height: 100vh;
 }
 .modal-content {
