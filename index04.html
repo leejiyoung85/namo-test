@@ -246,13 +246,6 @@
           $(".spinner-container").hide(); // 스피너 숨김
         }, 300);
       };
-
-
-
-
-      // 페이지 로드 및 리사이즈 이벤트 시에도 영역 높이 재설정
-      $(window).on('load resize', setMainHeight);
-      setMainHeight(); // 초기 설정
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });

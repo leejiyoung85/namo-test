@@ -1502,13 +1502,11 @@
   <script src="./js/bootstrap-select.js"></script>
   <script>
     $(document).ready(function () {
-      $(".spinner-container").show();
       window.onload = function () {
         setTimeout(function () {
           $(".spinner-container").hide(); // 스피너 숨김
         }, 300);
       };
-
 
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정

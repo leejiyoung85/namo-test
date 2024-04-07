@@ -213,12 +213,12 @@
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
-      // 폰트 및 이미지가 모두 로드된 후에 스피너 숨기기
       window.onload = function () {
         setTimeout(function () {
           $(".spinner-container").hide(); // 스피너 숨김
         }, 300);
       };
+
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });
