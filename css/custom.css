@@ -264,7 +264,6 @@
   padding: 40px;
   border: none;
   background-color: #ffffff;
-  min-height: fit-content;
   max-height: 80vh;
   overflow-y: auto;
 }

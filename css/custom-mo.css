@@ -93,7 +93,7 @@
   /* modal */
   .modal-content {
     padding: 0;
-    max-width: 90vw;
+    max-width: 80vw;
     max-height: 80vh;
     overflow-y: auto;
     position: fixed;
@@ -105,11 +105,10 @@
   .modal-title {
     padding: 32px 28px 0;
   }
-
   .modal-container {
     margin: 28px 0 32px;
     padding: 0 28px;
-    max-height: calc(80vh - 130px);
+    /* max-height: calc(80vh - 130px); */
     overflow-y: scroll;
   }
   .modal-btn-box button {
@@ -500,11 +499,11 @@
   }
 }
 @media (max-width: 670px) {
-  .modal-content-alert {
+  /* .modal-content-alert {
     max-width: 337px;
     margin: auto;
   }
   .sub-content-box .img {
     width: 100%;
-  }
+  } */
 }
