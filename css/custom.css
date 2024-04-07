@@ -257,16 +257,17 @@
   --bs-modal-border-radius: 0;
   --bs-modal-margin: 0;
 }
-.modal-dialog {
+.modal-dialog-centered {
   margin: 0 auto;
-  height: 100vh !important;
-  transform: translate(0, -10px) !important;
+  height: 100vh;
 }
 .modal-content {
   min-width: 400px;
   border: none;
   background-color: #ffffff;
   max-height: 90vh !important;
+  min-height: fit-content;
+  margin: auto;
 }
 .modal-title {
   display: flex;
