@@ -1,9 +1,9 @@
 @media (max-width: 1190px) {
-  body {
+  .mo-body {
+    overflow-y: auto;
     height: calc(
       100% - (env(safe-area-inset-top) + env(safe-area-inset-bottom))
     );
-    overflow-y: auto;
   }
   .m-block {
     display: block !important;

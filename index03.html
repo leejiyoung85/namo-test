@@ -291,12 +291,10 @@
         var contentHeight = $('body').height();
         console.log('컨텐츠 높이:', contentHeight, '픽셀');
       }
-
-
-      // 초기 실행 시 body 높이 조정
+      // 초기 실행  높이 
       bodyHeight();
 
-      // 윈도우 리사이즈 시 body 높이 조정
+      // 윈도우 리사이즈 높이
       $(window).resize(function () {
         bodyHeight();
       });
@@ -326,8 +324,16 @@
     function bodyHeight() {
       var windowHeight = $(window).height();
       var addressBarHeight = windowHeight - $(document).height();
-      $('body').height(windowHeight - addressBarHeight);
+      $('body').addClass('mo-body').height(windowHeight - addressBarHeight);
     }
+
+    // 초기 실행 높이 
+    bodyHeight();
+
+    // 윈도우 리사이즈 높이 
+    $(window).resize(function () {
+      bodyHeight();
+    });
   </script>
 </body>
 

@@ -55,10 +55,7 @@ body {
   line-height: 1.1875;
   -webkit-tap-highlight-color: transparent;
 }
-html {
-  overscroll-behavior-y: none;
-  scroll-behavior: smooth; /* 필요한 경우에만 스무스 스크롤 적용 */
-}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
