@@ -91,6 +91,13 @@
     width: 100%;
   }
   /* modal */
+  .modal {
+    --bs-modal-margin: auto;
+  }
+  .modal-dialog-centered {
+    height: 100vh;
+  }
+
   .modal-content {
     padding: 0;
     width: 90vw !important;
