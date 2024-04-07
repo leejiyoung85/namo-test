@@ -238,44 +238,13 @@
   <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/bootstrap-select.js"></script>
-  <script>
-    $(document).ready(function () {
-      var lastScrollTop = 0;
-      var timeout;
 
-      // 스크롤 이벤트 처리
-      $(window).on('scroll', function () {
-        clearTimeout(timeout);
-        var currentScrollTop = $(this).scrollTop();
-        // 스크롤 방향을 확인하여 상단 주소창과 하단 상태표시바가 자동으로 사라지는 것을 방지
-        if (currentScrollTop > lastScrollTop) {
-          // 아래로 스크롤하는 경우
-          $('body').addClass('scrolling-down');
-        } else {
-          // 위로 스크롤하는 경우
-          $('body').removeClass('scrolling-down');
-        }
-        lastScrollTop = currentScrollTop;
-        // 상단 주소창과 하단 상태표시바 숨김을 지연시킴
-        timeout = setTimeout(function () {
-          $('body').removeClass('scrolling-down');
-        }, 200);
-      });
-
-      // 화면 터치 이벤트 처리
-      $(window).on('touchmove', function (event) {
-        event.preventDefault();
-      });
-    });
-  </script>
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
-      window.onload = function () {
-        setTimeout(function () {
-          $(".spinner-container").hide(); // 스피너 숨김
-        }, 300);
-      };
+      setTimeout(function () {
+        $(".spinner-container").hide(); // 스피너 숨김
+      }, 300);
 
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
