@@ -149,7 +149,7 @@
   .index02-box {
     min-width: unset;
     width: 170px;
-    -webkit-max-width: 170px;
+    -webkit-width: 170px;
     margin: 24px auto;
   }
   .index02-selected {
