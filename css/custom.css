@@ -184,7 +184,7 @@
   height: 42px;
 }
 .dropdown-menu.show {
-  top: -3px !important;
+  /* top: -3px !important; */
 }
 .season-select {
   flex: 6 !important;
@@ -288,8 +288,8 @@
 }
 .modal-container {
   overflow-y: auto;
-  margin: 24px 0 40px;
-  padding: 0 40px;
+  margin: 14px 0 30px;
+  padding: 10px 40px;
   &::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 6px;
