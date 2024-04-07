@@ -286,19 +286,6 @@
         $(".spinner-container").hide(); // 스피너 숨김
       }, 300);
 
-      // 높이값 확인 함수
-      function checkContentHeight() {
-        var contentHeight = $('body').height();
-        console.log('컨텐츠 높이:', contentHeight, '픽셀');
-      }
-      // 초기 실행  높이 
-      bodyHeight();
-
-      // 윈도우 리사이즈 높이
-      $(window).resize(function () {
-        bodyHeight();
-      });
-
       $(".selectpicker").selectpicker({
         dropupAuto: false, // 드롭다운 위치 고정
       });
@@ -320,21 +307,7 @@
       });
     });
   </script>
-  <script>
-    function bodyHeight() {
-      var windowHeight = $(window).height();
-      var addressBarHeight = windowHeight - $(document).height();
-      $('body').addClass('mo-body').height(windowHeight - addressBarHeight);
-    }
 
-    // 초기 실행 높이 
-    bodyHeight();
-
-    // 윈도우 리사이즈 높이 
-    $(window).resize(function () {
-      bodyHeight();
-    });
-  </script>
 </body>
 
 </html>
