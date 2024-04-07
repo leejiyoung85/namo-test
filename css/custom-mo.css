@@ -94,13 +94,21 @@
   .modal {
     --bs-modal-margin: auto;
   }
+  .modal-dialo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 56px);
+  }
   .modal-dialog-centered {
-    height: calc(100vh - 50px);
+    height: 100%;
   }
   .modal-content {
     padding: 0;
     width: 90vw !important;
     min-width: unset !important;
+    max-height: calc(100vh - 56px);
+    /* max-height: 84vh !important; */
     max-height: 84vh !important;
     overflow-y: auto;
   }
