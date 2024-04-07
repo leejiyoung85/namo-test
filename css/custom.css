@@ -631,9 +631,8 @@ main h1 {
 /* --------------------  index02  -------------------- */
 .index02-box {
   position: relative;
-  left: 0;
-  width: max-content;
-  max-width: max-content;
+  width: max-content !important;
+  max-width: max-content !important;
   min-width: fit-content;
   margin: 0 auto;
 }
