@@ -281,9 +281,12 @@
   <script>
     $(document).ready(function () {
       $(".spinner-container").show();
-      $(window).on('load', function () {
-        $(".spinner-container").hide();
-      });
+      window.onload = function () {
+        setTimeout(function () {
+          $(".spinner-container").hide(); // 스피너 숨김
+        }, 300);
+      };
+
 
       function setMainHeight() {
         const windowHeight = window.innerHeight;
